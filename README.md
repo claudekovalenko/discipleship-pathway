@@ -2,7 +2,17 @@
 
 A simple, printable guide to the commands of Scripture about making disciples, from Genesis to Revelation, quoted in the ESV.
 
-Open `index.html` in any browser. It needs no build step and no installs, and works offline.
+An installable app (PWA) with a simple tab-based interface: **Steps · Bible · Tools · Meet**. It works offline once it has been opened.
+
+## Install it on a phone
+
+1. Host the folder on any HTTPS site. The easiest option is GitHub Pages: go to *Settings → Pages → Deploy from branch*, and choose the branch and `/ (root)`.
+2. Open the link on your phone.
+   - **iPhone (Safari):** Share → *Add to Home Screen*.
+   - **Android (Chrome):** tap **Install** in the app bar, or use the menu → *Install app*.
+3. It opens full-screen like a normal app and works without internet.
+
+To try it on your computer, run `python3 -m http.server` in this folder and open http://localhost:8000. Offline mode and installing need `http://localhost` or HTTPS. Opening the file directly still works, but without offline support.
 
 ## What's inside
 
@@ -12,15 +22,27 @@ Open `index.html` in any browser. It needs no build step and no installs, and wo
 - **Meeting Rhythm:** Look Back / Look Up / Look Forward.
 - **Multiply:** the 2 Timothy 2:2 four-generation chain.
 
+## Files
+
+| File | Purpose |
+|---|---|
+| `index.html` | App shell: top bar and tab bar |
+| `app.css` | Styles, including light and dark mode |
+| `app.js` | Screens, navigation, checklist, install button |
+| `data.js` | **All the content** (steps, passages, tools) |
+| `manifest.webmanifest`, `sw.js`, `icons/` | What makes it installable and offline |
+
 ## Editing
 
-All content lives in three arrays near the bottom of `index.html`: `STEPS`, `CMDS`, and `TOOLS`. To add a passage, add a row to `CMDS`:
+All content lives in three arrays in `data.js`: `STEPS`, `CMDS`, and `TOOLS`. To add a passage, add a row to `CMDS`:
 
 ```js
 ["Reference", eraIndex, stepNumber, "Short title", "“ESV text”", "Simple way to obey", isPattern]
 ```
 
 `eraIndex`: 0 Law & History, 1 Wisdom & Prophets, 2 Gospels, 3 Acts, 4 Letters & Revelation.
+
+**After any change,** bump `CACHE` in `sw.js` (e.g. `dp-v1` → `dp-v2`) so installed apps download the update.
 
 ## Scripture copyright
 

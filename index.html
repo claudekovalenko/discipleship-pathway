@@ -2,423 +2,45 @@
 <html lang="en">
 <head>
 <meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>Discipleship Pathway</title>
 <meta name="description" content="The commands of Scripture for making disciples, from Genesis to Revelation (ESV), with six simple steps and practical tools.">
-<style>
-:root{
-  --bg:#faf8f4; --surface:#ffffff; --ink:#1f2328; --muted:#5b6470; --line:#e4dfd6;
-  --accent:#8a5a1f; --accent-soft:#f3e9da;
-  --s1:#b5542d; --s2:#2f7a5b; --s3:#b0397a; --s4:#2a64a8; --s5:#6b4bb0; --s6:#a07a12;
-}
-@media (prefers-color-scheme: dark){
-  :root:not([data-theme="light"]){
-    --bg:#16181c; --surface:#1f2227; --ink:#ece8e1; --muted:#a3a9b3; --line:#33373e;
-    --accent:#e0b273; --accent-soft:#2c271f;
-    --s1:#e88a62; --s2:#5cc49a; --s3:#e47bb6; --s4:#6fa6ea; --s5:#a58ae6; --s6:#e2bd4f;
-  }
-}
-:root[data-theme="dark"]{
-  --bg:#16181c; --surface:#1f2227; --ink:#ece8e1; --muted:#a3a9b3; --line:#33373e;
-  --accent:#e0b273; --accent-soft:#2c271f;
-  --s1:#e88a62; --s2:#5cc49a; --s3:#e47bb6; --s4:#6fa6ea; --s5:#a58ae6; --s6:#e2bd4f;
-}
-*{box-sizing:border-box}
-html{scroll-behavior:smooth}
-body{margin:0;background:var(--bg);color:var(--ink);font:17px/1.6 Georgia,"Iowan Old Style","Palatino Linotype",serif}
-.sans,h1,h2,h3,nav,button,input,select,.tag,.label{font-family:system-ui,-apple-system,"Segoe UI",Roboto,sans-serif}
-.wrap{max-width:1040px;margin:0 auto;padding:0 16px}
-header.hero{padding:56px 0 32px;border-bottom:1px solid var(--line)}
-.eyebrow{font:600 13px/1 system-ui,sans-serif;letter-spacing:.12em;text-transform:uppercase;color:var(--accent)}
-h1{font-size:clamp(30px,6vw,48px);line-height:1.1;margin:.35em 0 .3em;letter-spacing:-.01em}
-h2{font-size:clamp(24px,4vw,32px);margin:0 0 .4em;letter-spacing:-.01em}
-h3{font-size:19px;margin:0 0 .3em}
-.lede{font-size:19px;color:var(--muted);max-width:44em;margin:0}
-blockquote.key{margin:24px 0 0;padding:16px 20px;border-left:4px solid var(--accent);background:var(--accent-soft);border-radius:0 10px 10px 0;max-width:46em}
-blockquote.key cite{display:block;margin-top:6px;font:600 14px system-ui,sans-serif;color:var(--accent);font-style:normal}
-nav.toc{position:sticky;top:0;z-index:5;background:var(--bg);border-bottom:1px solid var(--line)}
-nav.toc .wrap{display:flex;gap:4px;overflow-x:auto;padding-top:8px;padding-bottom:8px}
-nav.toc a{flex:none;font-size:14px;font-weight:600;color:var(--muted);text-decoration:none;padding:6px 12px;border-radius:999px}
-nav.toc a:hover{background:var(--accent-soft);color:var(--ink)}
-nav.toc button{margin-left:auto;flex:none;border:1px solid var(--line);background:var(--surface);color:var(--ink);border-radius:999px;padding:6px 12px;font-size:14px;cursor:pointer}
-section{padding:48px 0;border-bottom:1px solid var(--line)}
-.intro{color:var(--muted);max-width:46em;margin:0 0 24px}
-/* Pathway */
-.path{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:10px;margin-bottom:28px;counter-reset:s}
-.path a{display:block;text-decoration:none;color:var(--ink);background:var(--surface);border:1px solid var(--line);border-top:5px solid var(--c);border-radius:10px;padding:12px 14px}
-.path a b{display:block;font:700 12px system-ui,sans-serif;color:var(--c);letter-spacing:.08em;text-transform:uppercase}
-.path a span{font:700 18px system-ui,sans-serif}
-.path a small{display:block;color:var(--muted);font-size:13px;font-family:system-ui,sans-serif;line-height:1.35;margin-top:2px}
-.step{background:var(--surface);border:1px solid var(--line);border-left:6px solid var(--c);border-radius:12px;padding:22px;margin:0 0 18px}
-.step-head{display:flex;align-items:baseline;gap:12px;flex-wrap:wrap;margin-bottom:6px}
-.num{font:800 14px system-ui,sans-serif;color:#fff;background:var(--c);border-radius:999px;width:30px;height:30px;display:inline-grid;place-items:center;flex:none}
-.step-head h3{font-size:24px;margin:0}
-.step-head .q{color:var(--muted);font:500 15px system-ui,sans-serif}
-.grid2{display:grid;grid-template-columns:1fr 1fr;gap:18px;margin-top:12px}
-@media (max-width:720px){.grid2{grid-template-columns:1fr}}
-.label{font-size:12px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--c);margin:0 0 6px}
-.verse{margin:0 0 10px}
-.verse .ref{font:700 14px system-ui,sans-serif;color:var(--muted)}
-ul.plain{margin:0;padding-left:20px}
-ul.plain li{margin:4px 0}
-.do{background:var(--bg);border:1px dashed var(--line);border-radius:10px;padding:12px 14px;margin-top:14px}
-.do label{display:flex;gap:10px;align-items:flex-start;cursor:pointer;font-family:system-ui,sans-serif;font-size:15px;padding:3px 0}
-.do input{margin-top:4px;accent-color:var(--c);width:17px;height:17px;flex:none}
-/* Commands index */
-.controls{display:flex;flex-wrap:wrap;gap:10px;margin-bottom:12px}
-.controls input,.controls select{font-size:15px;padding:9px 12px;border:1px solid var(--line);border-radius:8px;background:var(--surface);color:var(--ink);min-width:0}
-.controls input{flex:1 1 220px}
-.controls select{flex:1 1 160px}
-.count{font:500 14px system-ui,sans-serif;color:var(--muted);margin:0 0 14px}
-.era{margin:26px 0 10px;font:700 13px system-ui,sans-serif;letter-spacing:.1em;text-transform:uppercase;color:var(--accent);border-bottom:1px solid var(--line);padding-bottom:6px}
-.cmd{background:var(--surface);border:1px solid var(--line);border-left:5px solid var(--c);border-radius:10px;padding:14px 16px;margin:0 0 10px}
-.cmd-top{display:flex;justify-content:space-between;gap:10px;flex-wrap:wrap;align-items:baseline}
-.cmd-top strong{font:700 16px system-ui,sans-serif}
-.tag{font-size:12px;font-weight:700;color:var(--c);border:1px solid var(--c);border-radius:999px;padding:1px 9px;white-space:nowrap}
-.tag.pattern{color:var(--muted);border-color:var(--line)}
-.cmd p{margin:6px 0 0}
-.cmd .ref{font:700 14px system-ui,sans-serif;color:var(--muted)}
-.cmd .act{font:500 14px system-ui,sans-serif;color:var(--muted);margin-top:6px}
-.cmd .act b{color:var(--ink)}
-/* Tools */
-.tools{display:grid;grid-template-columns:repeat(auto-fit,minmax(290px,1fr));gap:14px}
-.tool{background:var(--surface);border:1px solid var(--line);border-radius:12px;padding:18px}
-.tool h3{display:flex;justify-content:space-between;gap:8px;align-items:baseline;flex-wrap:wrap}
-.tool .ref{font:600 13px system-ui,sans-serif;color:var(--muted)}
-.tool ol,.tool ul{margin:8px 0 0;padding-left:22px}
-.tool li{margin:4px 0}
-.tool p{margin:6px 0 0;color:var(--muted);font-size:15px}
-/* Rhythm */
-table{width:100%;border-collapse:collapse;font-family:system-ui,sans-serif;font-size:15px;background:var(--surface);border:1px solid var(--line);border-radius:10px;overflow:hidden}
-th,td{text-align:left;padding:10px 12px;border-bottom:1px solid var(--line);vertical-align:top}
-th{background:var(--accent-soft);font-size:13px;letter-spacing:.05em;text-transform:uppercase}
-.tbl{overflow-x:auto}
-footer{padding:32px 0 56px;color:var(--muted);font-size:14px;font-family:system-ui,sans-serif}
-.s1{--c:var(--s1)}.s2{--c:var(--s2)}.s3{--c:var(--s3)}.s4{--c:var(--s4)}.s5{--c:var(--s5)}.s6{--c:var(--s6)}
-@media print{
-  nav.toc,.controls,.count{display:none}
-  body{background:#fff;color:#000;font-size:12pt}
-  section{padding:18px 0;break-inside:auto}
-  .step,.cmd,.tool{break-inside:avoid}
-}
-</style>
+<meta name="theme-color" content="#8a5a1f" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#16181c" media="(prefers-color-scheme: dark)">
+<link rel="manifest" href="manifest.webmanifest">
+<link rel="icon" href="icons/icon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="icons/apple-touch-icon.png">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="default">
+<meta name="apple-mobile-web-app-title" content="Disciple">
+<link rel="stylesheet" href="app.css">
 </head>
 <body>
-
-<header class="hero">
-  <div class="wrap">
-    <div class="eyebrow">Discipleship Pathway · ESV</div>
-    <h1>Make Disciples: Every Command, Six Simple Steps</h1>
-    <p class="lede">From Genesis to Revelation, God calls his people to know him, love him, and pass his word on to the next person and the next generation. This guide gathers those commands, arranges them into six steps anyone can follow, and gives you a simple tool for each step.</p>
-    <blockquote class="key">“Go therefore and make disciples of all nations, baptizing them in the name of the Father and of the Son and of the Holy Spirit, teaching them to observe all that I have commanded you. And behold, I am with you always, to the end of the age.”
-      <cite>Matthew 28:19–20</cite></blockquote>
-  </div>
+<header class="appbar">
+  <button class="iconbtn" id="back" aria-label="Back" hidden>
+    <svg viewBox="0 0 24 24"><path d="M15 5l-7 7 7 7"/></svg>
+  </button>
+  <h1 id="title">Discipleship Pathway</h1>
+  <button class="pill" id="install" hidden>Install</button>
 </header>
 
-<nav class="toc" aria-label="Sections">
-  <div class="wrap">
-    <a href="#pathway">6 Steps</a>
-    <a href="#commands">All Commands</a>
-    <a href="#tools">Tools</a>
-    <a href="#rhythm">Meeting Rhythm</a>
-    <a href="#generations">Multiply</a>
-    <button type="button" onclick="window.print()">Print</button>
-  </div>
+<main id="view" tabindex="-1"></main>
+
+<nav class="tabbar" aria-label="Main">
+  <a href="#/steps" data-tab="steps">
+    <svg viewBox="0 0 24 24"><path d="M4 19h4v-4h4v-4h4V7h4"/></svg><span>Steps</span></a>
+  <a href="#/bible" data-tab="bible">
+    <svg viewBox="0 0 24 24"><path d="M4 5.5A2.5 2.5 0 0 1 6.5 3H20v15H6.5A2.5 2.5 0 0 0 4 20.5zM4 20.5A2.5 2.5 0 0 0 6.5 23H20v-5M12 7v6M9 9.5h6"/></svg><span>Bible</span></a>
+  <a href="#/tools" data-tab="tools">
+    <svg viewBox="0 0 24 24"><path d="M14.7 6.3a4 4 0 0 0-5.4 5.4L3 18l3 3 6.3-6.3a4 4 0 0 0 5.4-5.4l-2.6 2.6-2.4-.6-.6-2.4z"/></svg><span>Tools</span></a>
+  <a href="#/meet" data-tab="meet">
+    <svg viewBox="0 0 24 24"><circle cx="9" cy="8" r="3.2"/><circle cx="17" cy="9" r="2.5"/><path d="M3 20c0-3.3 2.7-6 6-6s6 2.7 6 6M15 14.3c3 .1 6 1.8 6 5.7"/></svg><span>Meet</span></a>
 </nav>
 
-<main>
-<section id="pathway">
-  <div class="wrap">
-    <h2>The Pathway: Six Simple Steps</h2>
-    <p class="intro">Every command in Scripture about making disciples fits into one of these six steps. They aren't a ladder you climb once. A disciple keeps walking all six, and then helps someone else walk them. The same colors mark each step throughout this page.</p>
+<div class="toast" id="toast" role="status" aria-live="polite"></div>
 
-    <div class="path" id="pathNav"></div>
-    <div id="steps"></div>
-  </div>
-</section>
-
-<section id="commands">
-  <div class="wrap">
-    <h2>Every Command, Genesis to Revelation</h2>
-    <p class="intro">These are the commands (and a few clear patterns) across Scripture that shape how God's people make disciples. Each one is tagged with the step it belongs to and a simple way to obey it. Search or filter to find what you need.</p>
-    <div class="controls">
-      <input id="q" type="search" placeholder="Search a word or reference (e.g. “teach”, “John”)" aria-label="Search commands">
-      <select id="fStep" aria-label="Filter by step"><option value="">All steps</option></select>
-      <select id="fEra" aria-label="Filter by section of the Bible"><option value="">Whole Bible</option></select>
-    </div>
-    <p class="count" id="count"></p>
-    <div id="list"></div>
-  </div>
-</section>
-
-<section id="tools">
-  <div class="wrap">
-    <h2>Simple Tools</h2>
-    <p class="intro">Each tool is small enough to learn in one meeting and pass on in the next. If someone can't teach a tool to another person, it's too complicated, so keep these simple.</p>
-    <div class="tools" id="toolGrid"></div>
-  </div>
-</section>
-
-<section id="rhythm">
-  <div class="wrap">
-    <h2>A Simple Meeting Rhythm</h2>
-    <p class="intro">Meet weekly with 2–6 people for about 90 minutes. Each meeting has three parts, so every person looks back, looks up, and looks forward. That way the six steps happen every week.</p>
-    <div class="tbl"><table>
-      <thead><tr><th>Part</th><th>Time</th><th>What you do</th><th>Steps practiced</th></tr></thead>
-      <tbody>
-        <tr><td><b>1. Look Back</b></td><td>⅓</td><td>Care and share: “How are you, really?” Pray for each other's needs. Check in: “Did you obey what you learned? Who did you share it with?” Restate the vision: we exist to make disciples.</td><td>Love &amp; Belong · Go &amp; Tell</td></tr>
-        <tr><td><b>2. Look Up</b></td><td>⅓</td><td>Read a passage together using the Discovery Bible Study questions. Let the text speak. Ask “What does this teach about God? About people?”</td><td>Abide · Teach to Obey</td></tr>
-        <tr><td><b>3. Look Forward</b></td><td>⅓</td><td>Each person writes one “I will…” statement to obey and names one person to share with. Practice it out loud in pairs. Pray and send each other out.</td><td>Follow · Go &amp; Tell · Multiply</td></tr>
-      </tbody>
-    </table></div>
-  </div>
-</section>
-
-<section id="generations">
-  <div class="wrap">
-    <h2>Multiply: The 2 Timothy 2:2 Chain</h2>
-    <p class="intro">“And what you have heard from me in the presence of many witnesses entrust to faithful men, who will be able to teach others also” (2 Timothy 2:2). This one verse covers four generations. The goal is never just one disciple. It's a disciple who makes disciples.</p>
-    <div class="tools">
-      <div class="tool s6"><h3>Generation 1 · Paul</h3><p>Who invested in you? Thank God for them, and keep learning.</p></div>
-      <div class="tool s6"><h3>Generation 2 · Timothy</h3><p>You. Abide, obey, and stay accountable.</p></div>
-      <div class="tool s6"><h3>Generation 3 · Faithful people</h3><p>Who are 1–3 people you will meet with this month? Write their names.</p></div>
-      <div class="tool s6"><h3>Generation 4 · Others also</h3><p>Who will <em>they</em> teach? Help them start before they feel ready.</p></div>
-    </div>
-    <div class="step s6" style="margin-top:18px">
-      <p class="label">Coach the way Jesus did: Model → Assist → Watch → Leave</p>
-      <ul class="plain">
-        <li><b>Model:</b> “I do, you watch.” Jesus taught and healed while the twelve watched (Mark 1–3).</li>
-        <li><b>Assist:</b> “We do it together.” Jesus sent them out with clear instructions (Luke 9:1–6).</li>
-        <li><b>Watch:</b> “You do, I watch.” They came back and reported, and Jesus coached them (Luke 10:17–20).</li>
-        <li><b>Leave:</b> “You do, and you train someone else.” “As the Father has sent me, even so I am sending you” (John 20:21).</li>
-      </ul>
-    </div>
-  </div>
-</section>
-</main>
-
-<footer>
-  <div class="wrap">
-    <p>Scripture quotations are from the ESV® Bible (The Holy Bible, English Standard Version®), © 2001 by Crossway, a publishing ministry of Good News Publishers. Used by permission. All rights reserved. The ESV text may not be quoted in any publication made available to the public by a Creative Commons license. The ESV may not be translated into any other language.</p>
-    <p>Some passages are shortened with an ellipsis (…) to focus on the command. Read each one in its full context.</p>
-  </div>
-</footer>
-
-<script>
-const STEPS = [
-  {id:1, name:"Follow", short:"Repent, believe, follow Jesus",
-   q:"Who is Jesus to me, and will I follow him?",
-   verses:[
-     ["Mark 1:15","“The time is fulfilled, and the kingdom of God is at hand; repent and believe in the gospel.”"],
-     ["Luke 9:23","“If anyone would come after me, let him deny himself and take up his cross daily and follow me.”"]],
-   commands:["Repent and believe the gospel","Follow Jesus, and deny yourself daily","Be baptized as a public step of faith","Remember Jesus at the Lord's Supper"],
-   tool:"The Gospel in 4 Words: God · Sin · Jesus · Response",
-   doIt:["Write out how you came to follow Jesus, or what is holding you back","Name one area where you need to “deny yourself” this week","If you haven't been baptized, talk to a pastor or mentor about it"]},
-  {id:2, name:"Abide", short:"Stay in his word and in prayer",
-   q:"Am I staying connected to Jesus every day?",
-   verses:[
-     ["John 15:4","“Abide in me, and I in you. As the branch cannot bear fruit by itself, unless it abides in the vine, neither can you, unless you abide in me.”"],
-     ["John 8:31","“If you abide in my word, you are truly my disciples.”"]],
-   commands:["Abide in Christ and in his word","Meditate on Scripture day and night","Pray without ceasing","Let the word of Christ dwell in you richly"],
-   tool:"Discovery Bible Study (7 questions)",
-   doIt:["Read one chapter of a Gospel each day","Write one “I will…” from each reading","Pray through your reading for 5 minutes"]},
-  {id:3, name:"Love & Belong", short:"Love God, love people, gather",
-   q:"Am I loving and being loved in a spiritual family?",
-   verses:[
-     ["Matthew 22:37–39","“You shall love the Lord your God with all your heart and with all your soul and with all your mind. This is the great and first commandment. And a second is like it: You shall love your neighbor as yourself.”"],
-     ["John 13:35","“By this all people will know that you are my disciples, if you have love for one another.”"]],
-   commands:["Love God with everything","Love one another as Jesus loved you","Meet together and encourage one another","Confess sins and bear one another's burdens"],
-   tool:"Accountability Questions",
-   doIt:["Meet with your group or one friend this week","Ask someone, “How can I pray for you?” and then pray right there","Do one practical act of love for a neighbor"]},
-  {id:4, name:"Go & Tell", short:"Be his witness where you live",
-   q:"Who around me needs to hear about Jesus?",
-   verses:[
-     ["Acts 1:8","“But you will receive power when the Holy Spirit has come upon you, and you will be my witnesses in Jerusalem and in all Judea and Samaria, and to the end of the earth.”"],
-     ["Mark 5:19","“Go home to your friends and tell them how much the Lord has done for you, and how he has had mercy on you.”"]],
-   commands:["Go and be his witness","Tell your story of what the Lord has done","Pray for laborers for the harvest","Be ready to give a reason for your hope"],
-   tool:"My Story (3 minutes) + Name List",
-   doIt:["Write down 10 names of people who don't yet follow Jesus","Pray for 3 of them by name every day","Share your story with one of them"]},
-  {id:5, name:"Teach to Obey", short:"Baptize and teach obedience",
-   q:"Am I helping others obey, not just know?",
-   verses:[
-     ["Matthew 28:20","“…teaching them to observe all that I have commanded you.”"],
-     ["James 1:22","“But be doers of the word, and not hearers only, deceiving yourselves.”"]],
-   commands:["Baptize new believers","Teach them to observe (obey) everything","Be doers, not hearers only","Warn and teach everyone toward maturity"],
-   tool:"Three-Thirds Meeting (Look Back · Look Up · Look Forward)",
-   doIt:["Ask last week's question: “Did you obey? Who did you tell?”","Help one person write a clear “I will…” statement","Celebrate obedience, not just knowledge"]},
-  {id:6, name:"Multiply", short:"Entrust it to others who will teach",
-   q:"Who am I training to do what I do?",
-   verses:[
-     ["2 Timothy 2:2","“…entrust to faithful men, who will be able to teach others also.”"],
-     ["1 Corinthians 11:1","“Be imitators of me, as I am of Christ.”"]],
-   commands:["Entrust the word to faithful people","Invite others to imitate you as you imitate Christ","Equip the saints for the work of ministry","Send them out, just as Jesus sent you"],
-   tool:"Model · Assist · Watch · Leave",
-   doIt:["Pick 1–3 people to invest in this month","Have someone you disciple lead part of your next meeting","Ask, “Who are you passing this on to?”"]}
-];
-
-const ERAS = ["Law & History","Wisdom & Prophets","Gospels","Acts","Letters & Revelation"];
-
-// [ref, era, step, title, ESV text, simple obedience, isPattern]
-const CMDS = [
-  ["Genesis 1:28",0,6,"Be fruitful and multiply","“And God blessed them. And God said to them, ‘Be fruitful and multiply and fill the earth and subdue it…’”","God's first command is multiplication. Life is meant to reproduce. Pray: “Lord, make me fruitful.”"],
-  ["Genesis 12:2–3",0,4,"Be a blessing to the nations","“…and in you all the families of the earth shall be blessed.”","You are blessed to bless others. Name one person or family you can bless this week.",1],
-  ["Deuteronomy 6:5–7",0,5,"Teach his words diligently, all day","“You shall love the LORD your God with all your heart and with all your soul and with all your might. And these words that I command you today shall be on your heart. You shall teach them diligently to your children, and shall talk of them when you sit in your house, and when you walk by the way, and when you lie down, and when you rise.”","Discipleship happens in everyday life. Talk about God at a meal, on a drive, and at bedtime."],
-  ["Joshua 1:8",0,2,"Meditate on the word and do it","“This Book of the Law shall not depart from your mouth, but you shall meditate on it day and night, so that you may be careful to do according to all that is written in it…”","Read it, think on it, then do it. Keep one verse with you all day."],
-  ["Ezra 7:10",0,5,"Study it, do it, teach it","“For Ezra had set his heart to study the Law of the LORD, and to do it and to teach his statutes and rules in Israel.”","Follow the order: study → obey → teach. Don't teach what you haven't first obeyed.",1],
-  ["Nehemiah 8:8",0,5,"Read clearly and help people understand","“They read from the book, from the Law of God, clearly, and they gave the sense, so that the people understood the reading.”","When you read with someone, stop and ask, “What does this mean? What will we do?”",1],
-  ["Psalm 78:4",1,6,"Tell the next generation","“We will not hide them from their children, but tell to the coming generation the glorious deeds of the LORD, and his might, and the wonders that he has done.”","Tell a younger person one thing God has done in your life."],
-  ["Psalm 96:3",1,4,"Declare his glory among the nations","“Declare his glory among the nations, his marvelous works among all the peoples!”","Share a story of God's goodness with someone outside your church."],
-  ["Psalm 145:4",1,6,"Generation to generation","“One generation shall commend your works to another, and shall declare your mighty acts.”","Pair older and younger believers together."],
-  ["Micah 6:8",1,3,"Do justice, love kindness, walk humbly","“He has told you, O man, what is good; and what does the LORD require of you but to do justice, and to love kindness, and to walk humbly with your God?”","Choose one act of justice or kindness this week, done quietly and humbly."],
-  ["Isaiah 49:6",1,4,"A light for the nations","“…I will make you as a light for the nations, that my salvation may reach to the end of the earth.”","Pray for one unreached people group or nation by name.",1],
-
-  ["Matthew 4:19",2,1,"Follow me","“And he said to them, ‘Follow me, and I will make you fishers of men.’”","Following Jesus and fishing for people go together. Follow him, and he makes you a fisher of people."],
-  ["Mark 1:15",2,1,"Repent and believe","“The time is fulfilled, and the kingdom of God is at hand; repent and believe in the gospel.”","Turn from one known sin today and trust Jesus with it."],
-  ["Luke 9:23",2,1,"Deny yourself, take up your cross daily","“If anyone would come after me, let him deny himself and take up his cross daily and follow me.”","Ask each morning: “Where do I need to say no to me and yes to Jesus today?”"],
-  ["Matthew 9:37–38",2,4,"Pray for laborers","“The harvest is plentiful, but the laborers are few; therefore pray earnestly to the Lord of the harvest to send out laborers into his harvest.”","Set a daily phone alarm (many use 9:38) to pray for workers, and be willing to be one."],
-  ["Matthew 22:37–39",2,3,"Love God, love your neighbor","“You shall love the Lord your God with all your heart and with all your soul and with all your mind… You shall love your neighbor as yourself.”","Every disciple-making step flows from love. Ask, “How can I love this person well?”"],
-  ["Matthew 28:18–20",2,5,"Go, make disciples, baptize, teach to obey","“All authority in heaven and on earth has been given to me. Go therefore and make disciples of all nations, baptizing them in the name of the Father and of the Son and of the Holy Spirit, teaching them to observe all that I have commanded you…”","The main verb is “make disciples.” Go, baptize, and teach obedience, trusting his authority and presence."],
-  ["Mark 5:19",2,4,"Go home and tell what the Lord has done","“Go home to your friends and tell them how much the Lord has done for you, and how he has had mercy on you.”","Start with family and friends. Share your story with someone this week."],
-  ["Luke 6:40",2,6,"A trained disciple becomes like the teacher","“A disciple is not above his teacher, but everyone when he is fully trained will be like his teacher.”","People will copy your life, not just your words. Live what you want to multiply.",1],
-  ["Luke 22:19",2,1,"Do this in remembrance of me","“And he took bread, and when he had given thanks, he broke it and gave it to them, saying, ‘This is my body, which is given for you. Do this in remembrance of me.’”","Take the Lord's Supper with your church. Keep the cross at the center."],
-  ["John 8:31",2,2,"Abide in my word","“If you abide in my word, you are truly my disciples.”","A true disciple stays in the word. Read daily, even if only a few verses."],
-  ["John 13:34–35",2,3,"Love one another as I have loved you","“A new commandment I give to you, that you love one another: just as I have loved you, you also are to love one another. By this all people will know that you are my disciples, if you have love for one another.”","The world recognizes disciples by their love. Reconcile with a believer if you need to."],
-  ["John 15:4–5, 8",2,2,"Abide in me and bear much fruit","“Abide in me, and I in you… By this my Father is glorified, that you bear much fruit and so prove to be my disciples.”","Fruit comes from staying connected to Jesus, not from striving. Start each day with him."],
-  ["John 20:21",2,6,"As the Father sent me, I send you","“Peace be with you. As the Father has sent me, even so I am sending you.”","You are sent. See your workplace, school, and street as your mission field."],
-  ["John 21:17",2,6,"Feed my sheep","“…Jesus said to him, ‘Feed my sheep.’”","Love for Jesus shows up as care for his people. Who can you feed with the word?"],
-
-  ["Acts 1:8",3,4,"Be my witnesses, near and far","“But you will receive power when the Holy Spirit has come upon you, and you will be my witnesses in Jerusalem and in all Judea and Samaria, and to the end of the earth.”","Map it out: your home (Jerusalem), city (Judea), the people you avoid (Samaria), and the nations."],
-  ["Acts 2:38",3,5,"Repent and be baptized","“Repent and be baptized every one of you in the name of Jesus Christ for the forgiveness of your sins, and you will receive the gift of the Holy Spirit.”","Call people to respond, and baptize new believers quickly."],
-  ["Acts 2:42",3,3,"Devoted to teaching, fellowship, bread, prayer","“And they devoted themselves to the apostles' teaching and the fellowship, to the breaking of bread and the prayers.”","Build these four into your group: the word, sharing life, meals and the Lord's Supper, and prayer.",1],
-  ["Acts 14:21–22",3,6,"Make disciples, then return to strengthen them","“When they had preached the gospel to that city and had made many disciples, they returned… strengthening the souls of the disciples, encouraging them to continue in the faith…”","Don't just start people. Follow up, strengthen, and encourage them to keep going.",1],
-
-  ["Romans 10:14",4,4,"How will they hear without someone telling?","“How then will they call on him in whom they have not believed? And how are they to believe in him of whom they have never heard? And how are they to hear without someone preaching?”","Someone has to open their mouth. Let it be you.",1],
-  ["Romans 12:1–2",4,1,"Offer yourself; be transformed","“…present your bodies as a living sacrifice, holy and acceptable to God, which is your spiritual worship. Do not be conformed to this world, but be transformed by the renewal of your mind…”","Give God your whole self each morning. Renew your mind with his word."],
-  ["1 Corinthians 11:1",4,6,"Imitate me as I imitate Christ","“Be imitators of me, as I am of Christ.”","Let people see your life up close: your home, your habits, how you pray."],
-  ["2 Corinthians 5:20",4,4,"Ambassadors: be reconciled to God","“Therefore, we are ambassadors for Christ, God making his appeal through us. We implore you on behalf of Christ, be reconciled to God.”","You represent Jesus. Invite someone to be reconciled to God."],
-  ["Galatians 6:1–2",4,3,"Restore gently; bear burdens","“Brothers, if anyone is caught in any transgression, you who are spiritual should restore him in a spirit of gentleness… Bear one another's burdens, and so fulfill the law of Christ.”","When someone falls, go gently and help carry the weight."],
-  ["Ephesians 4:11–12",4,6,"Equip the saints for ministry","“And he gave the apostles, the prophets, the evangelists, the shepherds and teachers, to equip the saints for the work of ministry, for building up the body of Christ.”","Leaders equip, and everyone does ministry. Give someone a real job to do."],
-  ["Philippians 4:9",4,6,"Practice what you've learned and seen","“What you have learned and received and heard and seen in me—practice these things, and the God of peace will be with you.”","Discipleship is learned, received, heard, and seen. Make sure people see it in you."],
-  ["Colossians 1:28",4,5,"Present everyone mature in Christ","“Him we proclaim, warning everyone and teaching everyone with all wisdom, that we may present everyone mature in Christ.”","The goal is maturity, not just attendance. Ask, “What's the next step for this person?”"],
-  ["Colossians 3:16",4,2,"Let the word dwell richly; teach one another","“Let the word of Christ dwell in you richly, teaching and admonishing one another in all wisdom, singing psalms and hymns and spiritual songs, with thankfulness in your hearts to God.”","Memorize one verse a week and share it with your group."],
-  ["Colossians 4:5–6",4,4,"Walk wisely toward outsiders","“Walk in wisdom toward outsiders, making the best use of the time. Let your speech always be gracious, seasoned with salt, so that you may know how you ought to answer each person.”","Be kind, curious, and ready. Ask good questions and listen."],
-  ["1 Thessalonians 2:8",4,3,"Share the gospel and your own life","“So, being affectionately desirous of you, we were ready to share with you not only the gospel of God but also our own selves, because you had become very dear to us.”","Disciple people with an open life. Invite them to your table.",1],
-  ["1 Thessalonians 5:11",4,3,"Encourage and build one another up","“Therefore encourage one another and build one another up, just as you are doing.”","Send one encouraging text today."],
-  ["2 Timothy 2:2",4,6,"Entrust to faithful people who will teach others","“and what you have heard from me in the presence of many witnesses entrust to faithful men, who will be able to teach others also.”","Four generations in one verse. Choose faithful, available, teachable people."],
-  ["2 Timothy 3:16–17",4,2,"Scripture equips for every good work","“All Scripture is breathed out by God and profitable for teaching, for reproof, for correction, and for training in righteousness, that the man of God may be complete, equipped for every good work.”","Use the Bible as your main discipleship tool.",1],
-  ["2 Timothy 4:2",4,5,"Preach the word in season and out","“preach the word; be ready in season and out of season; reprove, rebuke, and exhort, with complete patience and teaching.”","Be ready anytime, and be patient with people."],
-  ["Titus 2:3–4",4,6,"Older teach younger","“Older women likewise are to be reverent in behavior… They are to teach what is good, and so train the young women…”","Older believers: pick a younger one to invest in. Younger: ask an older believer to mentor you."],
-  ["Hebrews 3:13",4,3,"Exhort one another every day","“But exhort one another every day, as long as it is called ‘today,’ that none of you may be hardened by the deceitfulness of sin.”","Daily contact protects against sin. Check in often."],
-  ["Hebrews 10:24–25",4,3,"Stir up love and good works; keep meeting","“And let us consider how to stir up one another to love and good works, not neglecting to meet together, as is the habit of some, but encouraging one another, and all the more as you see the Day drawing near.”","Don't skip gathering. Come ready to encourage someone."],
-  ["James 1:22",4,5,"Be doers of the word","“But be doers of the word, and not hearers only, deceiving yourselves.”","End every study with: “What will I do?”"],
-  ["James 5:16",4,3,"Confess and pray for one another","“Therefore, confess your sins to one another and pray for one another, that you may be healed.”","Have one honest friend you confess to and pray with."],
-  ["1 Peter 3:15",4,4,"Be ready to give a reason for your hope","“but in your hearts honor Christ the Lord as holy, always being prepared to make a defense to anyone who asks you for a reason for the hope that is in you; yet do it with gentleness and respect.”","Practice your 3-minute story until it feels natural, and share it gently."],
-  ["1 Peter 5:2–3",4,6,"Shepherd the flock by example","“shepherd the flock of God that is among you, exercising oversight, not under compulsion, but willingly… not domineering over those in your charge, but being examples to the flock.”","Lead by example, willingly and humbly."],
-  ["2 Peter 3:18",4,2,"Grow in grace and knowledge","“But grow in the grace and knowledge of our Lord and Savior Jesus Christ.”","Keep growing. Ask your mentor what to read next."],
-  ["1 John 2:6",4,1,"Walk as Jesus walked","“whoever says he abides in him ought to walk in the same way in which he walked.”","Ask in each situation: “How did Jesus walk in this?”"],
-  ["Jude 22–23",4,4,"Have mercy on doubters; rescue others","“And have mercy on those who doubt; save others by snatching them out of the fire…”","Be patient with doubters, and be urgent about the lost."],
-  ["Revelation 7:9",4,4,"The goal: every nation before the throne","“After this I looked, and behold, a great multitude that no one could number, from every nation, from all tribes and peoples and languages, standing before the throne and before the Lamb…”","This is where disciple-making ends: worshipers from every people. Keep the end in view.",1]
-];
-
-const TOOLS = [
-  {s:1,t:"The Gospel in 4 Words",r:"Romans 3:23; 6:23; 5:8; 10:9",
-   items:["<b>God</b>: He made us and loves us, and we were made to know him.","<b>Sin</b>: We all rebelled and are separated from him (Rom 3:23).","<b>Jesus</b>: He died for our sins and rose again (Rom 5:8).","<b>Response</b>: Repent, believe, and follow him (Rom 10:9)."],
-   note:"Draw it on a napkin with four simple pictures. Practice until you can share it in 2 minutes."},
-  {s:2,t:"Discovery Bible Study",r:"John 8:31; James 1:22",ol:1,
-   items:["<b>Read</b> the passage out loud twice.","<b>Retell</b> it in your own words.","What does this teach about <b>God</b>?","What does this teach about <b>people</b>?","How will I <b>obey</b>? (“I will…”)","Who will I <b>share</b> this with?","What do we need to <b>pray</b> about?"],
-   note:"Works with any passage. Start new believers in Mark or Luke."},
-  {s:3,t:"Accountability Questions",r:"James 5:16; Hebrews 3:13",ol:1,
-   items:["How is your relationship with Jesus right now?","What did you read and obey this week?","Where are you struggling with sin or temptation?","Who did you share Jesus with?","How can we pray for you?"],
-   note:"Meet in pairs of the same gender. Be honest and keep confidences."},
-  {s:4,t:"My Story (3 minutes)",r:"Mark 5:19; 1 Peter 3:15",ol:1,
-   items:["<b>Before:</b> What was my life like before Jesus?","<b>How:</b> How did I meet and trust Jesus?","<b>After:</b> What has he changed in me?","<b>Question:</b> “Do you have a story like that?”"],
-   note:"Keep it short and honest, with no church jargon. Practice it with your group."},
-  {s:4,t:"Name List (Prayer Ten)",r:"Matthew 9:37–38",ol:1,
-   items:["Write 10 names of people who don't yet follow Jesus.","Pray for them by name daily.","Look for open doors: needs, questions, life changes.","Share your story and the gospel when God opens a door."],
-   note:"Ask, “Who in your circle is ready to hear?” Many people come to faith through a friend."},
-  {s:5,t:"Three-Thirds Meeting",r:"Acts 2:42; Hebrews 10:24–25",ol:1,
-   items:["<b>Look Back:</b> care, prayer, and accountability (“Did you obey? Did you share?”)","<b>Look Up:</b> Discovery Bible Study on a new passage.","<b>Look Forward:</b> “I will…” goals, practice in pairs, and pray to send out."],
-   note:"The same simple meeting, every week. Simple things are easy to pass on."},
-  {s:6,t:"Model · Assist · Watch · Leave",r:"Mark 3:14; Luke 9–10; John 20:21",ol:1,
-   items:["<b>Model:</b> I do it, you watch.","<b>Assist:</b> We do it together.","<b>Watch:</b> You do it, I watch and coach.","<b>Leave:</b> You do it and train someone else."],
-   note:"This is how Jesus trained the twelve. Use it for every tool on this page."},
-  {s:6,t:"The Multiplication Question",r:"2 Timothy 2:2",
-   items:["Ask often: <b>“Who are you passing this on to?”</b>","Don't measure only how many are sitting. Also measure how many are sent.","Celebrate grandchildren: disciples of your disciples."],
-   note:"Start the next group early, with the newest believer helping lead."}
-];
-
-const $ = s => document.querySelector(s);
-
-// Pathway nav + step cards
-$("#pathNav").innerHTML = STEPS.map(s =>
-  `<a class="s${s.id}" href="#step${s.id}"><b>Step ${s.id}</b><span>${s.name}</span><small>${s.short}</small></a>`).join("");
-
-let done = {};
-try { done = JSON.parse(localStorage.getItem("dp-done") || "{}"); } catch(e) {}
-
-$("#steps").innerHTML = STEPS.map(s => `
-  <article class="step s${s.id}" id="step${s.id}">
-    <div class="step-head"><span class="num">${s.id}</span><h3>${s.name}</h3><span class="q">${s.q}</span></div>
-    <div class="grid2">
-      <div>
-        <p class="label">Key verses (ESV)</p>
-        ${s.verses.map(v => `<p class="verse">${v[1]} <span class="ref">${v[0]}</span></p>`).join("")}
-      </div>
-      <div>
-        <p class="label">The commands</p>
-        <ul class="plain">${s.commands.map(c => `<li>${c}</li>`).join("")}</ul>
-        <p class="label" style="margin-top:12px">The tool</p>
-        <p style="margin:0"><a href="#tools" style="color:var(--c)">${s.tool}</a></p>
-      </div>
-    </div>
-    <div class="do">
-      <p class="label">This week, I will…</p>
-      ${s.doIt.map((d,i) => { const k = s.id+"-"+i; return `<label><input type="checkbox" data-k="${k}" ${done[k]?"checked":""}> ${d}</label>`; }).join("")}
-    </div>
-  </article>`).join("");
-
-document.addEventListener("change", e => {
-  const k = e.target.dataset && e.target.dataset.k; if (!k) return;
-  done[k] = e.target.checked;
-  try { localStorage.setItem("dp-done", JSON.stringify(done)); } catch(err) {}
-});
-
-// Commands index
-STEPS.forEach(s => $("#fStep").insertAdjacentHTML("beforeend", `<option value="${s.id}">Step ${s.id}: ${s.name}</option>`));
-ERAS.forEach((e,i) => $("#fEra").insertAdjacentHTML("beforeend", `<option value="${i}">${e}</option>`));
-
-function render(){
-  const q = $("#q").value.trim().toLowerCase(), fs = $("#fStep").value, fe = $("#fEra").value;
-  const rows = CMDS.filter(c =>
-    (!fs || c[2] == fs) && (!fe || c[1] == fe) &&
-    (!q || (c[0]+" "+c[3]+" "+c[4]+" "+c[5]).toLowerCase().includes(q)));
-  $("#count").textContent = `${rows.length} of ${CMDS.length} passages`;
-  let html = "", era = -1;
-  rows.forEach(c => {
-    if (c[1] !== era) { era = c[1]; html += `<div class="era">${ERAS[era]}</div>`; }
-    const st = STEPS[c[2]-1];
-    html += `<div class="cmd s${c[2]}">
-      <div class="cmd-top"><strong>${c[3]}</strong>
-        <span>${c[6] ? '<span class="tag pattern">Pattern</span> ' : ''}<span class="tag">${st.id} · ${st.name}</span></span></div>
-      <p>${c[4]} <span class="ref">${c[0]}</span></p>
-      <div class="act"><b>Obey it:</b> ${c[5]}</div></div>`;
-  });
-  $("#list").innerHTML = html || `<p class="intro">No passages match. Try a different word.</p>`;
-}
-["input","change"].forEach(ev => { $("#q").addEventListener(ev, render); });
-$("#fStep").addEventListener("change", render);
-$("#fEra").addEventListener("change", render);
-render();
-
-// Tools
-$("#toolGrid").innerHTML = TOOLS.map(t => {
-  const st = STEPS[t.s-1], tag = t.ol ? "ol" : "ul";
-  return `<div class="tool s${t.s}" style="border-top:5px solid var(--c)">
-    <h3>${t.t} <span class="tag">${st.id} · ${st.name}</span></h3>
-    <div class="ref">${t.r}</div>
-    <${tag}>${t.items.map(i => `<li>${i}</li>`).join("")}</${tag}>
-    <p>${t.note}</p></div>`;
-}).join("");
-</script>
+<script src="data.js"></script>
+<script src="app.js"></script>
 </body>
 </html>
