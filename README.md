@@ -17,10 +17,11 @@ An installable app (PWA) that works offline once it has been opened.
   - "Entrust to faithful men" (2 Timothy 2:2)
 
   Each one opens every passage on that command, in canonical order.
+- **Patterns:** seven threads traced through the whole Bible: One life poured into another, Generation to generation, Hear it · do it · teach it, Called then sent, Blessed to bless every nation, Life together, and By the Spirit not by might. Each shows a bar of all 66 books marking where it appears, then every passage in order.
 - **Bible:** all 66 books, grouped by section (Law, History, Wisdom & Poetry, Major Prophets, Minor Prophets, Gospels, Acts, Paul's Letters, General Letters, Revelation). Tap a book to read its passages.
 - **Search:** any word, book, or reference, filtered by command.
 
-The verse text is always shown in full. Passages that show an example rather than giving a direct command are marked **Example**.
+The verse text is always shown in full. Passages that show an example rather than giving a direct command are marked **Example**, and promises are marked **Promise**.
 
 ## Install it on a phone
 
@@ -47,12 +48,12 @@ To try it on your computer, run `python3 -m http.server` in this folder and open
 All content is in `data.js`. To add a passage, add a row to `PASSAGES` in canonical order. The app works out the book from the reference:
 
 ```js
-["Reference", commandId, "Heading", "“ESV text”", isExample]
+["Reference", commandId, "Heading", "“ESV text”", kind]
 ```
 
-Command ids: 1 Follow me, 2 Abide in my word, 3 Love one another, 4 You will be my witnesses, 5 Teaching them to observe, 6 Entrust to faithful men. Set `isExample` to `1` for a passage that shows an example rather than giving a direct command.
+Command ids: 1 Follow me, 2 Abide in my word, 3 Love one another, 4 You will be my witnesses, 5 Teaching them to observe, 6 Entrust to faithful men. `kind`: 0 a direct command, 1 an example, 2 a promise. To add a pattern, add a row to `PATTERNS` with its name, a one-line summary, and the references it includes.
 
-**After any change,** bump `CACHE` in `sw.js` (e.g. `dp-v5` → `dp-v6`) so installed apps download the update.
+**After any change,** bump `CACHE` in `sw.js` (e.g. `dp-v6` → `dp-v7`) so installed apps download the update.
 
 ## Scripture copyright
 

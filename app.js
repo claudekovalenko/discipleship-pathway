@@ -11,13 +11,25 @@ const bookIdx = ref => { let best = -1, len = 0;
   return best; };
 const P_BOOK = PASSAGES.map(p => bookIdx(p[0]));
 const cmdOf = id => COMMANDS[id - 1];
+const REF_IDX = new Map(PASSAGES.map((p, i) => [p[0], i]));
+const PAT_IDS = PATTERNS.map(pt => pt[2].map(r => REF_IDX.get(r)));
+
+/* A strip of all 66 books; books where the pattern appears are filled in. */
+function strip(ids, big) {
+  const hit = new Set(ids.map(i => P_BOOK[i]));
+  const cell = (b, bi) => `<i class="${hit.has(bi) ? "on" : ""}" title="${b[0]}"></i>`;
+  const ot = BOOKS.slice(0, 39).map((b, i) => cell(b, i)).join(""), nt = BOOKS.slice(39).map((b, i) => cell(b, i + 39)).join("");
+  return `<div class="strip ${big ? "big" : ""}" aria-label="Appears in ${hit.size} of ${BOOKS.length} books">
+    <div class="ot">${ot}</div><div class="nt">${nt}</div></div>
+    ${big ? `<div class="strip-labels"><span>Genesis</span><span>Old Testament · New Testament</span><span>Revelation</span></div>` : ""}`;
+}
 
 /* One passage: heading, the full ESV text, reference. */
 function passage(i, showCmd = true) {
   const p = PASSAGES[i], c = cmdOf(p[1]);
   return `<article class="pass s${p[1]}">
     <div class="pass-top"><h3>${p[2]}</h3>
-      <span class="tags">${p[4] ? '<span class="tag example">Example</span>' : ""}${showCmd ? `<a class="tag" href="#cmd-${c[0]}">${c[1]}</a>` : ""}</span></div>
+      <span class="tags">${p[4] === 1 ? '<span class="tag example">Example</span>' : p[4] === 2 ? '<span class="tag example">Promise</span>' : ""}${showCmd ? `<a class="tag" href="#cmd-${c[0]}">${c[1]}</a>` : ""}</span></div>
     <p class="verse">${p[3]}</p>
     <span class="ref">${p[0]}</span>
   </article>`;
@@ -46,6 +58,8 @@ function homeScreen() {
     ${COMMANDS.map(c => `
       <a class="cmdrow s${c[0]}" href="#cmd-${c[0]}">
         <span class="txt"><b>“${c[1]}”</b><small>${c[2]} · ${PASSAGES.filter(p => p[1] === c[0]).length} passages</small></span>${chev}</a>`).join("")}
+    <a class="cmdrow" href="#patterns" style="--c:var(--accent)">
+      <span class="txt"><b>Patterns through the whole Bible</b><small>${PATTERNS.length} threads from Genesis to Revelation</small></span>${chev}</a>
     <a class="cmdrow" href="#bible" style="--c:var(--accent)">
       <span class="txt"><b>Genesis to Revelation</b><small>All ${BOOKS.length} books · ${PASSAGES.length} passages</small></span>${chev}</a>
     <p class="fine">Scripture quotations are from the ESV® Bible (The Holy Bible, English Standard Version®), © 2001 by Crossway, a publishing ministry of Good News Publishers. Used by permission. All rights reserved. Some passages are shortened with an ellipsis (…). Read each one in its full context.</p>` };
@@ -63,6 +77,36 @@ function cmdScreen(id) {
         ${id > 1 ? `<a href="#cmd-${id - 1}">← ${cmdOf(id - 1)[1]}</a>` : ""}
         ${id < COMMANDS.length ? `<a class="next" href="#cmd-${id + 1}">${cmdOf(id + 1)[1]} →</a>` : ""}
       </div>
+    </div>` };
+}
+
+function patternsScreen() {
+  return { title: "Patterns", tab: "patterns", html: `
+    <div class="hello"><h2>Patterns through the whole Bible</h2>
+      <p>The same threads run from Genesis to Revelation. Each bar below is the whole Bible, one mark per book; the filled marks show where the pattern appears.</p></div>
+    ${PATTERNS.map((pt, i) => { const ids = PAT_IDS[i];
+      return `<a class="patrow" href="#pattern-${i}">
+        <b>${pt[0]}</b><small>${pt[1]}</small>
+        ${strip(ids)}
+        <span class="patmeta">${PASSAGES[ids[0]][0]} → ${PASSAGES[ids[ids.length - 1]][0]} · ${ids.length} passages</span></a>`; }).join("")}` };
+}
+
+function patternScreen(n) {
+  const pt = PATTERNS[n]; if (!pt) return patternsScreen();
+  const ids = PAT_IDS[n];
+  let html = "", sec = -1;
+  ids.forEach(i => {
+    const s = BOOKS[P_BOOK[i]][2];
+    if (s !== sec) { sec = s; html += `<div class="era">${SECTIONS[s][0]}</div>`; }
+    html += passage(i);
+  });
+  return { title: pt[0], tab: "patterns", back: "#patterns", html: `
+    <div class="hello"><p class="label">Pattern ${n + 1} of ${PATTERNS.length}</p><h2>${pt[0]}</h2><p>${pt[1]}</p></div>
+    ${strip(ids, true)}
+    <div class="thread">${html}</div>
+    <div class="pager">
+      ${n > 0 ? `<a href="#pattern-${n - 1}">← ${PATTERNS[n - 1][0]}</a>` : ""}
+      ${n < PATTERNS.length - 1 ? `<a class="next" style="--c:var(--accent)" href="#pattern-${n + 1}">${PATTERNS[n + 1][0]} →</a>` : ""}
     </div>` };
 }
 
@@ -114,6 +158,8 @@ function renderSearch() {
 function route() {
   const [name, arg] = (location.hash.slice(1) || "home").split("-");
   const scr = name === "cmd" ? cmdScreen(+arg)
+    : name === "patterns" ? patternsScreen()
+    : name === "pattern" ? patternScreen(+arg)
     : name === "bible" ? bibleScreen()
     : name === "book" ? bookScreen(+arg)
     : name === "search" ? searchScreen()

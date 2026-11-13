@@ -169,3 +169,23 @@ main a:not([class]){color:var(--accent);font-weight:600}
 .tags{display:flex;gap:4px;flex-wrap:wrap;justify-content:flex-end}
 a.tag{text-decoration:none}
 .tag.example{color:var(--muted);border-color:var(--line)}
+
+/* Patterns */
+.patrow{display:block;text-decoration:none;color:var(--ink);background:var(--surface);border:1px solid var(--line);border-radius:14px;padding:14px;margin:0 0 12px}
+.patrow:active{background:var(--accent-soft)}
+.patrow b{display:block;font-family:Georgia,"Iowan Old Style",serif;font-size:19px;font-weight:600}
+.patrow small{display:block;color:var(--muted);font-size:14px;line-height:1.4;margin:2px 0 10px}
+.patmeta{display:block;font-size:12px;font-weight:600;color:var(--muted);margin-top:6px}
+.strip{display:flex;gap:6px}
+.strip .ot{flex:39;display:flex;gap:1px}
+.strip .nt{flex:27;display:flex;gap:1px}
+.strip i{flex:1;height:14px;border-radius:2px;background:var(--line)}
+.strip i.on{background:var(--accent)}
+.strip.big i{height:28px}
+.strip-labels{display:flex;justify-content:space-between;font-size:11px;font-weight:600;color:var(--muted);margin:4px 0 8px}
+.thread{position:relative;padding-left:18px;margin-top:6px}
+.thread::before{content:"";position:absolute;left:5px;top:8px;bottom:8px;width:2px;background:var(--accent);opacity:.4;border-radius:2px}
+.thread .pass{position:relative}
+.thread .pass::before{content:"";position:absolute;left:-19px;top:18px;width:10px;height:10px;border-radius:50%;background:var(--accent);border:2px solid var(--bg)}
+.thread .era{margin-left:-18px}
+.thread .era{position:relative;z-index:1;background:var(--bg);padding-top:6px}

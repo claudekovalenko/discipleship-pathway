@@ -18,6 +18,7 @@
   ],
   "shortcuts": [
     { "name": "Commands", "url": "./#home" },
+    { "name": "Patterns", "url": "./#patterns" },
     { "name": "The Whole Bible", "url": "./#bible" },
     { "name": "Search", "url": "./#search" }
   ]
