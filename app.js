@@ -38,24 +38,19 @@ function strip(ids, big) {
     ${big ? `<div class="strip-labels"><span>Genesis</span><span>Old Testament · New Testament</span><span>Revelation</span></div>` : ""}`;
 }
 
-/* One passage: heading, the full ESV text, reference. */
-function passage(i, showCmd = true) {
-  const p = PASSAGES[i], c = cmdOf(p[1]);
-  return `<article class="pass s${p[1]}">
-    <div class="pass-top"><h3>${p[2]}</h3>
-      <span class="tags">${p[4] === 1 ? '<span class="tag example">Example</span>' : p[4] === 2 ? '<span class="tag example">Promise</span>' : ""}${showCmd ? `<a class="tag" href="#cmd-${c[0]}">${c[1]}</a>` : ""}</span></div>
-    <p class="verse">${p[3]}</p>
-    <span class="ref">${p[0]}</span>
-  </article>`;
+/* One passage: the ESV text and its reference, nothing else. */
+function passage(i) {
+  const p = PASSAGES[i];
+  return `<article class="pass"><p class="verse">${p[2]}</p><span class="ref">${p[0]}</span></article>`;
 }
 
 /* Passages grouped under their canon section headings. */
-function grouped(ids, showCmd) {
+function grouped(ids) {
   let html = "", sec = -1;
   ids.forEach(i => {
     const s = BOOKS[P_BOOK[i]][2];
     if (s !== sec) { sec = s; html += `<div class="era">${SECTIONS[s][0]} <span class="muted">· ${SECTIONS[s][1]}</span></div>`; }
-    html += passage(i, showCmd);
+    html += passage(i);
   });
   return html;
 }
@@ -72,10 +67,11 @@ function homeScreen() {
     ${COMMANDS.map(c => `
       <a class="cmdrow s${c[0]}" href="#cmd-${c[0]}">
         <span class="txt"><b>“${c[1]}”</b><small>${c[2]} · ${PASSAGES.filter(p => p[1] === c[0]).length} passages</small></span>${chev}</a>`).join("")}
-    <a class="cmdrow" href="#pattern-${PATTERNS.findIndex(p => p[0] === "Establishing churches")}" style="--c:var(--accent)">
-      <span class="txt"><b>Establishing churches</b><small>Through the whole Bible, then the New Testament</small></span>${chev}</a>
-    <a class="cmdrow" href="#patterns" style="--c:var(--accent)">
-      <span class="txt"><b>Patterns through the whole Bible</b><small>${PATTERNS.length} threads from Genesis to Revelation</small></span>${chev}</a>
+    <p class="label" style="margin-top:22px">Patterns through the whole Bible</p>
+    ${PATTERNS.map((pt, i) => `
+      <a class="cmdrow" href="#pattern-${i}" style="--c:var(--accent)">
+        <span class="txt"><b>“${pt[0]}”</b><small>${pt[1]} · ${pt[2].length} passages</small></span>${chev}</a>`).join("")}
+    <p class="label" style="margin-top:22px">The whole Bible</p>
     <a class="cmdrow" href="#bible" style="--c:var(--accent)">
       <span class="txt"><b>Genesis to Revelation</b><small>All ${BOOKS.length} books · ${PASSAGES.length} passages</small></span>${chev}</a>
     <p class="fine">Scripture quotations are from the ESV® Bible (The Holy Bible, English Standard Version®), © 2001 by Crossway, a publishing ministry of Good News Publishers. Used by permission. All rights reserved. Some passages are shortened with an ellipsis (…). Read each one in its full context.</p>` };
@@ -87,9 +83,8 @@ function cmdScreen(id) {
   return { title: `“${c[1]}”`, tab: "home", back: "#home", html: `
     <div class="s${id}">
       <div class="hero"><p class="verse">${c[3]}</p><span class="ref">${c[2]}</span></div>
-      <p class="muted">${c[4]}</p>
       ${scopeBar("cmd-" + id, all)}
-      ${grouped(ids, false) || `<p class="muted">No passages in this part of the Bible.</p>`}
+      ${grouped(ids) || `<p class="muted">No passages in this part of the Bible.</p>`}
       <div class="pager">
         ${id > 1 ? `<a href="#cmd-${id - 1}${sfx()}">← ${cmdOf(id - 1)[1]}</a>` : ""}
         ${id < COMMANDS.length ? `<a class="next" href="#cmd-${id + 1}${sfx()}">${cmdOf(id + 1)[1]} →</a>` : ""}
@@ -99,13 +94,12 @@ function cmdScreen(id) {
 
 function patternsScreen() {
   return { title: "Patterns", tab: "patterns", html: `
-    <div class="hello"><h2>Patterns through the whole Bible</h2>
-      <p>The same threads run from Genesis to Revelation. Each bar below is the whole Bible, one mark per book; the filled marks show where the pattern appears.</p></div>
+    <p class="muted" style="margin-top:0">Each bar is the whole Bible, Genesis to Revelation, one mark per book.</p>
     ${PATTERNS.map((pt, i) => { const ids = PAT_IDS[i];
       return `<a class="patrow" href="#pattern-${i}">
-        <b>${pt[0]}</b><small>${pt[1]}</small>
+        <b>“${pt[0]}”</b><small>${pt[1]}</small>
         ${strip(ids)}
-        <span class="patmeta">${PASSAGES[ids[0]][0]} → ${PASSAGES[ids[ids.length - 1]][0]} · Old Testament ${ids.filter(i => !isNT(i)).length} · New Testament ${ids.filter(isNT).length}</span></a>`; }).join("")}` };
+        <span class="patmeta">Old Testament ${ids.filter(i => !isNT(i)).length} · New Testament ${ids.filter(isNT).length}</span></a>`; }).join("")}` };
 }
 
 function patternScreen(n) {
@@ -117,23 +111,22 @@ function patternScreen(n) {
     if (s !== sec) { sec = s; html += `<div class="era">${SECTIONS[s][0]}</div>`; }
     html += passage(i);
   });
-  return { title: pt[0], tab: "patterns", back: "#patterns", html: `
-    <div class="hello"><p class="label">Pattern ${n + 1} of ${PATTERNS.length}</p><h2>${pt[0]}</h2><p>${pt[1]}</p></div>
+  return { title: `“${pt[0]}”`, tab: "patterns", back: "#patterns", html: `
+    <div class="hello"><h2 class="phrase">“${pt[0]}”</h2><span class="ref">${pt[1]}</span></div>
     ${strip(all, true)}
     ${scopeBar("pattern-" + n, all)}
     <div class="thread">${html || `<p class="muted">No passages in this part of the Bible.</p>`}</div>
     <div class="pager">
-      ${n > 0 ? `<a href="#pattern-${n - 1}${sfx()}">← ${PATTERNS[n - 1][0]}</a>` : ""}
-      ${n < PATTERNS.length - 1 ? `<a class="next" style="--c:var(--accent)" href="#pattern-${n + 1}${sfx()}">${PATTERNS[n + 1][0]} →</a>` : ""}
+      ${n > 0 ? `<a href="#pattern-${n - 1}${sfx()}">← Previous</a>` : ""}
+      ${n < PATTERNS.length - 1 ? `<a class="next" style="--c:var(--accent)" href="#pattern-${n + 1}${sfx()}">Next →</a>` : ""}
     </div>` };
 }
 
 function bibleScreen() {
   return { title: "The Whole Bible", tab: "bible", html: `
-    <p class="muted" style="margin-top:0">Every book of the Bible speaks to making disciples. Tap a book to read its passages.</p>
+    <p class="muted" style="margin-top:0">Tap a book to read its passages.</p>
     ${SECTIONS.map((s, si) => `
       <div class="era">${s[0]} <span class="muted">· ${s[1]}</span></div>
-      <p class="sect">${s[2]}</p>
       <div class="books">${BOOKS.map((b, bi) => b[2] !== si ? "" : `
         <a class="book" href="#book-${bi}"><b>${b[1]}</b><small>${P_BOOK.filter(x => x === bi).length}</small></a>`).join("")}</div>`).join("")}` };
 }
@@ -143,7 +136,7 @@ function bookScreen(bi) {
   const ids = PASSAGES.map((p, i) => i).filter(i => P_BOOK[i] === bi);
   return { title: b[0], tab: "bible", back: "#bible", html: `
     <div class="hello"><p class="label">${SECTIONS[b[2]][0]} · book ${bi + 1} of ${BOOKS.length}</p><h2>${b[0]}</h2></div>
-    ${ids.map(i => passage(i)).join("")}
+    ${ids.map(passage).join("")}
     <div class="pager">
       ${bi > 0 ? `<a href="#book-${bi - 1}">← ${BOOKS[bi - 1][0]}</a>` : ""}
       ${bi < BOOKS.length - 1 ? `<a class="next" style="--c:var(--accent)" href="#book-${bi + 1}">${BOOKS[bi + 1][0]} →</a>` : ""}
@@ -167,9 +160,9 @@ function renderSearch() {
   const q = search.q.trim().toLowerCase();
   const ids = PASSAGES.map((p, i) => i).filter(i => { const p = PASSAGES[i];
     return (!search.cmd || p[1] === search.cmd) &&
-      (!q || (p[0] + " " + p[2] + " " + p[3] + " " + BOOKS[P_BOOK[i]][0]).toLowerCase().includes(q)); });
+      (!q || (p[0] + " " + p[2] + " " + BOOKS[P_BOOK[i]][0]).toLowerCase().includes(q)); });
   $("#count").textContent = `${ids.length} of ${PASSAGES.length} passages`;
-  $("#list").innerHTML = grouped(ids, true) || `<p class="muted">No passages match. Try another word.</p>`;
+  $("#list").innerHTML = grouped(ids) || `<p class="muted">No passages match. Try another word.</p>`;
 }
 
 /* ---------- Router ---------- */

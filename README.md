@@ -17,12 +17,22 @@ An installable app (PWA) that works offline once it has been opened.
   - "Entrust to faithful men" (2 Timothy 2:2)
 
   Each one opens every passage on that command, in canonical order.
-- **Patterns:** eight threads traced through the whole Bible: One life poured into another, Generation to generation, Hear it · do it · teach it, Called then sent, **Establishing churches**, Blessed to bless every nation, Life together, and By the Spirit not by might. Each shows a bar of all 66 books marking where it appears, then every passage in order.
-- **Whole Bible · Old Testament · New Testament:** every pattern and command page has this switch. Links keep the choice, e.g. `#pattern-4-nt` opens Establishing churches in the New Testament.
+- **Patterns:** eight threads through the whole Bible, each named by a phrase of Scripture:
+  - "Be imitators of me, as I am of Christ" (1 Corinthians 11:1)
+  - "One generation shall commend your works to another" (Psalm 145:4)
+  - "To study… and to do it and to teach" (Ezra 7:10)
+  - "Here I am! Send me" (Isaiah 6:8)
+  - "I will build my church" (Matthew 16:18): establishing churches
+  - "In you all the families of the earth shall be blessed" (Genesis 12:3)
+  - "Two are better than one" (Ecclesiastes 4:9)
+  - "Not by might, nor by power, but by my Spirit" (Zechariah 4:6)
+
+  Each shows a bar of all 66 books marking where it appears, then every passage in order.
+- **Whole Bible · Old Testament · New Testament:** every pattern and command page has this switch. Links keep the choice, e.g. `#pattern-4-nt` opens "I will build my church" in the New Testament.
 - **Bible:** all 66 books, grouped by section (Law, History, Wisdom & Poetry, Major Prophets, Minor Prophets, Gospels, Acts, Paul's Letters, General Letters, Revelation). Tap a book to read its passages.
 - **Search:** any word, book, or reference, filtered by command.
 
-The verse text is always shown in full. Passages that show an example rather than giving a direct command are marked **Example**, and promises are marked **Promise**.
+Each passage is shown as Scripture alone: the ESV text and its reference, with no added headings or notes.
 
 ## Install it on a phone
 
@@ -49,12 +59,12 @@ To try it on your computer, run `python3 -m http.server` in this folder and open
 All content is in `data.js`. To add a passage, add a row to `PASSAGES` in canonical order. The app works out the book from the reference:
 
 ```js
-["Reference", commandId, "Heading", "“ESV text”", kind]
+["Reference", commandId, "“ESV text”"]
 ```
 
-Command ids: 1 Follow me, 2 Abide in my word, 3 Love one another, 4 You will be my witnesses, 5 Teaching them to observe, 6 Entrust to faithful men. `kind`: 0 a direct command, 1 an example, 2 a promise. To add a pattern, add a row to `PATTERNS` with its name, a one-line summary, and the references it includes.
+Command ids: 1 Follow me, 2 Abide in my word, 3 Love one another, 4 You will be my witnesses, 5 Teaching them to observe, 6 Entrust to faithful men. To add a pattern, add a row to `PATTERNS` with a phrase of Scripture to name it, where that phrase is from, and the references it includes.
 
-**After any change,** bump `CACHE` in `sw.js` (e.g. `dp-v7` → `dp-v8`) so installed apps download the update.
+**After any change,** bump `CACHE` in `sw.js` (e.g. `dp-v8` → `dp-v9`) so installed apps download the update.
 
 ## Scripture copyright
 
