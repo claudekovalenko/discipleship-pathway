@@ -17,7 +17,7 @@ An installable app (PWA) that works offline once it has been opened.
   - "Entrust to faithful men" (2 Timothy 2:2)
 
   Each one opens every passage on that command, in canonical order.
-- **Patterns:** fifteen threads through the whole Bible, each named by a phrase of Scripture:
+- **Patterns:** twenty threads through the whole Bible, each named by a phrase of Scripture:
   - "Be imitators of me, as I am of Christ" (1 Corinthians 11:1)
   - "One generation shall commend your works to another" (Psalm 145:4)
   - "To study… and to do it and to teach" (Ezra 7:10)
@@ -33,9 +33,15 @@ An installable app (PWA) that works offline once it has been opened.
   - "Feed my sheep" (John 21:17)
   - "Share in suffering as a good soldier of Christ Jesus" (2 Timothy 2:3)
   - "As for me and my house, we will serve the LORD" (Joshua 24:15)
+  - "After fasting and praying they laid their hands on them" (Acts 13:3)
+  - "Devote yourself to the public reading of Scripture" (1 Timothy 4:13)
+  - "I will write it on their hearts" (Jeremiah 31:33)
+  - "Love the sojourner" (Deuteronomy 10:19)
+  - "God chose what is weak in the world to shame the strong" (1 Corinthians 1:27)
 
   Each shows a bar of all 66 books marking where it appears, then every passage in order.
 - **Whole Bible · Old Testament · New Testament:** every pattern and command page has this switch. Links keep the choice, e.g. `#pattern-4-nt` opens "I will build my church" in the New Testament.
+- **All patterns compiled:** every pattern and every verse on one page in the app (`#compiled`, or `#compiled-nt` for the New Testament only; it prints cleanly from a browser), and as a document: [PATTERNS.md](PATTERNS.md).
 - **Bible:** all 66 books, grouped by section (Law, History, Wisdom & Poetry, Major Prophets, Minor Prophets, Gospels, Acts, Paul's Letters, General Letters, Revelation). Tap a book to read its passages.
 - **Search:** any word, book, or reference, filtered by command.
 
@@ -59,6 +65,8 @@ To try it on your computer, run `python3 -m http.server` in this folder and open
 | `app.js` | Screens and navigation |
 | `data.js` | **All the content:** commands, sections, books, passages |
 | `manifest.webmanifest`, `sw.js`, `icons/` | What makes it installable and offline |
+| `PATTERNS.md` | Every pattern and verse compiled into one document |
+| `scripts/compile-patterns.js` | Rebuilds `PATTERNS.md` from `data.js` |
 | `.github/workflows/pages.yml` | Publishes the site to GitHub Pages on every push |
 
 ## Editing
@@ -71,7 +79,7 @@ All content is in `data.js`. To add a passage, add a row to `PASSAGES` in canoni
 
 Command ids: 1 Follow me, 2 Abide in my word, 3 Love one another, 4 You will be my witnesses, 5 Teaching them to observe, 6 Entrust to faithful men. To add a pattern, add a row to `PATTERNS` with a phrase of Scripture to name it, where that phrase is from, and the references it includes.
 
-**After any change,** bump `CACHE` in `sw.js` (e.g. `dp-v9` → `dp-v10`) so installed apps download the update.
+**After any change,** run `node scripts/compile-patterns.js` to rebuild `PATTERNS.md`, and bump `CACHE` in `sw.js` (e.g. `dp-v10` → `dp-v11`) so installed apps download the update.
 
 ## Scripture copyright
 

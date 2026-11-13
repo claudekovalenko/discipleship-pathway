@@ -68,9 +68,10 @@ function homeScreen() {
       <a class="cmdrow s${c[0]}" href="#cmd-${c[0]}">
         <span class="txt"><b>“${c[1]}”</b><small>${c[2]} · ${PASSAGES.filter(p => p[1] === c[0]).length} passages</small></span>${chev}</a>`).join("")}
     <p class="label" style="margin-top:22px">Patterns through the whole Bible</p>
-    ${PATTERNS.map((pt, i) => `
-      <a class="cmdrow" href="#pattern-${i}" style="--c:var(--accent)">
-        <span class="txt"><b>“${pt[0]}”</b><small>${pt[1]} · ${pt[2].length} passages</small></span>${chev}</a>`).join("")}
+    <a class="cmdrow" href="#patterns" style="--c:var(--accent)">
+      <span class="txt"><b>${PATTERNS.length} patterns</b><small>Each named by a phrase of Scripture</small></span>${chev}</a>
+    <a class="cmdrow" href="#compiled" style="--c:var(--accent)">
+      <span class="txt"><b>All patterns compiled</b><small>Every pattern and every verse on one page</small></span>${chev}</a>
     <p class="label" style="margin-top:22px">The whole Bible</p>
     <a class="cmdrow" href="#bible" style="--c:var(--accent)">
       <span class="txt"><b>Genesis to Revelation</b><small>All ${BOOKS.length} books · ${PASSAGES.length} passages</small></span>${chev}</a>
@@ -94,7 +95,9 @@ function cmdScreen(id) {
 
 function patternsScreen() {
   return { title: "Patterns", tab: "patterns", html: `
-    <p class="muted" style="margin-top:0">Each bar is the whole Bible, Genesis to Revelation, one mark per book.</p>
+    <a class="cmdrow" href="#compiled" style="--c:var(--accent)">
+      <span class="txt"><b>All patterns compiled</b><small>All ${PATTERNS.length} patterns and every verse on one page</small></span>${chev}</a>
+    <p class="muted">Each bar is the whole Bible, Genesis to Revelation, one mark per book.</p>
     ${PATTERNS.map((pt, i) => { const ids = PAT_IDS[i];
       return `<a class="patrow" href="#pattern-${i}">
         <b>“${pt[0]}”</b><small>${pt[1]}</small>
@@ -120,6 +123,31 @@ function patternScreen(n) {
       ${n > 0 ? `<a href="#pattern-${n - 1}${sfx()}">← Previous</a>` : ""}
       ${n < PATTERNS.length - 1 ? `<a class="next" style="--c:var(--accent)" href="#pattern-${n + 1}${sfx()}">Next →</a>` : ""}
     </div>` };
+}
+
+/* Every pattern and every verse on one page. */
+function compiledScreen() {
+  const sections = PATTERNS.map((pt, n) => {
+    const all = PAT_IDS[n], ids = all.filter(i => inScope(i));
+    let html = "", sec = -1;
+    ids.forEach(i => {
+      const s = BOOKS[P_BOOK[i]][2];
+      if (s !== sec) { sec = s; html += `<div class="era">${SECTIONS[s][0]}</div>`; }
+      html += passage(i);
+    });
+    return `<section class="compiled" id="pt${n}">
+      <h2 class="phrase"><span class="num">${n + 1}</span>“${pt[0]}”</h2><span class="ref">${pt[1]} · ${ids.length} passages</span>
+      ${strip(all)}
+      <div class="thread">${html || `<p class="muted">No passages in this part of the Bible.</p>`}</div>
+    </section>`;
+  }).join("");
+  const total = new Set(PAT_IDS.flat().filter(i => inScope(i))).size;
+  return { title: "All Patterns", tab: "patterns", back: "#patterns", html: `
+    <div class="hello"><h2>All patterns compiled</h2>
+      <p>${PATTERNS.length} patterns · ${total} passages</p></div>
+    ${scopeBar("compiled", PAT_IDS.flat().filter((v, i, a) => a.indexOf(v) === i))}
+    <ol class="toc">${PATTERNS.map((pt, n) => `<li><button type="button" data-jump="pt${n}">“${pt[0]}”</button></li>`).join("")}</ol>
+    ${sections}` };
 }
 
 function bibleScreen() {
@@ -168,8 +196,10 @@ function renderSearch() {
 /* ---------- Router ---------- */
 function route() {
   const [name, arg, sc] = (location.hash.slice(1) || "home").split("-");
-  scope = sc === "ot" || sc === "nt" ? sc : "all";
+  const want = name === "compiled" ? arg : sc;
+  scope = want === "ot" || want === "nt" ? want : "all";
   const scr = name === "cmd" ? cmdScreen(+arg)
+    : name === "compiled" ? compiledScreen()
     : name === "patterns" ? patternsScreen()
     : name === "pattern" ? patternScreen(+arg)
     : name === "bible" ? bibleScreen()
@@ -194,6 +224,8 @@ view.addEventListener("input", e => {
   if (e.target.id === "q") { search.q = e.target.value; renderSearch(); }
 });
 view.addEventListener("click", e => {
+  const jump = e.target.closest("[data-jump]");
+  if (jump) { document.getElementById(jump.dataset.jump)?.scrollIntoView({ behavior: "smooth" }); return; }
   const chip = e.target.closest(".chip");
   if (!chip) return;
   search.cmd = +chip.dataset.cmd;

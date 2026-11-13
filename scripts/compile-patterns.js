@@ -1,0 +1,38 @@
+// Builds PATTERNS.md: every pattern with every verse, from data.js.
+// Run from the repository root:  node scripts/compile-patterns.js
+const fs = require("fs");
+const path = require("path");
+const root = path.join(__dirname, "..");
+const d = {};
+new Function("d", fs.readFileSync(path.join(root, "data.js"), "utf8").replace(/const (\w+) =/g, "d.$1 ="))(d);
+
+const byRef = new Map(d.PASSAGES.map(p => [p[0], p]));
+const bookOf = ref => {
+  let best = -1, len = 0;
+  d.BOOKS.forEach((b, i) => [b[0], b[0] === "Psalms" ? "Psalm" : ""].forEach(n => {
+    if (n && ref.startsWith(n + " ") && n.length > len) { best = i; len = n.length; }
+  }));
+  return best;
+};
+const anchor = s => s.toLowerCase().replace(/[^a-z0-9 ]/g, "").trim().replace(/ +/g, "-");
+
+let md = `# Patterns Through the Whole Bible\n\n`;
+md += `${d.PATTERNS.length} patterns, each named by a phrase of Scripture and traced from Genesis to Revelation. Scripture quotations are from the ESV.\n\n`;
+md += `## Contents\n\n`;
+d.PATTERNS.forEach((pt, n) => { md += `${n + 1}. [“${pt[0]}” (${pt[1]})](#${anchor(`${n + 1} ${pt[0]}`)})\n`; });
+
+d.PATTERNS.forEach((pt, n) => {
+  const refs = pt[2];
+  const ot = refs.filter(r => bookOf(r) < 39), nt = refs.filter(r => bookOf(r) >= 39);
+  md += `\n---\n\n## ${n + 1}. ${pt[0]}\n\n`;
+  md += `*${pt[1]}* · Old Testament ${ot.length} · New Testament ${nt.length}\n\n`;
+  [["Old Testament", ot], ["New Testament", nt]].forEach(([label, list]) => {
+    if (!list.length) return;
+    md += `### ${label}\n\n`;
+    list.forEach(r => { md += `**${r}**\n> ${byRef.get(r)[2]}\n\n`; });
+  });
+});
+
+md += `\n---\n\nScripture quotations are from the ESV® Bible (The Holy Bible, English Standard Version®), © 2001 by Crossway, a publishing ministry of Good News Publishers. Used by permission. All rights reserved. Some passages are shortened with an ellipsis (…). Read each one in its full context.\n`;
+fs.writeFileSync(path.join(root, "PATTERNS.md"), md);
+console.log(`Wrote PATTERNS.md: ${d.PATTERNS.length} patterns`);

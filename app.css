@@ -199,3 +199,22 @@ a.tag{text-decoration:none}
 .pass{border-left-color:var(--accent)}
 .hello .phrase{font-family:Georgia,"Iowan Old Style",serif;font-weight:600;font-size:26px;line-height:1.25;margin:0 0 4px}
 .hello .ref{margin-bottom:14px}
+
+/* All patterns compiled */
+.toc{margin:0 0 8px;padding:0;list-style:none;counter-reset:t}
+.toc li{counter-increment:t}
+.toc button{display:flex;gap:10px;width:100%;text-align:left;background:none;border:0;border-bottom:1px solid var(--line);padding:9px 2px;
+  font-family:Georgia,"Iowan Old Style",serif;font-size:16px;color:var(--ink);cursor:pointer}
+.toc button::before{content:counter(t);font:700 12px system-ui,sans-serif;color:var(--accent);min-width:20px;padding-top:3px}
+.compiled{padding-top:28px;scroll-margin-top:calc(var(--top) + var(--sat) + 8px)}
+.compiled .phrase{display:flex;gap:10px;align-items:baseline;font-family:Georgia,"Iowan Old Style",serif;font-size:22px;line-height:1.3;margin:0 0 2px}
+.compiled .num{font:700 13px system-ui,sans-serif;color:var(--accent)}
+.compiled > .ref{margin:0 0 10px}
+@media print{
+  .appbar,.tabbar,.seg,.toc,.pager,.toast{display:none!important}
+  main{padding:0;max-width:none}
+  body{background:#fff;color:#000}
+  .pass{break-inside:avoid;border-color:#ccc}
+  .compiled{break-before:page}
+  .thread::before,.thread .pass::before{display:none}
+}
