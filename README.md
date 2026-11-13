@@ -16,11 +16,11 @@ To try it on your computer, run `python3 -m http.server` in this folder and open
 
 ## What's inside
 
-- **6 Simple Steps:** Follow → Abide → Love & Belong → Go & Tell → Teach to Obey → Multiply. Each step has key verses, the commands, one tool, and a "This week, I will…" checklist.
-- **Every Command:** 55 passages across the Law, Prophets, Gospels, Acts, and Letters. Each one is tagged to a step, with a one-line way to obey it. You can search and filter them.
+- **6 Simple Steps:** Follow → Abide → Love → Witness → Teach → Entrust. Each step has key verses, the commands, one tool, and a "This week, I will…" checklist.
+- **The Whole Bible:** 100 passages covering all 66 books, browsed in canonical order by section (Law, History, Wisdom & Poetry, Major Prophets, Minor Prophets, Gospels, Acts, Paul's Letters, General Letters, Revelation). Each passage is tagged to a step and has a one-line way to live it out, and some are marked as patterns (examples rather than direct commands). Search, or filter by step.
 - **Simple Tools:** practices taken straight from Scripture: The Gospel (1 Cor 15:3–4), Study · Do · Teach (Ezra 7:10), the “One Another” commands, Tell What the Lord Has Done (Mark 5:19), Pray for Open Doors (Col 4:3), Hear and Do (Matt 7:24), Imitate (Phil 4:9), and Entrust (2 Tim 2:2).
 - **Meet Together:** the four devotions of Acts 2:42.
-- **Multiply:** the 2 Timothy 2:2 four-generation chain.
+- **Entrust:** the 2 Timothy 2:2 four-generation chain.
 
 ## Files
 
@@ -34,13 +34,13 @@ To try it on your computer, run `python3 -m http.server` in this folder and open
 
 ## Editing
 
-All content lives in three arrays in `data.js`: `STEPS`, `CMDS`, and `TOOLS`. To add a passage, add a row to `CMDS`:
+All content lives in `data.js`: `STEPS`, `SECTIONS`, `BOOKS`, `CMDS`, and `TOOLS`. To add a passage, add a row to `CMDS` in canonical order. The app works out the book from the reference:
 
 ```js
-["Reference", eraIndex, stepNumber, "Short title", "“ESV text”", "Simple way to obey", isPattern]
+["Reference", stepNumber, "Short title", "“ESV text”", "Simple way to live it", isPattern]
 ```
 
-`eraIndex`: 0 Law & History, 1 Wisdom & Prophets, 2 Gospels, 3 Acts, 4 Letters & Revelation.
+Steps: 1 Follow, 2 Abide, 3 Love, 4 Witness, 5 Teach, 6 Entrust. Set `isPattern` to `1` for an example or theme rather than a command.
 
 **After any change,** bump `CACHE` in `sw.js` (e.g. `dp-v1` → `dp-v2`) so installed apps download the update.
 

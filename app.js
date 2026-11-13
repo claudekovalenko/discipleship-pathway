@@ -10,7 +10,7 @@ const save = () => { try { localStorage.setItem("dp-done", JSON.stringify(done))
 const stepDone = s => s.doIt.filter((_, i) => done[s.id + "-" + i]).length;
 const allDone = () => STEPS.reduce((n, s) => n + stepDone(s), 0);
 
-const bible = { q: "", step: 0, era: -1, open: {} };
+const bible = { q: "", step: 0, open: {} };
 const chev = `<svg class="chev" viewBox="0 0 24 24"><path d="M9 5l7 7-7 7"/></svg>`;
 
 function toast(msg) {
@@ -33,7 +33,9 @@ function stepsScreen() {
         <div class="n">${s.id}</div><b>${s.name}</b><small>${s.short}</small>
         <div class="bar"><i style="width:${stepDone(s) / s.doIt.length * 100}%"></i></div>
       </a>`).join("")}</div>
-    <div class="card" style="margin-top:12px">
+    <a class="rowbtn" href="#/bible" style="margin-top:12px"><span class="dot" style="background:var(--accent)"></span>
+      <span class="txt"><b>Through the whole Bible</b><small>${CMDS.length} passages from all ${BOOKS.length} books, Genesis to Revelation</small></span>${chev}</a>
+    <div class="card">
       <p class="verse">“Go therefore and make disciples of all nations…”<span class="ref">Matthew 28:19</span></p>
     </div>` };
 }
@@ -41,7 +43,7 @@ function stepsScreen() {
 function stepScreen(id) {
   const s = STEPS[id - 1]; if (!s) return stepsScreen();
   const tools = TOOLS.map((t, i) => ({ ...t, i })).filter(t => t.s === s.id);
-  const related = CMDS.filter(c => c[2] === s.id).length;
+  const related = CMDS.filter(c => c[1] === s.id).length;
   return { title: `Step ${s.id}: ${s.name}`, tab: "steps", back: "#/steps", html: `
     <div class="s${s.id}">
       <div class="hero"><div class="n">Step ${s.id} of 6</div><h2>${s.name}</h2><p>${s.q}</p></div>
@@ -56,7 +58,7 @@ function stepScreen(id) {
       ${tools.map(t => `<a class="rowbtn" href="#/tool/${t.i}"><span class="dot"></span>
         <span class="txt"><b>${t.t}</b><small>${t.r}</small></span>${chev}</a>`).join("")}
       <button class="rowbtn" data-related="${s.id}"><span class="dot"></span>
-        <span class="txt"><b>See all ${related} passages</b><small>Every command for this step</small></span>${chev}</button>
+        <span class="txt"><b>See all ${related} passages</b><small>Across the whole Bible for this step</small></span>${chev}</button>
       <div class="pager">
         ${s.id > 1 ? `<a href="#/step/${s.id - 1}">← ${STEPS[s.id - 2].name}</a>` : ""}
         ${s.id < 6 ? `<a class="next" href="#/step/${s.id + 1}">${STEPS[s.id].name} →</a>` : `<a class="next" href="#/meet">Start meeting →</a>`}
@@ -64,40 +66,70 @@ function stepScreen(id) {
     </div>` };
 }
 
+const bookIdx = ref => { let best = -1, len = 0;
+  BOOKS.forEach((b, i) => [b[0], b[0] === "Psalms" ? "Psalm" : ""].forEach(n => {
+    if (n && ref.startsWith(n + " ") && n.length > len) { best = i; len = n.length; } }));
+  return best; };
+const CMD_BOOK = CMDS.map(c => bookIdx(c[0]));
+
+function cmdCard(i) {
+  const c = CMDS[i], st = STEPS[c[1] - 1], open = !!bible.open[i];
+  return `<button class="cmd s${c[1]} ${open ? "open" : ""}" data-i="${i}" aria-expanded="${open}">
+    <div class="cmd-top"><span><b>${c[2]}</b><div class="r">${c[0]}</div></span>
+      <span>${c[5] ? '<span class="tag pattern">Pattern</span>' : ""}<span class="tag">${st.id} · ${st.name}</span></span></div>
+    <div class="more"><p class="verse">${c[3]}</p><div class="obey"><b>Live it:</b> ${c[4]}</div></div>
+  </button>`;
+}
+
 function bibleScreen() {
-  return { title: "Every Command", tab: "bible", html: `
+  return { title: "The Whole Bible", tab: "bible", html: `
     <div class="search">
-      <input id="q" type="search" placeholder="Search a word or reference" value="${bible.q.replace(/"/g, "&quot;")}" aria-label="Search">
-      <div class="chips" id="stepChips">
+      <input id="q" type="search" placeholder="Search a word, book, or reference" value="${bible.q.replace(/"/g, "&quot;")}" aria-label="Search">
+      <div class="chips">
         <button class="chip ${bible.step ? "" : "on"}" data-step="0">All steps</button>
         ${STEPS.map(s => `<button class="chip s${s.id} ${bible.step === s.id ? "on" : ""}" data-step="${s.id}">${s.id} · ${s.name}</button>`).join("")}
       </div>
-      <div class="chips" id="eraChips">
-        <button class="chip ${bible.era < 0 ? "on" : ""}" data-era="-1">Whole Bible</button>
-        ${ERAS.map((e, i) => `<button class="chip ${bible.era === i ? "on" : ""}" data-era="${i}">${e}</button>`).join("")}
-      </div>
     </div>
     <div class="count" id="count"></div>
-    <div id="list"></div>` , after: renderList };
+    <div id="list"></div>`, after: renderList };
 }
 
 function renderList() {
   const q = bible.q.trim().toLowerCase();
-  const rows = CMDS.map((c, i) => [c[0], c[1], c[2], c[3], c[4], c[5], !!c[6], i]).filter(c =>
-    (!bible.step || c[2] === bible.step) && (bible.era < 0 || c[1] === bible.era) &&
-    (!q || (c[0] + " " + c[3] + " " + c[4] + " " + c[5]).toLowerCase().includes(q)));
+  if (!q && !bible.step) {           // Canon map: every section and book
+    $("#count").textContent = `${BOOKS.length} books · ${CMDS.length} passages · tap a book`;
+    $("#list").innerHTML = SECTIONS.map((s, si) => `
+      <div class="era">${s[0]} <span class="muted">· ${s[1]}</span></div>
+      <p class="sect">${s[2]}</p>
+      <div class="books">${BOOKS.map((b, bi) => b[2] !== si ? "" : `
+        <a class="book" href="#/book/${bi}"><b>${b[1]}</b><small>${CMD_BOOK.filter(x => x === bi).length}</small></a>`).join("")}</div>`).join("");
+    return;
+  }
+  const rows = CMDS.map((c, i) => i).filter(i => { const c = CMDS[i];
+    return (!bible.step || c[1] === bible.step) &&
+      (!q || (c[0] + " " + c[2] + " " + c[3] + " " + c[4] + " " + BOOKS[CMD_BOOK[i]][0]).toLowerCase().includes(q)); });
   $("#count").textContent = `${rows.length} of ${CMDS.length} passages · tap to open`;
-  let html = "", era = -1;
-  rows.forEach(c => {
-    if (c[1] !== era) { era = c[1]; html += `<div class="era">${ERAS[era]}</div>`; }
-    const st = STEPS[c[2] - 1], idx = c[7];
-    html += `<button class="cmd s${c[2]} ${bible.open[idx] ? "open" : ""}" data-i="${idx}" aria-expanded="${!!bible.open[idx]}">
-      <div class="cmd-top"><span><b>${c[3]}</b><div class="r">${c[0]}</div></span>
-        <span>${c[6] ? '<span class="tag pattern">Pattern</span>' : ""}<span class="tag">${st.id} · ${st.name}</span></span></div>
-      <div class="more"><p class="verse">${c[4]}</p><div class="obey"><b>Obey it:</b> ${c[5]}</div></div>
-    </button>`;
+  let html = "", sec = -1;
+  rows.forEach(i => {
+    const s = BOOKS[CMD_BOOK[i]][2];
+    if (s !== sec) { sec = s; html += `<div class="era">${SECTIONS[s][0]}</div>`; }
+    html += cmdCard(i);
   });
   $("#list").innerHTML = html || `<p class="muted">No passages match. Try another word.</p>`;
+}
+
+function bookScreen(bi) {
+  const b = BOOKS[bi]; if (!b) return bibleScreen();
+  const ids = CMDS.map((c, i) => i).filter(i => CMD_BOOK[i] === bi);
+  ids.forEach(i => { bible.open[i] = true; });
+  return { title: b[0], tab: "bible", back: "#/bible", html: `
+    <div class="hello"><p class="label">${SECTIONS[b[2]][0]} · book ${bi + 1} of ${BOOKS.length}</p><h2>${b[0]}</h2>
+      <p>${SECTIONS[b[2]][2]}</p></div>
+    ${ids.map(cmdCard).join("")}
+    <div class="pager">
+      ${bi > 0 ? `<a href="#/book/${bi - 1}">← ${BOOKS[bi - 1][0]}</a>` : ""}
+      ${bi < BOOKS.length - 1 ? `<a class="next" style="--c:var(--accent)" href="#/book/${bi + 1}">${BOOKS[bi + 1][0]} →</a>` : ""}
+    </div>` };
 }
 
 function toolsScreen() {
@@ -132,7 +164,7 @@ function meetScreen() {
     ${parts.map((p, i) => `<div class="card third"><div class="big">${i + 1}</div><div><b>${p[0]}</b><div>${p[1]}</div></div></div>`).join("")}
     <div class="card"><p class="verse">“And let us consider how to stir up one another to love and good works, not neglecting to meet together… but encouraging one another…”<span class="ref">Hebrews 10:24–25</span></p></div>
 
-    <div class="hello" style="margin-top:24px"><h2>Multiply</h2>
+    <div class="hello" style="margin-top:24px"><h2>Entrust</h2>
       <p>“…entrust to faithful men, who will be able to teach others also.” 2 Timothy 2:2</p></div>
     <div class="card chain">
       <div data-n="1"><b>Paul</b><span class="muted">Who invested in you?</span></div>
@@ -156,6 +188,7 @@ function route() {
   const [, name, arg] = (location.hash || "#/steps").split("/");
   const scr = name === "step" ? stepScreen(+arg)
     : name === "bible" ? bibleScreen()
+    : name === "book" ? bookScreen(+arg)
     : name === "tools" ? toolsScreen()
     : name === "tool" ? toolScreen(+arg)
     : name === "meet" ? meetScreen()
@@ -188,7 +221,6 @@ view.addEventListener("click", e => {
   const chip = e.target.closest(".chip");
   if (chip) {
     if (chip.dataset.step !== undefined) bible.step = +chip.dataset.step;
-    if (chip.dataset.era !== undefined) bible.era = +chip.dataset.era;
     chip.parentElement.querySelectorAll(".chip").forEach(c => c.classList.toggle("on", c === chip));
     renderList(); return;
   }
@@ -198,7 +230,7 @@ view.addEventListener("click", e => {
     cmd.classList.toggle("open", bible.open[i]); cmd.setAttribute("aria-expanded", bible.open[i]); return;
   }
   const rel = e.target.closest("[data-related]");
-  if (rel) { bible.step = +rel.dataset.related; bible.era = -1; bible.q = ""; location.hash = "#/bible"; return; }
+  if (rel) { bible.step = +rel.dataset.related; bible.q = ""; location.hash = "#/bible"; return; }
   if (e.target.id === "reset" && confirm("Clear all checked items?")) { done = {}; save(); toast("Checklist cleared"); }
 });
 
