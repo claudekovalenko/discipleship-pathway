@@ -149,3 +149,23 @@ main a:not([class]){color:var(--accent);font-weight:600}
 .book b{font-size:14px}
 .book small{font-size:11px;color:var(--muted)}
 .hello .label{color:var(--accent)}
+
+/* Scripture-first layout */
+.charge{padding:4px 2px 0}
+.verse.big{font-size:21px;line-height:1.5;margin:0 0 6px}
+.cmdrow{display:flex;align-items:center;gap:12px;text-decoration:none;color:var(--ink);background:var(--surface);
+  border:1px solid var(--line);border-left:5px solid var(--c);border-radius:14px;padding:14px;margin:0 0 10px}
+.cmdrow:active{background:var(--accent-soft)}
+.cmdrow .txt{flex:1;min-width:0}
+.cmdrow b{display:block;font-family:Georgia,"Iowan Old Style",serif;font-size:19px;font-weight:600}
+.cmdrow small{color:var(--muted)}
+.cmdrow .chev{color:var(--muted);flex:none}
+.hero .verse{font-size:19px;margin:0 0 6px;color:inherit}
+.hero .ref{color:inherit;opacity:.85}
+.pass{background:var(--surface);border:1px solid var(--line);border-left:5px solid var(--c);border-radius:12px;padding:14px 16px;margin:0 0 10px}
+.pass-top{display:flex;justify-content:space-between;gap:8px;align-items:flex-start;margin-bottom:6px}
+.pass h3{margin:0;font-size:15px;line-height:1.35;color:var(--muted);font-weight:600}
+.pass .verse{margin:0}
+.tags{display:flex;gap:4px;flex-wrap:wrap;justify-content:flex-end}
+a.tag{text-decoration:none}
+.tag.example{color:var(--muted);border-color:var(--line)}

@@ -1,9 +1,9 @@
 {
   "name": "Discipleship Pathway",
   "short_name": "Disciple",
-  "description": "Every command in Scripture about making disciples (ESV), in six simple steps with simple tools.",
+  "description": "What Scripture says about making disciples, from Genesis to Revelation (ESV).",
   "id": "./",
-  "start_url": "./#steps",
+  "start_url": "./#home",
   "scope": "./",
   "display": "standalone",
   "orientation": "portrait",
@@ -17,9 +17,8 @@
     { "src": "icons/icon.svg", "sizes": "any", "type": "image/svg+xml", "purpose": "any" }
   ],
   "shortcuts": [
-    { "name": "Six Steps", "url": "./#steps" },
-    { "name": "Every Command", "url": "./#bible" },
-    { "name": "Tools", "url": "./#tools" },
-    { "name": "Weekly Meeting", "url": "./#meet" }
+    { "name": "Commands", "url": "./#home" },
+    { "name": "The Whole Bible", "url": "./#bible" },
+    { "name": "Search", "url": "./#search" }
   ]
 }

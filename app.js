@@ -1,202 +1,127 @@
-/* Discipleship Pathway: app logic. Content lives in data.js. */
+/* Discipleship Pathway: what Scripture says about making disciples. Content lives in data.js. */
 (() => {
 const $ = s => document.querySelector(s);
 const view = $("#view"), titleEl = $("#title"), backBtn = $("#back");
-const TOTAL = STEPS.reduce((n, s) => n + s.doIt.length, 0);
-
-let done = {};
-try { done = JSON.parse(localStorage.getItem("dp-done") || "{}"); } catch (e) {}
-const save = () => { try { localStorage.setItem("dp-done", JSON.stringify(done)); } catch (e) {} };
-const stepDone = s => s.doIt.filter((_, i) => done[s.id + "-" + i]).length;
-const allDone = () => STEPS.reduce((n, s) => n + stepDone(s), 0);
-
-const bible = { q: "", step: 0, open: {} };
 const chev = `<svg class="chev" viewBox="0 0 24 24"><path d="M9 5l7 7-7 7"/></svg>`;
-
-function toast(msg) {
-  const t = $("#toast"); t.textContent = msg; t.classList.add("show");
-  clearTimeout(toast.t); toast.t = setTimeout(() => t.classList.remove("show"), 1800);
-}
-
-/* ---------- Screens ---------- */
-function stepsScreen() {
-  const n = allDone(), pct = Math.round(n / TOTAL * 100);
-  return { title: "Discipleship Pathway", tab: "steps", html: `
-    <div class="hello"><h2>Make disciples, one step at a time</h2>
-      <p>Six simple steps from the commands of Scripture. Tap a step to begin.</p></div>
-    <div class="card progress">
-      <div class="ring" style="--p:${pct}"><span>${pct}%</span></div>
-      <div><b>This week</b><div class="muted">${n} of ${TOTAL} actions done</div></div>
-    </div>
-    <div class="tiles">${STEPS.map(s => `
-      <a class="tile s${s.id}" href="#step-${s.id}">
-        <div class="n">${s.id}</div><b>${s.name}</b><small>${s.short}</small>
-        <div class="bar"><i style="width:${stepDone(s) / s.doIt.length * 100}%"></i></div>
-      </a>`).join("")}</div>
-    <a class="rowbtn" href="#bible" style="margin-top:12px"><span class="dot" style="background:var(--accent)"></span>
-      <span class="txt"><b>Through the whole Bible</b><small>${CMDS.length} passages from all ${BOOKS.length} books, Genesis to Revelation</small></span>${chev}</a>
-    <div class="card">
-      <p class="verse">“Go therefore and make disciples of all nations…”<span class="ref">Matthew 28:19</span></p>
-    </div>` };
-}
-
-function stepScreen(id) {
-  const s = STEPS[id - 1]; if (!s) return stepsScreen();
-  const tools = TOOLS.map((t, i) => ({ ...t, i })).filter(t => t.s === s.id);
-  const related = CMDS.filter(c => c[1] === s.id).length;
-  return { title: `Step ${s.id}: ${s.name}`, tab: "steps", back: "#steps", html: `
-    <div class="s${s.id}">
-      <div class="hero"><div class="n">Step ${s.id} of 6</div><h2>${s.name}</h2><p>${s.q}</p></div>
-      <div class="card"><p class="label">Key verses</p>
-        ${s.verses.map(v => `<p class="verse">${v[1]}<span class="ref">${v[0]} ESV</span></p>`).join("")}</div>
-      <div class="card"><p class="label">The commands</p>
-        <ul class="dots">${s.commands.map(c => `<li>${c}</li>`).join("")}</ul></div>
-      <div class="card"><p class="label">This week, I will…</p>
-        ${s.doIt.map((d, i) => { const k = s.id + "-" + i;
-          return `<label class="check"><input type="checkbox" data-k="${k}" ${done[k] ? "checked" : ""}><span>${d}</span></label>`; }).join("")}</div>
-      <p class="label" style="margin-top:18px">Use this tool</p>
-      ${tools.map(t => `<a class="rowbtn" href="#tool-${t.i}"><span class="dot"></span>
-        <span class="txt"><b>${t.t}</b><small>${t.r}</small></span>${chev}</a>`).join("")}
-      <button class="rowbtn" data-related="${s.id}"><span class="dot"></span>
-        <span class="txt"><b>See all ${related} passages</b><small>Across the whole Bible for this step</small></span>${chev}</button>
-      <div class="pager">
-        ${s.id > 1 ? `<a href="#step-${s.id - 1}">← ${STEPS[s.id - 2].name}</a>` : ""}
-        ${s.id < 6 ? `<a class="next" href="#step-${s.id + 1}">${STEPS[s.id].name} →</a>` : `<a class="next" href="#meet">Start meeting →</a>`}
-      </div>
-    </div>` };
-}
+const search = { q: "", cmd: 0 };
 
 const bookIdx = ref => { let best = -1, len = 0;
   BOOKS.forEach((b, i) => [b[0], b[0] === "Psalms" ? "Psalm" : ""].forEach(n => {
     if (n && ref.startsWith(n + " ") && n.length > len) { best = i; len = n.length; } }));
   return best; };
-const CMD_BOOK = CMDS.map(c => bookIdx(c[0]));
+const P_BOOK = PASSAGES.map(p => bookIdx(p[0]));
+const cmdOf = id => COMMANDS[id - 1];
 
-function cmdCard(i) {
-  const c = CMDS[i], st = STEPS[c[1] - 1], open = !!bible.open[i];
-  return `<button class="cmd s${c[1]} ${open ? "open" : ""}" data-i="${i}" aria-expanded="${open}">
-    <div class="cmd-top"><span><b>${c[2]}</b><div class="r">${c[0]}</div></span>
-      <span>${c[5] ? '<span class="tag pattern">Pattern</span>' : ""}<span class="tag">${st.id} · ${st.name}</span></span></div>
-    <div class="more"><p class="verse">${c[3]}</p><div class="obey"><b>Live it:</b> ${c[4]}</div></div>
-  </button>`;
+/* One passage: heading, the full ESV text, reference. */
+function passage(i, showCmd = true) {
+  const p = PASSAGES[i], c = cmdOf(p[1]);
+  return `<article class="pass s${p[1]}">
+    <div class="pass-top"><h3>${p[2]}</h3>
+      <span class="tags">${p[4] ? '<span class="tag example">Example</span>' : ""}${showCmd ? `<a class="tag" href="#cmd-${c[0]}">${c[1]}</a>` : ""}</span></div>
+    <p class="verse">${p[3]}</p>
+    <span class="ref">${p[0]}</span>
+  </article>`;
+}
+
+/* Passages grouped under their canon section headings. */
+function grouped(ids, showCmd) {
+  let html = "", sec = -1;
+  ids.forEach(i => {
+    const s = BOOKS[P_BOOK[i]][2];
+    if (s !== sec) { sec = s; html += `<div class="era">${SECTIONS[s][0]} <span class="muted">· ${SECTIONS[s][1]}</span></div>`; }
+    html += passage(i, showCmd);
+  });
+  return html;
+}
+
+/* ---------- Screens ---------- */
+function homeScreen() {
+  return { title: "Make Disciples", tab: "home", html: `
+    <div class="charge">
+      <p class="label">The Great Commission</p>
+      <p class="verse big">“All authority in heaven and on earth has been given to me. Go therefore and make disciples of all nations, baptizing them in the name of the Father and of the Son and of the Holy Spirit, teaching them to observe all that I have commanded you. And behold, I am with you always, to the end of the age.”</p>
+      <span class="ref">Matthew 28:18–20</span>
+    </div>
+    <p class="label" style="margin-top:22px">What the word commands</p>
+    ${COMMANDS.map(c => `
+      <a class="cmdrow s${c[0]}" href="#cmd-${c[0]}">
+        <span class="txt"><b>“${c[1]}”</b><small>${c[2]} · ${PASSAGES.filter(p => p[1] === c[0]).length} passages</small></span>${chev}</a>`).join("")}
+    <a class="cmdrow" href="#bible" style="--c:var(--accent)">
+      <span class="txt"><b>Genesis to Revelation</b><small>All ${BOOKS.length} books · ${PASSAGES.length} passages</small></span>${chev}</a>
+    <p class="fine">Scripture quotations are from the ESV® Bible (The Holy Bible, English Standard Version®), © 2001 by Crossway, a publishing ministry of Good News Publishers. Used by permission. All rights reserved. Some passages are shortened with an ellipsis (…). Read each one in its full context.</p>` };
+}
+
+function cmdScreen(id) {
+  const c = cmdOf(id); if (!c) return homeScreen();
+  const ids = PASSAGES.map((p, i) => i).filter(i => PASSAGES[i][1] === id);
+  return { title: `“${c[1]}”`, tab: "home", back: "#home", html: `
+    <div class="s${id}">
+      <div class="hero"><p class="verse">${c[3]}</p><span class="ref">${c[2]}</span></div>
+      <p class="muted">${c[4]} Here is what Scripture says, from Genesis to Revelation.</p>
+      ${grouped(ids, false)}
+      <div class="pager">
+        ${id > 1 ? `<a href="#cmd-${id - 1}">← ${cmdOf(id - 1)[1]}</a>` : ""}
+        ${id < COMMANDS.length ? `<a class="next" href="#cmd-${id + 1}">${cmdOf(id + 1)[1]} →</a>` : ""}
+      </div>
+    </div>` };
 }
 
 function bibleScreen() {
   return { title: "The Whole Bible", tab: "bible", html: `
-    <div class="search">
-      <input id="q" type="search" placeholder="Search a word, book, or reference" value="${bible.q.replace(/"/g, "&quot;")}" aria-label="Search">
-      <div class="chips">
-        <button class="chip ${bible.step ? "" : "on"}" data-step="0">All steps</button>
-        ${STEPS.map(s => `<button class="chip s${s.id} ${bible.step === s.id ? "on" : ""}" data-step="${s.id}">${s.id} · ${s.name}</button>`).join("")}
-      </div>
-    </div>
-    <div class="count" id="count"></div>
-    <div id="list"></div>`, after: renderList };
-}
-
-function renderList() {
-  const q = bible.q.trim().toLowerCase();
-  if (!q && !bible.step) {           // Canon map: every section and book
-    $("#count").textContent = `${BOOKS.length} books · ${CMDS.length} passages · tap a book`;
-    $("#list").innerHTML = SECTIONS.map((s, si) => `
+    <p class="muted" style="margin-top:0">Every book of the Bible speaks to making disciples. Tap a book to read its passages.</p>
+    ${SECTIONS.map((s, si) => `
       <div class="era">${s[0]} <span class="muted">· ${s[1]}</span></div>
       <p class="sect">${s[2]}</p>
       <div class="books">${BOOKS.map((b, bi) => b[2] !== si ? "" : `
-        <a class="book" href="#book-${bi}"><b>${b[1]}</b><small>${CMD_BOOK.filter(x => x === bi).length}</small></a>`).join("")}</div>`).join("");
-    return;
-  }
-  const rows = CMDS.map((c, i) => i).filter(i => { const c = CMDS[i];
-    return (!bible.step || c[1] === bible.step) &&
-      (!q || (c[0] + " " + c[2] + " " + c[3] + " " + c[4] + " " + BOOKS[CMD_BOOK[i]][0]).toLowerCase().includes(q)); });
-  $("#count").textContent = `${rows.length} of ${CMDS.length} passages · tap to open`;
-  let html = "", sec = -1;
-  rows.forEach(i => {
-    const s = BOOKS[CMD_BOOK[i]][2];
-    if (s !== sec) { sec = s; html += `<div class="era">${SECTIONS[s][0]}</div>`; }
-    html += cmdCard(i);
-  });
-  $("#list").innerHTML = html || `<p class="muted">No passages match. Try another word.</p>`;
+        <a class="book" href="#book-${bi}"><b>${b[1]}</b><small>${P_BOOK.filter(x => x === bi).length}</small></a>`).join("")}</div>`).join("")}` };
 }
 
 function bookScreen(bi) {
   const b = BOOKS[bi]; if (!b) return bibleScreen();
-  const ids = CMDS.map((c, i) => i).filter(i => CMD_BOOK[i] === bi);
-  ids.forEach(i => { bible.open[i] = true; });
+  const ids = PASSAGES.map((p, i) => i).filter(i => P_BOOK[i] === bi);
   return { title: b[0], tab: "bible", back: "#bible", html: `
-    <div class="hello"><p class="label">${SECTIONS[b[2]][0]} · book ${bi + 1} of ${BOOKS.length}</p><h2>${b[0]}</h2>
-      <p>${SECTIONS[b[2]][2]}</p></div>
-    ${ids.map(cmdCard).join("")}
+    <div class="hello"><p class="label">${SECTIONS[b[2]][0]} · book ${bi + 1} of ${BOOKS.length}</p><h2>${b[0]}</h2></div>
+    ${ids.map(i => passage(i)).join("")}
     <div class="pager">
       ${bi > 0 ? `<a href="#book-${bi - 1}">← ${BOOKS[bi - 1][0]}</a>` : ""}
       ${bi < BOOKS.length - 1 ? `<a class="next" style="--c:var(--accent)" href="#book-${bi + 1}">${BOOKS[bi + 1][0]} →</a>` : ""}
     </div>` };
 }
 
-function toolsScreen() {
-  return { title: "Simple Tools", tab: "tools", html: `
-    <div class="hello"><h2>Simple tools</h2><p>Simple practices taken straight from Scripture.</p></div>
-    ${TOOLS.map((t, i) => `<a class="rowbtn s${t.s}" href="#tool-${i}"><span class="dot"></span>
-      <span class="txt"><b>${t.t}</b><small>Step ${t.s} · ${STEPS[t.s - 1].name}</small></span>${chev}</a>`).join("")}` };
+function searchScreen() {
+  return { title: "Search", tab: "search", html: `
+    <div class="search">
+      <input id="q" type="search" placeholder="Search a word, book, or reference" value="${search.q.replace(/"/g, "&quot;")}" aria-label="Search the passages">
+      <div class="chips">
+        <button class="chip ${search.cmd ? "" : "on"}" data-cmd="0">All</button>
+        ${COMMANDS.map(c => `<button class="chip s${c[0]} ${search.cmd === c[0] ? "on" : ""}" data-cmd="${c[0]}">${c[1]}</button>`).join("")}
+      </div>
+    </div>
+    <div class="count" id="count"></div>
+    <div id="list"></div>`, after: renderSearch };
 }
 
-function toolScreen(i) {
-  const t = TOOLS[i]; if (!t) return toolsScreen();
-  const st = STEPS[t.s - 1];
-  return { title: t.t, tab: "tools", back: "#tools", html: `
-    <div class="s${t.s}">
-      <div class="hero"><div class="n">Tool · Step ${st.id} ${st.name}</div><h2>${t.t}</h2><p>${t.r}</p></div>
-      <div class="card"><ol class="steps-ol">${t.items.map(x => `<li><span>${x}</span></li>`).join("")}</ol></div>
-      <div class="card"><p class="label">Tip</p><p style="margin:0">${t.note}</p></div>
-      <a class="rowbtn" href="#step-${st.id}"><span class="dot"></span>
-        <span class="txt"><b>Go to Step ${st.id}: ${st.name}</b><small>${st.short}</small></span>${chev}</a>
-    </div>` };
-}
-
-function meetScreen() {
-  const parts = [
-    ["The apostles' teaching","Open God's word together, and use <a href=\"#tool-5\">Hear and Do</a>."],
-    ["The fellowship","Share life: how you are really doing, joys and burdens (Galatians 6:2)."],
-    ["The breaking of bread","Eat together, and remember Jesus at the Lord's Table (Luke 22:19)."],
-    ["The prayers","Pray for one another, and for people who don't yet know Jesus (James 5:16; Colossians 4:3)."]];
-  return { title: "Meet Together", tab: "meet", html: `
-    <div class="hello"><h2>Gather like the early church</h2>
-      <p>“And they devoted themselves to the apostles' teaching and the fellowship, to the breaking of bread and the prayers.” Acts 2:42</p></div>
-    ${parts.map((p, i) => `<div class="card third"><div class="big">${i + 1}</div><div><b>${p[0]}</b><div>${p[1]}</div></div></div>`).join("")}
-    <div class="card"><p class="verse">“And let us consider how to stir up one another to love and good works, not neglecting to meet together… but encouraging one another…”<span class="ref">Hebrews 10:24–25</span></p></div>
-
-    <div class="hello" style="margin-top:24px"><h2>Entrust</h2>
-      <p>“…entrust to faithful men, who will be able to teach others also.” 2 Timothy 2:2</p></div>
-    <div class="card chain">
-      <div data-n="1"><b>Paul</b><span class="muted">Who invested in you?</span></div>
-      <div data-n="2"><b>Timothy</b><span class="muted">You: abide, obey, keep growing.</span></div>
-      <div data-n="3"><b>Faithful people</b><span class="muted">Who is God calling you to invest in?</span></div>
-      <div data-n="4"><b>Others also</b><span class="muted">Who will <em>they</em> teach?</span></div>
-    </div>
-    <a class="rowbtn s6" href="#tool-6"><span class="dot"></span>
-      <span class="txt"><b>Imitate</b><small>Learned · received · heard · seen (Philippians 4:9)</small></span>${chev}</a>
-
-    <div class="card" style="margin-top:24px">
-      <p class="label">Start a new week</p>
-      <p class="muted" style="margin-top:0">Clear your “This week, I will…” checklist.</p>
-      <button class="btn" id="reset">Reset checklist</button>
-    </div>
-    <p class="fine">Scripture quotations are from the ESV® Bible (The Holy Bible, English Standard Version®), © 2001 by Crossway, a publishing ministry of Good News Publishers. Used by permission. All rights reserved. Some passages are shortened with an ellipsis (…). Read each one in its full context.</p>` };
+function renderSearch() {
+  const q = search.q.trim().toLowerCase();
+  const ids = PASSAGES.map((p, i) => i).filter(i => { const p = PASSAGES[i];
+    return (!search.cmd || p[1] === search.cmd) &&
+      (!q || (p[0] + " " + p[2] + " " + p[3] + " " + BOOKS[P_BOOK[i]][0]).toLowerCase().includes(q)); });
+  $("#count").textContent = `${ids.length} of ${PASSAGES.length} passages`;
+  $("#list").innerHTML = grouped(ids, true) || `<p class="muted">No passages match. Try another word.</p>`;
 }
 
 /* ---------- Router ---------- */
 function route() {
-  const [name, arg] = (location.hash.slice(1) || "steps").split("-");
-  const scr = name === "step" ? stepScreen(+arg)
+  const [name, arg] = (location.hash.slice(1) || "home").split("-");
+  const scr = name === "cmd" ? cmdScreen(+arg)
     : name === "bible" ? bibleScreen()
     : name === "book" ? bookScreen(+arg)
-    : name === "tools" ? toolsScreen()
-    : name === "tool" ? toolScreen(+arg)
-    : name === "meet" ? meetScreen()
-    : stepsScreen();
+    : name === "search" ? searchScreen()
+    : homeScreen();
   view.innerHTML = scr.html;
   view.classList.remove("view-enter"); void view.offsetWidth; view.classList.add("view-enter");
   titleEl.textContent = scr.title;
-  document.title = scr.title === "Discipleship Pathway" ? scr.title : scr.title + " · Discipleship Pathway";
+  document.title = scr.tab === "home" && !scr.back ? "Discipleship Pathway" : scr.title.replace(/[“”]/g, "") + " · Discipleship Pathway";
   backBtn.hidden = !scr.back; backBtn.dataset.to = scr.back || "";
   document.querySelectorAll(".tabbar a").forEach(a => a.classList.toggle("on", a.dataset.tab === scr.tab));
   if (scr.after) scr.after();
@@ -205,37 +130,15 @@ function route() {
 window.addEventListener("hashchange", route);
 backBtn.addEventListener("click", () => { location.hash = backBtn.dataset.to; });
 
-/* ---------- Events ---------- */
-view.addEventListener("change", e => {
-  const k = e.target.dataset.k; if (!k) return;
-  done[k] = e.target.checked; save();
-  if (e.target.checked) {
-    const sid = +k.split("-")[0], s = STEPS[sid - 1];
-    toast(stepDone(s) === s.doIt.length ? `Step ${sid} complete!` : "Nice work!");
-  }
-});
 view.addEventListener("input", e => {
-  if (e.target.id === "q") { bible.q = e.target.value; renderList(); }
+  if (e.target.id === "q") { search.q = e.target.value; renderSearch(); }
 });
 view.addEventListener("click", e => {
   const chip = e.target.closest(".chip");
-  if (chip) {
-    if (chip.dataset.step !== undefined) bible.step = +chip.dataset.step;
-    chip.parentElement.querySelectorAll(".chip").forEach(c => c.classList.toggle("on", c === chip));
-    renderList(); return;
-  }
-  const cmd = e.target.closest(".cmd");
-  if (cmd) {
-    const i = cmd.dataset.i; bible.open[i] = !bible.open[i];
-    cmd.classList.toggle("open", bible.open[i]); cmd.setAttribute("aria-expanded", bible.open[i]); return;
-  }
-  const rel = e.target.closest("[data-related]");
-  if (rel) { bible.step = +rel.dataset.related; bible.q = ""; location.hash = "#bible"; return; }
-  if (e.target.id === "reset") {
-    const b = e.target;
-    if (!b.dataset.armed) { b.dataset.armed = "1"; b.textContent = "Tap again to clear all checked items"; return; }
-    done = {}; save(); delete b.dataset.armed; b.textContent = "Reset checklist"; toast("Checklist cleared");
-  }
+  if (!chip) return;
+  search.cmd = +chip.dataset.cmd;
+  chip.parentElement.querySelectorAll(".chip").forEach(c => c.classList.toggle("on", c === chip));
+  renderSearch();
 });
 
 route();
@@ -249,5 +152,5 @@ window.addEventListener("beforeinstallprompt", e => { e.preventDefault(); deferr
 $("#install").addEventListener("click", async () => {
   if (!deferred) return; deferred.prompt(); await deferred.userChoice; deferred = null; $("#install").hidden = true;
 });
-window.addEventListener("appinstalled", () => { $("#install").hidden = true; toast("Installed!"); });
+window.addEventListener("appinstalled", () => { $("#install").hidden = true; });
 })();
