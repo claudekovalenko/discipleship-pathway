@@ -17,7 +17,7 @@
     { "src": "icons/icon.svg", "sizes": "any", "type": "image/svg+xml", "purpose": "any" }
   ],
   "shortcuts": [
-    { "name": "Commands", "url": "./#home" },
+    { "name": "Love God · Love People", "url": "./#home" },
     { "name": "Patterns", "url": "./#patterns" },
     { "name": "The Whole Bible", "url": "./#bible" },
     { "name": "Search", "url": "./#search" }

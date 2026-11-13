@@ -18,6 +18,8 @@ const anchor = s => s.toLowerCase().replace(/[^a-z0-9 ]/g, "").trim().replace(/ 
 
 let md = `# Patterns Through the Whole Bible\n\n`;
 md += `${d.PATTERNS.length} patterns, each named by a phrase of Scripture and traced from Genesis to Revelation. Scripture quotations are from the ESV.\n\n`;
+md += `> “You shall love the Lord your God with all your heart and with all your soul and with all your mind. This is the great and first commandment. And a second is like it: You shall love your neighbor as yourself. On these two commandments depend all the Law and the Prophets.” (Matthew 22:37–40)\n\n`;
+md += `Patterns 1 and 2 are that focus. The rest flow from it.\n\n`;
 md += `## Contents\n\n`;
 d.PATTERNS.forEach((pt, n) => { md += `${n + 1}. [“${pt[0]}” (${pt[1]})](#${anchor(`${n + 1} ${pt[0]}`)})\n`; });
 

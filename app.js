@@ -57,22 +57,34 @@ function grouped(ids) {
 
 /* ---------- Screens ---------- */
 function homeScreen() {
-  return { title: "Make Disciples", tab: "home", html: `
+  const focus = PASSAGES[REF_IDX.get("Matthew 22:37–40")];
+  const loveRow = n => { const pt = PATTERNS[n], ids = PAT_IDS[n];
+    return `<a class="patrow love" href="#pattern-${n}">
+      <b>“${pt[0]}”</b><small>${pt[1]}</small>
+      ${strip(ids)}
+      <span class="patmeta">Old Testament ${ids.filter(i => !isNT(i)).length} · New Testament ${ids.filter(isNT).length}</span></a>`; };
+  return { title: "Love God · Love People", tab: "home", html: `
     <div class="charge">
-      <p class="label">The Great Commission</p>
-      <p class="verse big">“All authority in heaven and on earth has been given to me. Go therefore and make disciples of all nations, baptizing them in the name of the Father and of the Son and of the Holy Spirit, teaching them to observe all that I have commanded you. And behold, I am with you always, to the end of the age.”</p>
+      <p class="label">The focus of the whole Bible</p>
+      <p class="verse big">${focus[2]}</p>
+      <span class="ref">${focus[0]}</span>
+    </div>
+    <div class="two">${loveRow(0)}${loveRow(1)}</div>
+
+    <p class="label" style="margin-top:26px">The mission that flows from it</p>
+    <div class="card">
+      <p class="verse">“All authority in heaven and on earth has been given to me. Go therefore and make disciples of all nations, baptizing them in the name of the Father and of the Son and of the Holy Spirit, teaching them to observe all that I have commanded you. And behold, I am with you always, to the end of the age.”</p>
       <span class="ref">Matthew 28:18–20</span>
     </div>
-    <p class="label" style="margin-top:22px">What the word commands</p>
     ${COMMANDS.map(c => `
       <a class="cmdrow s${c[0]}" href="#cmd-${c[0]}">
         <span class="txt"><b>“${c[1]}”</b><small>${c[2]} · ${PASSAGES.filter(p => p[1] === c[0]).length} passages</small></span>${chev}</a>`).join("")}
-    <p class="label" style="margin-top:22px">Patterns through the whole Bible</p>
+
+    <p class="label" style="margin-top:26px">Patterns through the whole Bible</p>
     <a class="cmdrow" href="#patterns" style="--c:var(--accent)">
       <span class="txt"><b>${PATTERNS.length} patterns</b><small>Each named by a phrase of Scripture</small></span>${chev}</a>
     <a class="cmdrow" href="#compiled" style="--c:var(--accent)">
       <span class="txt"><b>All patterns compiled</b><small>Every pattern and every verse on one page</small></span>${chev}</a>
-    <p class="label" style="margin-top:22px">The whole Bible</p>
     <a class="cmdrow" href="#bible" style="--c:var(--accent)">
       <span class="txt"><b>Genesis to Revelation</b><small>All ${BOOKS.length} books · ${PASSAGES.length} passages</small></span>${chev}</a>
     <p class="fine">Scripture quotations are from the ESV® Bible (The Holy Bible, English Standard Version®), © 2001 by Crossway, a publishing ministry of Good News Publishers. Used by permission. All rights reserved. Some passages are shortened with an ellipsis (…). Read each one in its full context.</p>` };
@@ -99,7 +111,8 @@ function patternsScreen() {
       <span class="txt"><b>All patterns compiled</b><small>All ${PATTERNS.length} patterns and every verse on one page</small></span>${chev}</a>
     <p class="muted">Each bar is the whole Bible, Genesis to Revelation, one mark per book.</p>
     ${PATTERNS.map((pt, i) => { const ids = PAT_IDS[i];
-      return `<a class="patrow" href="#pattern-${i}">
+      const head = i === 0 ? `<p class="label">The focus: Matthew 22:37–40</p>` : i === 2 ? `<p class="label" style="margin-top:22px">Flowing from it</p>` : "";
+      return head + `<a class="patrow ${i < 2 ? "love" : ""}" href="#pattern-${i}">
         <b>“${pt[0]}”</b><small>${pt[1]}</small>
         ${strip(ids)}
         <span class="patmeta">Old Testament ${ids.filter(i => !isNT(i)).length} · New Testament ${ids.filter(isNT).length}</span></a>`; }).join("")}` };

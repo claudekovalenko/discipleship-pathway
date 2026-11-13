@@ -218,3 +218,9 @@ a.tag{text-decoration:none}
   .compiled{break-before:page}
   .thread::before,.thread .pass::before{display:none}
 }
+
+/* The two great commandments */
+.two{display:grid;gap:12px;margin-top:14px}
+@media (min-width:640px){.two{grid-template-columns:1fr 1fr}}
+.patrow.love{border:2px solid var(--accent);background:var(--accent-soft)}
+.patrow.love .strip i:not(.on){background:var(--surface)}

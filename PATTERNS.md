@@ -1,33 +1,172 @@
 # Patterns Through the Whole Bible
 
-20 patterns, each named by a phrase of Scripture and traced from Genesis to Revelation. Scripture quotations are from the ESV.
+22 patterns, each named by a phrase of Scripture and traced from Genesis to Revelation. Scripture quotations are from the ESV.
+
+> “You shall love the Lord your God with all your heart and with all your soul and with all your mind. This is the great and first commandment. And a second is like it: You shall love your neighbor as yourself. On these two commandments depend all the Law and the Prophets.” (Matthew 22:37–40)
+
+Patterns 1 and 2 are that focus. The rest flow from it.
 
 ## Contents
 
-1. [“Be imitators of me, as I am of Christ” (1 Corinthians 11:1)](#1-be-imitators-of-me-as-i-am-of-christ)
-2. [“One generation shall commend your works to another” (Psalm 145:4)](#2-one-generation-shall-commend-your-works-to-another)
-3. [“To study… and to do it and to teach” (Ezra 7:10)](#3-to-study-and-to-do-it-and-to-teach)
-4. [“Here I am! Send me” (Isaiah 6:8)](#4-here-i-am-send-me)
-5. [“I will build my church” (Matthew 16:18)](#5-i-will-build-my-church)
-6. [“In you all the families of the earth shall be blessed” (Genesis 12:3)](#6-in-you-all-the-families-of-the-earth-shall-be-blessed)
-7. [“Two are better than one” (Ecclesiastes 4:9)](#7-two-are-better-than-one)
-8. [“Not by might, nor by power, but by my Spirit” (Zechariah 4:6)](#8-not-by-might-nor-by-power-but-by-my-spirit)
-9. [“Pray earnestly to the Lord of the harvest” (Matthew 9:38)](#9-pray-earnestly-to-the-lord-of-the-harvest)
-10. [“Lay your hand on him” (Numbers 27:18)](#10-lay-your-hand-on-him)
-11. [“Come and hear… and I will tell what he has done for my soul” (Psalm 66:16)](#11-come-and-hear-and-i-will-tell-what-he-has-done-for-my-soul)
-12. [“The word of God increased and multiplied” (Acts 12:24)](#12-the-word-of-god-increased-and-multiplied)
-13. [“Feed my sheep” (John 21:17)](#13-feed-my-sheep)
-14. [“Share in suffering as a good soldier of Christ Jesus” (2 Timothy 2:3)](#14-share-in-suffering-as-a-good-soldier-of-christ-jesus)
-15. [“As for me and my house, we will serve the LORD” (Joshua 24:15)](#15-as-for-me-and-my-house-we-will-serve-the-lord)
-16. [“After fasting and praying they laid their hands on them” (Acts 13:3)](#16-after-fasting-and-praying-they-laid-their-hands-on-them)
-17. [“Devote yourself to the public reading of Scripture” (1 Timothy 4:13)](#17-devote-yourself-to-the-public-reading-of-scripture)
-18. [“I will write it on their hearts” (Jeremiah 31:33)](#18-i-will-write-it-on-their-hearts)
-19. [“Love the sojourner” (Deuteronomy 10:19)](#19-love-the-sojourner)
-20. [“God chose what is weak in the world to shame the strong” (1 Corinthians 1:27)](#20-god-chose-what-is-weak-in-the-world-to-shame-the-strong)
+1. [“You shall love the LORD your God with all your heart” (Deuteronomy 6:5)](#1-you-shall-love-the-lord-your-god-with-all-your-heart)
+2. [“You shall love your neighbor as yourself” (Leviticus 19:18)](#2-you-shall-love-your-neighbor-as-yourself)
+3. [“Be imitators of me, as I am of Christ” (1 Corinthians 11:1)](#3-be-imitators-of-me-as-i-am-of-christ)
+4. [“One generation shall commend your works to another” (Psalm 145:4)](#4-one-generation-shall-commend-your-works-to-another)
+5. [“To study… and to do it and to teach” (Ezra 7:10)](#5-to-study-and-to-do-it-and-to-teach)
+6. [“Here I am! Send me” (Isaiah 6:8)](#6-here-i-am-send-me)
+7. [“I will build my church” (Matthew 16:18)](#7-i-will-build-my-church)
+8. [“In you all the families of the earth shall be blessed” (Genesis 12:3)](#8-in-you-all-the-families-of-the-earth-shall-be-blessed)
+9. [“Two are better than one” (Ecclesiastes 4:9)](#9-two-are-better-than-one)
+10. [“Not by might, nor by power, but by my Spirit” (Zechariah 4:6)](#10-not-by-might-nor-by-power-but-by-my-spirit)
+11. [“Pray earnestly to the Lord of the harvest” (Matthew 9:38)](#11-pray-earnestly-to-the-lord-of-the-harvest)
+12. [“Lay your hand on him” (Numbers 27:18)](#12-lay-your-hand-on-him)
+13. [“Come and hear… and I will tell what he has done for my soul” (Psalm 66:16)](#13-come-and-hear-and-i-will-tell-what-he-has-done-for-my-soul)
+14. [“The word of God increased and multiplied” (Acts 12:24)](#14-the-word-of-god-increased-and-multiplied)
+15. [“Feed my sheep” (John 21:17)](#15-feed-my-sheep)
+16. [“Share in suffering as a good soldier of Christ Jesus” (2 Timothy 2:3)](#16-share-in-suffering-as-a-good-soldier-of-christ-jesus)
+17. [“As for me and my house, we will serve the LORD” (Joshua 24:15)](#17-as-for-me-and-my-house-we-will-serve-the-lord)
+18. [“After fasting and praying they laid their hands on them” (Acts 13:3)](#18-after-fasting-and-praying-they-laid-their-hands-on-them)
+19. [“Devote yourself to the public reading of Scripture” (1 Timothy 4:13)](#19-devote-yourself-to-the-public-reading-of-scripture)
+20. [“I will write it on their hearts” (Jeremiah 31:33)](#20-i-will-write-it-on-their-hearts)
+21. [“Love the sojourner” (Deuteronomy 10:19)](#21-love-the-sojourner)
+22. [“God chose what is weak in the world to shame the strong” (1 Corinthians 1:27)](#22-god-chose-what-is-weak-in-the-world-to-shame-the-strong)
 
 ---
 
-## 1. Be imitators of me, as I am of Christ
+## 1. You shall love the LORD your God with all your heart
+
+*Deuteronomy 6:5* · Old Testament 9 · New Testament 9
+
+### Old Testament
+
+**Deuteronomy 6:5–7**
+> “You shall love the LORD your God with all your heart and with all your soul and with all your might. And these words that I command you today shall be on your heart. You shall teach them diligently to your children, and shall talk of them when you sit in your house, and when you walk by the way, and when you lie down, and when you rise.”
+
+**Deuteronomy 10:12**
+> “And now, Israel, what does the LORD your God require of you, but to fear the LORD your God, to walk in all his ways, to love him, to serve the LORD your God with all your heart and with all your soul,”
+
+**Joshua 22:5**
+> “Only be very careful to observe the commandment and the law that Moses the servant of the LORD commanded you, to love the LORD your God, and to walk in all his ways and to keep his commandments and to cling to him and to serve him with all your heart and with all your soul.”
+
+**Psalm 18:1**
+> “I love you, O LORD, my strength.”
+
+**Psalm 73:25–26**
+> “Whom have I in heaven but you? And there is nothing on earth that I desire besides you. My flesh and my heart may fail, but God is the strength of my heart and my portion forever.”
+
+**Psalm 116:1**
+> “I love the LORD, because he has heard my voice and my pleas for mercy.”
+
+**Song of Songs 8:7**
+> “Many waters cannot quench love, neither can floods drown it.”
+
+**Jeremiah 9:23–24**
+> “…but let him who boasts boast in this, that he understands and knows me, that I am the LORD who practices steadfast love, justice, and righteousness in the earth…”
+
+**Hosea 6:6**
+> “For I desire steadfast love and not sacrifice, the knowledge of God rather than burnt offerings.”
+
+### New Testament
+
+**Matthew 22:37–40**
+> “And he said to him, ‘You shall love the Lord your God with all your heart and with all your soul and with all your mind. This is the great and first commandment. And a second is like it: You shall love your neighbor as yourself. On these two commandments depend all the Law and the Prophets.’”
+
+**Mark 12:30**
+> “And you shall love the Lord your God with all your heart and with all your soul and with all your mind and with all your strength.”
+
+**John 14:15**
+> “If you love me, you will keep my commandments.”
+
+**John 14:21**
+> “Whoever has my commandments and keeps them, he it is who loves me. And he who loves me will be loved by my Father, and I will love him and manifest myself to him.”
+
+**John 21:17**
+> “…Jesus said to him, ‘Feed my sheep.’”
+
+**1 John 4:19**
+> “We love because he first loved us.”
+
+**1 John 5:3**
+> “For this is the love of God, that we keep his commandments. And his commandments are not burdensome.”
+
+**Jude 21**
+> “keep yourselves in the love of God, waiting for the mercy of our Lord Jesus Christ that leads to eternal life.”
+
+**Revelation 2:4**
+> “But I have this against you, that you have abandoned the love you had at first.”
+
+
+---
+
+## 2. You shall love your neighbor as yourself
+
+*Leviticus 19:18* · Old Testament 6 · New Testament 13
+
+### Old Testament
+
+**Leviticus 19:18**
+> “…but you shall love your neighbor as yourself: I am the LORD.”
+
+**Leviticus 19:34**
+> “You shall treat the stranger who sojourns with you as the native among you, and you shall love him as yourself, for you were strangers in the land of Egypt: I am the LORD your God.”
+
+**Deuteronomy 10:19**
+> “Love the sojourner, therefore, for you were sojourners in the land of Egypt.”
+
+**Proverbs 3:27**
+> “Do not withhold good from those to whom it is due, when it is in your power to do it.”
+
+**Micah 6:8**
+> “He has told you, O man, what is good; and what does the LORD require of you but to do justice, and to love kindness, and to walk humbly with your God?”
+
+**Zechariah 7:9–10**
+> “Thus says the LORD of hosts, Render true judgments, show kindness and mercy to one another, do not oppress the widow, the fatherless, the sojourner, or the poor, and let none of you devise evil against another in your heart.”
+
+### New Testament
+
+**Matthew 22:37–40**
+> “And he said to him, ‘You shall love the Lord your God with all your heart and with all your soul and with all your mind. This is the great and first commandment. And a second is like it: You shall love your neighbor as yourself. On these two commandments depend all the Law and the Prophets.’”
+
+**Luke 10:36–37**
+> “‘Which of these three, do you think, proved to be a neighbor to the man who fell among the robbers?’ He said, ‘The one who showed him mercy.’ And Jesus said to him, ‘You go, and do likewise.’”
+
+**John 13:34–35**
+> “A new commandment I give to you, that you love one another: just as I have loved you, you also are to love one another. By this all people will know that you are my disciples, if you have love for one another.”
+
+**John 15:12–13**
+> “This is my commandment, that you love one another as I have loved you. Greater love has no one than this, that someone lay down his life for his friends.”
+
+**Romans 13:8, 10**
+> “Owe no one anything, except to love each other, for the one who loves another has fulfilled the law.… Love does no wrong to a neighbor; therefore love is the fulfilling of the law.”
+
+**1 Corinthians 13:4–7**
+> “Love is patient and kind; love does not envy or boast; it is not arrogant or rude. It does not insist on its own way; it is not irritable or resentful; it does not rejoice at wrongdoing, but rejoices with the truth. Love bears all things, believes all things, hopes all things, endures all things.”
+
+**1 Corinthians 13:13**
+> “So now faith, hope, and love abide, these three; but the greatest of these is love.”
+
+**Galatians 5:14**
+> “For the whole law is fulfilled in one word: ‘You shall love your neighbor as yourself.’”
+
+**1 Timothy 1:5**
+> “The aim of our charge is love that issues from a pure heart and a good conscience and a sincere faith.”
+
+**James 2:8**
+> “If you really fulfill the royal law according to the Scripture, ‘You shall love your neighbor as yourself,’ you are doing well.”
+
+**1 Peter 4:8**
+> “Above all, keep loving one another earnestly, since love covers a multitude of sins.”
+
+**1 John 3:18**
+> “Little children, let us not love in word or talk but in deed and in truth.”
+
+**1 John 4:20–21**
+> “If anyone says, ‘I love God,’ and hates his brother, he is a liar; for he who does not love his brother whom he has seen cannot love God whom he has not seen. And this commandment we have from him: whoever loves God must also love his brother.”
+
+
+---
+
+## 3. Be imitators of me, as I am of Christ
 
 *1 Corinthians 11:1* · Old Testament 7 · New Testament 9
 
@@ -86,7 +225,7 @@
 
 ---
 
-## 2. One generation shall commend your works to another
+## 4. One generation shall commend your works to another
 
 *Psalm 145:4* · Old Testament 8 · New Testament 3
 
@@ -130,7 +269,7 @@
 
 ---
 
-## 3. To study… and to do it and to teach
+## 5. To study… and to do it and to teach
 
 *Ezra 7:10* · Old Testament 6 · New Testament 5
 
@@ -174,7 +313,7 @@
 
 ---
 
-## 4. Here I am! Send me
+## 6. Here I am! Send me
 
 *Isaiah 6:8* · Old Testament 5 · New Testament 5
 
@@ -215,7 +354,7 @@
 
 ---
 
-## 5. I will build my church
+## 7. I will build my church
 
 *Matthew 16:18* · Old Testament 8 · New Testament 31
 
@@ -343,7 +482,7 @@
 
 ---
 
-## 6. In you all the families of the earth shall be blessed
+## 8. In you all the families of the earth shall be blessed
 
 *Genesis 12:3* · Old Testament 5 · New Testament 3
 
@@ -378,7 +517,7 @@
 
 ---
 
-## 7. Two are better than one
+## 9. Two are better than one
 
 *Ecclesiastes 4:9* · Old Testament 4 · New Testament 6
 
@@ -419,7 +558,7 @@
 
 ---
 
-## 8. Not by might, nor by power, but by my Spirit
+## 10. Not by might, nor by power, but by my Spirit
 
 *Zechariah 4:6* · Old Testament 3 · New Testament 3
 
@@ -448,7 +587,7 @@
 
 ---
 
-## 9. Pray earnestly to the Lord of the harvest
+## 11. Pray earnestly to the Lord of the harvest
 
 *Matthew 9:38* · Old Testament 3 · New Testament 10
 
@@ -498,7 +637,7 @@
 
 ---
 
-## 10. Lay your hand on him
+## 12. Lay your hand on him
 
 *Numbers 27:18* · Old Testament 3 · New Testament 6
 
@@ -536,7 +675,7 @@
 
 ---
 
-## 11. Come and hear… and I will tell what he has done for my soul
+## 13. Come and hear… and I will tell what he has done for my soul
 
 *Psalm 66:16* · Old Testament 5 · New Testament 6
 
@@ -580,7 +719,7 @@
 
 ---
 
-## 12. The word of God increased and multiplied
+## 14. The word of God increased and multiplied
 
 *Acts 12:24* · Old Testament 3 · New Testament 8
 
@@ -624,7 +763,7 @@
 
 ---
 
-## 13. Feed my sheep
+## 15. Feed my sheep
 
 *John 21:17* · Old Testament 5 · New Testament 6
 
@@ -668,7 +807,7 @@
 
 ---
 
-## 14. Share in suffering as a good soldier of Christ Jesus
+## 16. Share in suffering as a good soldier of Christ Jesus
 
 *2 Timothy 2:3* · Old Testament 3 · New Testament 9
 
@@ -715,7 +854,7 @@
 
 ---
 
-## 15. As for me and my house, we will serve the LORD
+## 17. As for me and my house, we will serve the LORD
 
 *Joshua 24:15* · Old Testament 4 · New Testament 9
 
@@ -765,7 +904,7 @@
 
 ---
 
-## 16. After fasting and praying they laid their hands on them
+## 18. After fasting and praying they laid their hands on them
 
 *Acts 13:3* · Old Testament 6 · New Testament 4
 
@@ -806,7 +945,7 @@
 
 ---
 
-## 17. Devote yourself to the public reading of Scripture
+## 19. Devote yourself to the public reading of Scripture
 
 *1 Timothy 4:13* · Old Testament 6 · New Testament 6
 
@@ -853,7 +992,7 @@
 
 ---
 
-## 18. I will write it on their hearts
+## 20. I will write it on their hearts
 
 *Jeremiah 31:33* · Old Testament 6 · New Testament 5
 
@@ -897,7 +1036,7 @@
 
 ---
 
-## 19. Love the sojourner
+## 21. Love the sojourner
 
 *Deuteronomy 10:19* · Old Testament 6 · New Testament 8
 
@@ -950,7 +1089,7 @@
 
 ---
 
-## 20. God chose what is weak in the world to shame the strong
+## 22. God chose what is weak in the world to shame the strong
 
 *1 Corinthians 1:27* · Old Testament 6 · New Testament 6
 

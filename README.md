@@ -1,6 +1,8 @@
 # Discipleship Pathway
 
-What Scripture says about making disciples, from Genesis to Revelation, in the words of the ESV.
+What Scripture says about making disciples, from Genesis to Revelation, in the words of the ESV, centered on the focus of the whole Bible:
+
+> “You shall love the Lord your God with all your heart and with all your soul and with all your mind. This is the great and first commandment. And a second is like it: You shall love your neighbor as yourself. On these two commandments depend all the Law and the Prophets.” (Matthew 22:37–40)
 
 An installable app (PWA) that works offline once it has been opened.
 
@@ -8,6 +10,7 @@ An installable app (PWA) that works offline once it has been opened.
 
 ## What's inside
 
+- **Home:** Matthew 22:37–40 first, with its two loves traced through the whole Bible; then the mission that flows from it.
 - **Commands:** Matthew 28:18–20, then six commands, each named in Scripture's own words:
   - "Follow me" (Matthew 4:19)
   - "Abide in my word" (John 8:31)
@@ -17,7 +20,11 @@ An installable app (PWA) that works offline once it has been opened.
   - "Entrust to faithful men" (2 Timothy 2:2)
 
   Each one opens every passage on that command, in canonical order.
-- **Patterns:** twenty threads through the whole Bible, each named by a phrase of Scripture:
+- **Patterns:** twenty-two threads through the whole Bible, each named by a phrase of Scripture. The first two are the focus:
+  - "You shall love the LORD your God with all your heart" (Deuteronomy 6:5)
+  - "You shall love your neighbor as yourself" (Leviticus 19:18)
+
+  The rest flow from them:
   - "Be imitators of me, as I am of Christ" (1 Corinthians 11:1)
   - "One generation shall commend your works to another" (Psalm 145:4)
   - "To study… and to do it and to teach" (Ezra 7:10)
@@ -40,7 +47,7 @@ An installable app (PWA) that works offline once it has been opened.
   - "God chose what is weak in the world to shame the strong" (1 Corinthians 1:27)
 
   Each shows a bar of all 66 books marking where it appears, then every passage in order.
-- **Whole Bible · Old Testament · New Testament:** every pattern and command page has this switch. Links keep the choice, e.g. `#pattern-4-nt` opens "I will build my church" in the New Testament.
+- **Whole Bible · Old Testament · New Testament:** every pattern and command page has this switch. Links keep the choice, e.g. `#pattern-6-nt` opens "I will build my church" in the New Testament.
 - **All patterns compiled:** every pattern and every verse on one page in the app (`#compiled`, or `#compiled-nt` for the New Testament only; it prints cleanly from a browser), and as a document: [PATTERNS.md](PATTERNS.md).
 - **Bible:** all 66 books, grouped by section (Law, History, Wisdom & Poetry, Major Prophets, Minor Prophets, Gospels, Acts, Paul's Letters, General Letters, Revelation). Tap a book to read its passages.
 - **Search:** any word, book, or reference, filtered by command.
@@ -79,7 +86,7 @@ All content is in `data.js`. To add a passage, add a row to `PASSAGES` in canoni
 
 Command ids: 1 Follow me, 2 Abide in my word, 3 Love one another, 4 You will be my witnesses, 5 Teaching them to observe, 6 Entrust to faithful men. To add a pattern, add a row to `PATTERNS` with a phrase of Scripture to name it, where that phrase is from, and the references it includes.
 
-**After any change,** run `node scripts/compile-patterns.js` to rebuild `PATTERNS.md`, and bump `CACHE` in `sw.js` (e.g. `dp-v10` → `dp-v11`) so installed apps download the update.
+**After any change,** run `node scripts/compile-patterns.js` to rebuild `PATTERNS.md`, and bump `CACHE` in `sw.js` (e.g. `dp-v11` → `dp-v12`) so installed apps download the update.
 
 ## Scripture copyright
 
