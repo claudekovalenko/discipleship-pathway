@@ -17,7 +17,7 @@ An installable app (PWA) that works offline once it has been opened.
   - "Entrust to faithful men" (2 Timothy 2:2)
 
   Each one opens every passage on that command, in canonical order.
-- **Patterns:** eight threads through the whole Bible, each named by a phrase of Scripture:
+- **Patterns:** fifteen threads through the whole Bible, each named by a phrase of Scripture:
   - "Be imitators of me, as I am of Christ" (1 Corinthians 11:1)
   - "One generation shall commend your works to another" (Psalm 145:4)
   - "To study… and to do it and to teach" (Ezra 7:10)
@@ -26,6 +26,13 @@ An installable app (PWA) that works offline once it has been opened.
   - "In you all the families of the earth shall be blessed" (Genesis 12:3)
   - "Two are better than one" (Ecclesiastes 4:9)
   - "Not by might, nor by power, but by my Spirit" (Zechariah 4:6)
+  - "Pray earnestly to the Lord of the harvest" (Matthew 9:38)
+  - "Lay your hand on him" (Numbers 27:18)
+  - "Come and hear… and I will tell what he has done for my soul" (Psalm 66:16)
+  - "The word of God increased and multiplied" (Acts 12:24)
+  - "Feed my sheep" (John 21:17)
+  - "Share in suffering as a good soldier of Christ Jesus" (2 Timothy 2:3)
+  - "As for me and my house, we will serve the LORD" (Joshua 24:15)
 
   Each shows a bar of all 66 books marking where it appears, then every passage in order.
 - **Whole Bible · Old Testament · New Testament:** every pattern and command page has this switch. Links keep the choice, e.g. `#pattern-4-nt` opens "I will build my church" in the New Testament.
@@ -64,7 +71,7 @@ All content is in `data.js`. To add a passage, add a row to `PASSAGES` in canoni
 
 Command ids: 1 Follow me, 2 Abide in my word, 3 Love one another, 4 You will be my witnesses, 5 Teaching them to observe, 6 Entrust to faithful men. To add a pattern, add a row to `PATTERNS` with a phrase of Scripture to name it, where that phrase is from, and the references it includes.
 
-**After any change,** bump `CACHE` in `sw.js` (e.g. `dp-v8` → `dp-v9`) so installed apps download the update.
+**After any change,** bump `CACHE` in `sw.js` (e.g. `dp-v9` → `dp-v10`) so installed apps download the update.
 
 ## Scripture copyright
 
