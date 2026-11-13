@@ -4,6 +4,9 @@ const $ = s => document.querySelector(s);
 const view = $("#view"), titleEl = $("#title"), backBtn = $("#back");
 const chev = `<svg class="chev" viewBox="0 0 24 24"><path d="M9 5l7 7-7 7"/></svg>`;
 const search = { q: "", cmd: 0 };
+let scope = "all";   // "all" | "ot" | "nt", set from the link (#pattern-4-nt)
+const NT_START = 39; // Matthew is book 40
+const SCOPES = [["all", "Whole Bible"], ["ot", "Old Testament"], ["nt", "New Testament"]];
 
 const bookIdx = ref => { let best = -1, len = 0;
   BOOKS.forEach((b, i) => [b[0], b[0] === "Psalms" ? "Psalm" : ""].forEach(n => {
@@ -14,12 +17,23 @@ const cmdOf = id => COMMANDS[id - 1];
 const REF_IDX = new Map(PASSAGES.map((p, i) => [p[0], i]));
 const PAT_IDS = PATTERNS.map(pt => pt[2].map(r => REF_IDX.get(r)));
 
+const isNT = i => P_BOOK[i] >= NT_START;
+const inScope = (i, sc = scope) => sc === "all" || (sc === "nt") === isNT(i);
+
+/* Whole Bible / Old Testament / New Testament switch for a page. */
+function scopeBar(base, ids) {
+  return `<nav class="seg" aria-label="Show passages from">${SCOPES.map(([k, label]) =>
+    `<a href="#${base}${k === "all" ? "" : "-" + k}" class="${scope === k ? "on" : ""}" ${scope === k ? 'aria-current="true"' : ""}>
+      ${label}<small>${ids.filter(i => inScope(i, k)).length}</small></a>`).join("")}</nav>`;
+}
+const sfx = () => scope === "all" ? "" : "-" + scope;
+
 /* A strip of all 66 books; books where the pattern appears are filled in. */
 function strip(ids, big) {
   const hit = new Set(ids.map(i => P_BOOK[i]));
   const cell = (b, bi) => `<i class="${hit.has(bi) ? "on" : ""}" title="${b[0]}"></i>`;
   const ot = BOOKS.slice(0, 39).map((b, i) => cell(b, i)).join(""), nt = BOOKS.slice(39).map((b, i) => cell(b, i + 39)).join("");
-  return `<div class="strip ${big ? "big" : ""}" aria-label="Appears in ${hit.size} of ${BOOKS.length} books">
+  return `<div class="strip ${big ? "big scope-" + scope : ""}" aria-label="Appears in ${hit.size} of ${BOOKS.length} books">
     <div class="ot">${ot}</div><div class="nt">${nt}</div></div>
     ${big ? `<div class="strip-labels"><span>Genesis</span><span>Old Testament · New Testament</span><span>Revelation</span></div>` : ""}`;
 }
@@ -58,6 +72,8 @@ function homeScreen() {
     ${COMMANDS.map(c => `
       <a class="cmdrow s${c[0]}" href="#cmd-${c[0]}">
         <span class="txt"><b>“${c[1]}”</b><small>${c[2]} · ${PASSAGES.filter(p => p[1] === c[0]).length} passages</small></span>${chev}</a>`).join("")}
+    <a class="cmdrow" href="#pattern-${PATTERNS.findIndex(p => p[0] === "Establishing churches")}" style="--c:var(--accent)">
+      <span class="txt"><b>Establishing churches</b><small>Through the whole Bible, then the New Testament</small></span>${chev}</a>
     <a class="cmdrow" href="#patterns" style="--c:var(--accent)">
       <span class="txt"><b>Patterns through the whole Bible</b><small>${PATTERNS.length} threads from Genesis to Revelation</small></span>${chev}</a>
     <a class="cmdrow" href="#bible" style="--c:var(--accent)">
@@ -67,15 +83,16 @@ function homeScreen() {
 
 function cmdScreen(id) {
   const c = cmdOf(id); if (!c) return homeScreen();
-  const ids = PASSAGES.map((p, i) => i).filter(i => PASSAGES[i][1] === id);
+  const all = PASSAGES.map((p, i) => i).filter(i => PASSAGES[i][1] === id), ids = all.filter(i => inScope(i));
   return { title: `“${c[1]}”`, tab: "home", back: "#home", html: `
     <div class="s${id}">
       <div class="hero"><p class="verse">${c[3]}</p><span class="ref">${c[2]}</span></div>
-      <p class="muted">${c[4]} Here is what Scripture says, from Genesis to Revelation.</p>
-      ${grouped(ids, false)}
+      <p class="muted">${c[4]}</p>
+      ${scopeBar("cmd-" + id, all)}
+      ${grouped(ids, false) || `<p class="muted">No passages in this part of the Bible.</p>`}
       <div class="pager">
-        ${id > 1 ? `<a href="#cmd-${id - 1}">← ${cmdOf(id - 1)[1]}</a>` : ""}
-        ${id < COMMANDS.length ? `<a class="next" href="#cmd-${id + 1}">${cmdOf(id + 1)[1]} →</a>` : ""}
+        ${id > 1 ? `<a href="#cmd-${id - 1}${sfx()}">← ${cmdOf(id - 1)[1]}</a>` : ""}
+        ${id < COMMANDS.length ? `<a class="next" href="#cmd-${id + 1}${sfx()}">${cmdOf(id + 1)[1]} →</a>` : ""}
       </div>
     </div>` };
 }
@@ -88,12 +105,12 @@ function patternsScreen() {
       return `<a class="patrow" href="#pattern-${i}">
         <b>${pt[0]}</b><small>${pt[1]}</small>
         ${strip(ids)}
-        <span class="patmeta">${PASSAGES[ids[0]][0]} → ${PASSAGES[ids[ids.length - 1]][0]} · ${ids.length} passages</span></a>`; }).join("")}` };
+        <span class="patmeta">${PASSAGES[ids[0]][0]} → ${PASSAGES[ids[ids.length - 1]][0]} · Old Testament ${ids.filter(i => !isNT(i)).length} · New Testament ${ids.filter(isNT).length}</span></a>`; }).join("")}` };
 }
 
 function patternScreen(n) {
   const pt = PATTERNS[n]; if (!pt) return patternsScreen();
-  const ids = PAT_IDS[n];
+  const all = PAT_IDS[n], ids = all.filter(i => inScope(i));
   let html = "", sec = -1;
   ids.forEach(i => {
     const s = BOOKS[P_BOOK[i]][2];
@@ -102,11 +119,12 @@ function patternScreen(n) {
   });
   return { title: pt[0], tab: "patterns", back: "#patterns", html: `
     <div class="hello"><p class="label">Pattern ${n + 1} of ${PATTERNS.length}</p><h2>${pt[0]}</h2><p>${pt[1]}</p></div>
-    ${strip(ids, true)}
-    <div class="thread">${html}</div>
+    ${strip(all, true)}
+    ${scopeBar("pattern-" + n, all)}
+    <div class="thread">${html || `<p class="muted">No passages in this part of the Bible.</p>`}</div>
     <div class="pager">
-      ${n > 0 ? `<a href="#pattern-${n - 1}">← ${PATTERNS[n - 1][0]}</a>` : ""}
-      ${n < PATTERNS.length - 1 ? `<a class="next" style="--c:var(--accent)" href="#pattern-${n + 1}">${PATTERNS[n + 1][0]} →</a>` : ""}
+      ${n > 0 ? `<a href="#pattern-${n - 1}${sfx()}">← ${PATTERNS[n - 1][0]}</a>` : ""}
+      ${n < PATTERNS.length - 1 ? `<a class="next" style="--c:var(--accent)" href="#pattern-${n + 1}${sfx()}">${PATTERNS[n + 1][0]} →</a>` : ""}
     </div>` };
 }
 
@@ -156,7 +174,8 @@ function renderSearch() {
 
 /* ---------- Router ---------- */
 function route() {
-  const [name, arg] = (location.hash.slice(1) || "home").split("-");
+  const [name, arg, sc] = (location.hash.slice(1) || "home").split("-");
+  scope = sc === "ot" || sc === "nt" ? sc : "all";
   const scr = name === "cmd" ? cmdScreen(+arg)
     : name === "patterns" ? patternsScreen()
     : name === "pattern" ? patternScreen(+arg)
@@ -171,7 +190,9 @@ function route() {
   backBtn.hidden = !scr.back; backBtn.dataset.to = scr.back || "";
   document.querySelectorAll(".tabbar a").forEach(a => a.classList.toggle("on", a.dataset.tab === scr.tab));
   if (scr.after) scr.after();
-  window.scrollTo(0, 0);
+  const page = name + "-" + arg;
+  if (route.last !== page) window.scrollTo(0, 0);
+  route.last = page;
 }
 window.addEventListener("hashchange", route);
 backBtn.addEventListener("click", () => { location.hash = backBtn.dataset.to; });
