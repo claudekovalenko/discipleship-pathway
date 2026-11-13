@@ -3,7 +3,7 @@
   "short_name": "Disciple",
   "description": "Every command in Scripture about making disciples (ESV), in six simple steps with simple tools.",
   "id": "./",
-  "start_url": "./#/steps",
+  "start_url": "./#steps",
   "scope": "./",
   "display": "standalone",
   "orientation": "portrait",
@@ -17,9 +17,9 @@
     { "src": "icons/icon.svg", "sizes": "any", "type": "image/svg+xml", "purpose": "any" }
   ],
   "shortcuts": [
-    { "name": "Six Steps", "url": "./#/steps" },
-    { "name": "Every Command", "url": "./#/bible" },
-    { "name": "Tools", "url": "./#/tools" },
-    { "name": "Weekly Meeting", "url": "./#/meet" }
+    { "name": "Six Steps", "url": "./#steps" },
+    { "name": "Every Command", "url": "./#bible" },
+    { "name": "Tools", "url": "./#tools" },
+    { "name": "Weekly Meeting", "url": "./#meet" }
   ]
 }

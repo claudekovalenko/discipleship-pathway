@@ -29,11 +29,11 @@ function stepsScreen() {
       <div><b>This week</b><div class="muted">${n} of ${TOTAL} actions done</div></div>
     </div>
     <div class="tiles">${STEPS.map(s => `
-      <a class="tile s${s.id}" href="#/step/${s.id}">
+      <a class="tile s${s.id}" href="#step-${s.id}">
         <div class="n">${s.id}</div><b>${s.name}</b><small>${s.short}</small>
         <div class="bar"><i style="width:${stepDone(s) / s.doIt.length * 100}%"></i></div>
       </a>`).join("")}</div>
-    <a class="rowbtn" href="#/bible" style="margin-top:12px"><span class="dot" style="background:var(--accent)"></span>
+    <a class="rowbtn" href="#bible" style="margin-top:12px"><span class="dot" style="background:var(--accent)"></span>
       <span class="txt"><b>Through the whole Bible</b><small>${CMDS.length} passages from all ${BOOKS.length} books, Genesis to Revelation</small></span>${chev}</a>
     <div class="card">
       <p class="verse">“Go therefore and make disciples of all nations…”<span class="ref">Matthew 28:19</span></p>
@@ -44,7 +44,7 @@ function stepScreen(id) {
   const s = STEPS[id - 1]; if (!s) return stepsScreen();
   const tools = TOOLS.map((t, i) => ({ ...t, i })).filter(t => t.s === s.id);
   const related = CMDS.filter(c => c[1] === s.id).length;
-  return { title: `Step ${s.id}: ${s.name}`, tab: "steps", back: "#/steps", html: `
+  return { title: `Step ${s.id}: ${s.name}`, tab: "steps", back: "#steps", html: `
     <div class="s${s.id}">
       <div class="hero"><div class="n">Step ${s.id} of 6</div><h2>${s.name}</h2><p>${s.q}</p></div>
       <div class="card"><p class="label">Key verses</p>
@@ -55,13 +55,13 @@ function stepScreen(id) {
         ${s.doIt.map((d, i) => { const k = s.id + "-" + i;
           return `<label class="check"><input type="checkbox" data-k="${k}" ${done[k] ? "checked" : ""}><span>${d}</span></label>`; }).join("")}</div>
       <p class="label" style="margin-top:18px">Use this tool</p>
-      ${tools.map(t => `<a class="rowbtn" href="#/tool/${t.i}"><span class="dot"></span>
+      ${tools.map(t => `<a class="rowbtn" href="#tool-${t.i}"><span class="dot"></span>
         <span class="txt"><b>${t.t}</b><small>${t.r}</small></span>${chev}</a>`).join("")}
       <button class="rowbtn" data-related="${s.id}"><span class="dot"></span>
         <span class="txt"><b>See all ${related} passages</b><small>Across the whole Bible for this step</small></span>${chev}</button>
       <div class="pager">
-        ${s.id > 1 ? `<a href="#/step/${s.id - 1}">← ${STEPS[s.id - 2].name}</a>` : ""}
-        ${s.id < 6 ? `<a class="next" href="#/step/${s.id + 1}">${STEPS[s.id].name} →</a>` : `<a class="next" href="#/meet">Start meeting →</a>`}
+        ${s.id > 1 ? `<a href="#step-${s.id - 1}">← ${STEPS[s.id - 2].name}</a>` : ""}
+        ${s.id < 6 ? `<a class="next" href="#step-${s.id + 1}">${STEPS[s.id].name} →</a>` : `<a class="next" href="#meet">Start meeting →</a>`}
       </div>
     </div>` };
 }
@@ -102,7 +102,7 @@ function renderList() {
       <div class="era">${s[0]} <span class="muted">· ${s[1]}</span></div>
       <p class="sect">${s[2]}</p>
       <div class="books">${BOOKS.map((b, bi) => b[2] !== si ? "" : `
-        <a class="book" href="#/book/${bi}"><b>${b[1]}</b><small>${CMD_BOOK.filter(x => x === bi).length}</small></a>`).join("")}</div>`).join("");
+        <a class="book" href="#book-${bi}"><b>${b[1]}</b><small>${CMD_BOOK.filter(x => x === bi).length}</small></a>`).join("")}</div>`).join("");
     return;
   }
   const rows = CMDS.map((c, i) => i).filter(i => { const c = CMDS[i];
@@ -122,39 +122,39 @@ function bookScreen(bi) {
   const b = BOOKS[bi]; if (!b) return bibleScreen();
   const ids = CMDS.map((c, i) => i).filter(i => CMD_BOOK[i] === bi);
   ids.forEach(i => { bible.open[i] = true; });
-  return { title: b[0], tab: "bible", back: "#/bible", html: `
+  return { title: b[0], tab: "bible", back: "#bible", html: `
     <div class="hello"><p class="label">${SECTIONS[b[2]][0]} · book ${bi + 1} of ${BOOKS.length}</p><h2>${b[0]}</h2>
       <p>${SECTIONS[b[2]][2]}</p></div>
     ${ids.map(cmdCard).join("")}
     <div class="pager">
-      ${bi > 0 ? `<a href="#/book/${bi - 1}">← ${BOOKS[bi - 1][0]}</a>` : ""}
-      ${bi < BOOKS.length - 1 ? `<a class="next" style="--c:var(--accent)" href="#/book/${bi + 1}">${BOOKS[bi + 1][0]} →</a>` : ""}
+      ${bi > 0 ? `<a href="#book-${bi - 1}">← ${BOOKS[bi - 1][0]}</a>` : ""}
+      ${bi < BOOKS.length - 1 ? `<a class="next" style="--c:var(--accent)" href="#book-${bi + 1}">${BOOKS[bi + 1][0]} →</a>` : ""}
     </div>` };
 }
 
 function toolsScreen() {
   return { title: "Simple Tools", tab: "tools", html: `
     <div class="hello"><h2>Simple tools</h2><p>Simple practices taken straight from Scripture.</p></div>
-    ${TOOLS.map((t, i) => `<a class="rowbtn s${t.s}" href="#/tool/${i}"><span class="dot"></span>
+    ${TOOLS.map((t, i) => `<a class="rowbtn s${t.s}" href="#tool-${i}"><span class="dot"></span>
       <span class="txt"><b>${t.t}</b><small>Step ${t.s} · ${STEPS[t.s - 1].name}</small></span>${chev}</a>`).join("")}` };
 }
 
 function toolScreen(i) {
   const t = TOOLS[i]; if (!t) return toolsScreen();
   const st = STEPS[t.s - 1];
-  return { title: t.t, tab: "tools", back: "#/tools", html: `
+  return { title: t.t, tab: "tools", back: "#tools", html: `
     <div class="s${t.s}">
       <div class="hero"><div class="n">Tool · Step ${st.id} ${st.name}</div><h2>${t.t}</h2><p>${t.r}</p></div>
       <div class="card"><ol class="steps-ol">${t.items.map(x => `<li><span>${x}</span></li>`).join("")}</ol></div>
       <div class="card"><p class="label">Tip</p><p style="margin:0">${t.note}</p></div>
-      <a class="rowbtn" href="#/step/${st.id}"><span class="dot"></span>
+      <a class="rowbtn" href="#step-${st.id}"><span class="dot"></span>
         <span class="txt"><b>Go to Step ${st.id}: ${st.name}</b><small>${st.short}</small></span>${chev}</a>
     </div>` };
 }
 
 function meetScreen() {
   const parts = [
-    ["The apostles' teaching","Open God's word together, and use <a href=\"#/tool/5\">Hear and Do</a>."],
+    ["The apostles' teaching","Open God's word together, and use <a href=\"#tool-5\">Hear and Do</a>."],
     ["The fellowship","Share life: how you are really doing, joys and burdens (Galatians 6:2)."],
     ["The breaking of bread","Eat together, and remember Jesus at the Lord's Table (Luke 22:19)."],
     ["The prayers","Pray for one another, and for people who don't yet know Jesus (James 5:16; Colossians 4:3)."]];
@@ -172,7 +172,7 @@ function meetScreen() {
       <div data-n="3"><b>Faithful people</b><span class="muted">Who is God calling you to invest in?</span></div>
       <div data-n="4"><b>Others also</b><span class="muted">Who will <em>they</em> teach?</span></div>
     </div>
-    <a class="rowbtn s6" href="#/tool/6"><span class="dot"></span>
+    <a class="rowbtn s6" href="#tool-6"><span class="dot"></span>
       <span class="txt"><b>Imitate</b><small>Learned · received · heard · seen (Philippians 4:9)</small></span>${chev}</a>
 
     <div class="card" style="margin-top:24px">
@@ -185,7 +185,7 @@ function meetScreen() {
 
 /* ---------- Router ---------- */
 function route() {
-  const [, name, arg] = (location.hash || "#/steps").split("/");
+  const [name, arg] = (location.hash.slice(1) || "steps").split("-");
   const scr = name === "step" ? stepScreen(+arg)
     : name === "bible" ? bibleScreen()
     : name === "book" ? bookScreen(+arg)
@@ -230,8 +230,12 @@ view.addEventListener("click", e => {
     cmd.classList.toggle("open", bible.open[i]); cmd.setAttribute("aria-expanded", bible.open[i]); return;
   }
   const rel = e.target.closest("[data-related]");
-  if (rel) { bible.step = +rel.dataset.related; bible.q = ""; location.hash = "#/bible"; return; }
-  if (e.target.id === "reset" && confirm("Clear all checked items?")) { done = {}; save(); toast("Checklist cleared"); }
+  if (rel) { bible.step = +rel.dataset.related; bible.q = ""; location.hash = "#bible"; return; }
+  if (e.target.id === "reset") {
+    const b = e.target;
+    if (!b.dataset.armed) { b.dataset.armed = "1"; b.textContent = "Tap again to clear all checked items"; return; }
+    done = {}; save(); delete b.dataset.armed; b.textContent = "Reset checklist"; toast("Checklist cleared");
+  }
 });
 
 route();

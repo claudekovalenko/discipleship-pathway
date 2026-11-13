@@ -10,13 +10,13 @@
   :root:not([data-theme="light"]){
     --bg:#16181c; --surface:#1f2227; --ink:#ece8e1; --muted:#a3a9b3; --line:#33373e;
     --accent:#e0b273; --accent-soft:#2c271f; --on-c:#16181c;
-    --s1:#e88a62; --s2:#5cc49a; --s3:#e47bb6; --s4:#6fa6ea; --s5:#a58ae6; --s6:#e2bd4f;
+    --s1:#e88a62; --s2:#5cc49a; --s3:#e47bb6; --s4:#6fa6ea; --s5:#a58ae6; --s6:#e2bd4f; color-scheme:dark;
   }
 }
 :root[data-theme="dark"]{
   --bg:#16181c; --surface:#1f2227; --ink:#ece8e1; --muted:#a3a9b3; --line:#33373e;
   --accent:#e0b273; --accent-soft:#2c271f; --on-c:#16181c;
-  --s1:#e88a62; --s2:#5cc49a; --s3:#e47bb6; --s4:#6fa6ea; --s5:#a58ae6; --s6:#e2bd4f;
+  --s1:#e88a62; --s2:#5cc49a; --s3:#e47bb6; --s4:#6fa6ea; --s5:#a58ae6; --s6:#e2bd4f; color-scheme:dark;
 }
 *{box-sizing:border-box;-webkit-tap-highlight-color:transparent}
 html,body{margin:0;height:100%}
