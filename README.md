@@ -18,8 +18,8 @@ To try it on your computer, run `python3 -m http.server` in this folder and open
 
 - **6 Simple Steps:** Follow → Abide → Love & Belong → Go & Tell → Teach to Obey → Multiply. Each step has key verses, the commands, one tool, and a "This week, I will…" checklist.
 - **Every Command:** 55 passages across the Law, Prophets, Gospels, Acts, and Letters. Each one is tagged to a step, with a one-line way to obey it. You can search and filter them.
-- **Simple Tools:** Gospel in 4 Words, Discovery Bible Study, Accountability Questions, My Story, Name List, Three-Thirds Meeting, Model-Assist-Watch-Leave, and the Multiplication Question.
-- **Meeting Rhythm:** Look Back / Look Up / Look Forward.
+- **Simple Tools:** practices taken straight from Scripture: The Gospel (1 Cor 15:3–4), Study · Do · Teach (Ezra 7:10), the “One Another” commands, Tell What the Lord Has Done (Mark 5:19), Pray for Open Doors (Col 4:3), Hear and Do (Matt 7:24), Imitate (Phil 4:9), and Entrust (2 Tim 2:2).
+- **Meet Together:** the four devotions of Acts 2:42.
 - **Multiply:** the 2 Timothy 2:2 four-generation chain.
 
 ## Files

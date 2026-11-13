@@ -102,7 +102,7 @@ function renderList() {
 
 function toolsScreen() {
   return { title: "Simple Tools", tab: "tools", html: `
-    <div class="hello"><h2>Simple tools</h2><p>Small enough to learn in one meeting and pass on in the next.</p></div>
+    <div class="hello"><h2>Simple tools</h2><p>Simple practices taken straight from Scripture.</p></div>
     ${TOOLS.map((t, i) => `<a class="rowbtn s${t.s}" href="#/tool/${i}"><span class="dot"></span>
       <span class="txt"><b>${t.t}</b><small>Step ${t.s} · ${STEPS[t.s - 1].name}</small></span>${chev}</a>`).join("")}` };
 }
@@ -121,25 +121,27 @@ function toolScreen(i) {
 }
 
 function meetScreen() {
+  const parts = [
+    ["The apostles' teaching","Open God's word together, and use <a href=\"#/tool/5\">Hear and Do</a>."],
+    ["The fellowship","Share life: how you are really doing, joys and burdens (Galatians 6:2)."],
+    ["The breaking of bread","Eat together, and remember Jesus at the Lord's Table (Luke 22:19)."],
+    ["The prayers","Pray for one another, and for people who don't yet know Jesus (James 5:16; Colossians 4:3)."]];
   return { title: "Meet Together", tab: "meet", html: `
-    <div class="hello"><h2>Weekly meeting</h2><p>2–6 people · about 90 minutes · three parts.</p></div>
-    <div class="card third"><div class="big">1</div><div><b>Look Back</b> <span class="muted">· ⅓ of the time</span>
-      <div>Care and pray for each other. Ask: “Did you obey? Who did you share with?”</div></div></div>
-    <div class="card third"><div class="big">2</div><div><b>Look Up</b> <span class="muted">· ⅓ of the time</span>
-      <div>Read a new passage with the <a href="#/tool/1">Discovery Bible Study</a> questions.</div></div></div>
-    <div class="card third"><div class="big">3</div><div><b>Look Forward</b> <span class="muted">· ⅓ of the time</span>
-      <div>Each person writes one “I will…” and names one person to share with. Practice in pairs, then pray.</div></div></div>
+    <div class="hello"><h2>Gather like the early church</h2>
+      <p>“And they devoted themselves to the apostles' teaching and the fellowship, to the breaking of bread and the prayers.” Acts 2:42</p></div>
+    ${parts.map((p, i) => `<div class="card third"><div class="big">${i + 1}</div><div><b>${p[0]}</b><div>${p[1]}</div></div></div>`).join("")}
+    <div class="card"><p class="verse">“And let us consider how to stir up one another to love and good works, not neglecting to meet together… but encouraging one another…”<span class="ref">Hebrews 10:24–25</span></p></div>
 
     <div class="hello" style="margin-top:24px"><h2>Multiply</h2>
       <p>“…entrust to faithful men, who will be able to teach others also.” 2 Timothy 2:2</p></div>
     <div class="card chain">
       <div data-n="1"><b>Paul</b><span class="muted">Who invested in you?</span></div>
-      <div data-n="2"><b>Timothy</b><span class="muted">You: abide, obey, stay accountable.</span></div>
-      <div data-n="3"><b>Faithful people</b><span class="muted">Who are 1–3 people you will meet with?</span></div>
+      <div data-n="2"><b>Timothy</b><span class="muted">You: abide, obey, keep growing.</span></div>
+      <div data-n="3"><b>Faithful people</b><span class="muted">Who is God calling you to invest in?</span></div>
       <div data-n="4"><b>Others also</b><span class="muted">Who will <em>they</em> teach?</span></div>
     </div>
     <a class="rowbtn s6" href="#/tool/6"><span class="dot"></span>
-      <span class="txt"><b>Model · Assist · Watch · Leave</b><small>How Jesus trained the twelve</small></span>${chev}</a>
+      <span class="txt"><b>Imitate</b><small>Learned · received · heard · seen (Philippians 4:9)</small></span>${chev}</a>
 
     <div class="card" style="margin-top:24px">
       <p class="label">Start a new week</p>
