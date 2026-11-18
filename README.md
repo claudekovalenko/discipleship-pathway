@@ -48,6 +48,7 @@ An installable app (PWA) that works offline once it has been opened.
 
   Each shows a bar of all 66 books marking where it appears, then every passage in order.
 - **Whole Bible · Old Testament · New Testament:** every pattern and command page has this switch. Links keep the choice, e.g. `#pattern-6-nt` opens "I will build my church" in the New Testament.
+- **Practices:** seventeen practices of discipleship, each named by a phrase of Scripture. For each one, what Jesus did with his disciples (the Gospels) is set beside what his followers did afterward (Acts to Revelation): being with him, teaching, prayer, fasting, choosing and appointing, sending out two by two, receiving and hospitality, going to the next towns, reporting back, baptizing, breaking bread, singing, serving, sharing possessions, correcting and restoring, strengthening, and suffering. There is also an all-practices page (`#practicesall`).
 - **All patterns compiled:** every pattern and every verse on one page in the app (`#compiled`, or `#compiled-nt` for the New Testament only; it prints cleanly from a browser), and as a document: [PATTERNS.md](PATTERNS.md).
 - **Bible:** all 66 books, grouped by section (Law, History, Wisdom & Poetry, Major Prophets, Minor Prophets, Gospels, Acts, Paul's Letters, General Letters, Revelation). Tap a book to read its passages.
 - **Search:** any word, book, or reference, filtered by command.
@@ -72,7 +73,7 @@ To try it on your computer, run `python3 -m http.server` in this folder and open
 | `app.js` | Screens and navigation |
 | `data.js` | **All the content:** commands, sections, books, passages |
 | `manifest.webmanifest`, `sw.js`, `icons/` | What makes it installable and offline |
-| `PATTERNS.md` | Every pattern and verse compiled into one document |
+| `PATTERNS.md` | Every pattern and practice, with every verse, compiled into one document |
 | `scripts/compile-patterns.js` | Rebuilds `PATTERNS.md` from `data.js` |
 | `.github/workflows/pages.yml` | Publishes the site to GitHub Pages on every push |
 
@@ -86,7 +87,7 @@ All content is in `data.js`. To add a passage, add a row to `PASSAGES` in canoni
 
 Command ids: 1 Follow me, 2 Abide in my word, 3 Love one another, 4 You will be my witnesses, 5 Teaching them to observe, 6 Entrust to faithful men. To add a pattern, add a row to `PATTERNS` with a phrase of Scripture to name it, where that phrase is from, and the references it includes.
 
-**After any change,** run `node scripts/compile-patterns.js` to rebuild `PATTERNS.md`, and bump `CACHE` in `sw.js` (e.g. `dp-v11` → `dp-v12`) so installed apps download the update.
+**After any change,** run `node scripts/compile-patterns.js` to rebuild `PATTERNS.md`, and bump `CACHE` in `sw.js` (e.g. `dp-v12` → `dp-v13`) so installed apps download the update.
 
 ## Scripture copyright
 

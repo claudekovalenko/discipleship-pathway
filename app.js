@@ -16,6 +16,7 @@ const P_BOOK = PASSAGES.map(p => bookIdx(p[0]));
 const cmdOf = id => COMMANDS[id - 1];
 const REF_IDX = new Map(PASSAGES.map((p, i) => [p[0], i]));
 const PAT_IDS = PATTERNS.map(pt => pt[2].map(r => REF_IDX.get(r)));
+const PR_IDS = PRACTICES.map(pr => [pr[2].map(r => REF_IDX.get(r)), pr[3].map(r => REF_IDX.get(r))]);
 
 const isNT = i => P_BOOK[i] >= NT_START;
 const inScope = (i, sc = scope) => sc === "all" || (sc === "nt") === isNT(i);
@@ -79,6 +80,10 @@ function homeScreen() {
     ${COMMANDS.map(c => `
       <a class="cmdrow s${c[0]}" href="#cmd-${c[0]}">
         <span class="txt"><b>“${c[1]}”</b><small>${c[2]} · ${PASSAGES.filter(p => p[1] === c[0]).length} passages</small></span>${chev}</a>`).join("")}
+
+    <p class="label" style="margin-top:26px">How Jesus made disciples, and what his followers did afterward</p>
+    <a class="cmdrow" href="#practices" style="--c:var(--accent)">
+      <span class="txt"><b>${PRACTICES.length} practices</b><small>With Jesus in the Gospels · Afterward in Acts to Revelation</small></span>${chev}</a>
 
     <p class="label" style="margin-top:26px">Patterns through the whole Bible</p>
     <a class="cmdrow" href="#patterns" style="--c:var(--accent)">
@@ -163,6 +168,45 @@ function compiledScreen() {
     ${sections}` };
 }
 
+/* Practices: what Jesus did with his disciples, then what his followers did afterward. */
+function practiceBody(n) {
+  const [jesus, after] = PR_IDS[n];
+  return `<div class="pair">
+    <div><p class="side"><b>With Jesus</b> · the Gospels · ${jesus.length}</p>${jesus.map(passage).join("")}</div>
+    <div><p class="side"><b>Afterward</b> · Acts to Revelation · ${after.length}</p>${after.map(passage).join("")}</div>
+  </div>`;
+}
+
+function practicesScreen() {
+  return { title: "Practices", tab: "practices", html: `
+    <p class="muted" style="margin-top:0">What Jesus did with his disciples, and what his followers did afterward.</p>
+    <a class="cmdrow" href="#practicesall" style="--c:var(--accent)">
+      <span class="txt"><b>All practices compiled</b><small>All ${PRACTICES.length} practices and every verse on one page</small></span>${chev}</a>
+    ${PRACTICES.map((pr, n) => `
+      <a class="cmdrow" href="#practice-${n}" style="--c:var(--accent)">
+        <span class="txt"><b>“${pr[0]}”</b><small>${pr[1]} · With Jesus ${pr[2].length} · Afterward ${pr[3].length}</small></span>${chev}</a>`).join("")}` };
+}
+
+function practiceScreen(n) {
+  const pr = PRACTICES[n]; if (!pr) return practicesScreen();
+  return { title: `“${pr[0]}”`, tab: "practices", back: "#practices", html: `
+    <div class="hello"><h2 class="phrase">“${pr[0]}”</h2><span class="ref">${pr[1]}</span></div>
+    ${practiceBody(n)}
+    <div class="pager">
+      ${n > 0 ? `<a href="#practice-${n - 1}">← Previous</a>` : ""}
+      ${n < PRACTICES.length - 1 ? `<a class="next" style="--c:var(--accent)" href="#practice-${n + 1}">Next →</a>` : ""}
+    </div>` };
+}
+
+function practicesAllScreen() {
+  return { title: "All Practices", tab: "practices", back: "#practices", html: `
+    <div class="hello"><h2>All practices compiled</h2><p>${PRACTICES.length} practices</p></div>
+    <ol class="toc">${PRACTICES.map((pr, n) => `<li><button type="button" data-jump="pr${n}">“${pr[0]}”</button></li>`).join("")}</ol>
+    ${PRACTICES.map((pr, n) => `<section class="compiled" id="pr${n}">
+      <h2 class="phrase"><span class="num">${n + 1}</span>“${pr[0]}”</h2><span class="ref">${pr[1]}</span>
+      ${practiceBody(n)}</section>`).join("")}` };
+}
+
 function bibleScreen() {
   return { title: "The Whole Bible", tab: "bible", html: `
     <p class="muted" style="margin-top:0">Tap a book to read its passages.</p>
@@ -213,6 +257,9 @@ function route() {
   scope = want === "ot" || want === "nt" ? want : "all";
   const scr = name === "cmd" ? cmdScreen(+arg)
     : name === "compiled" ? compiledScreen()
+    : name === "practices" ? practicesScreen()
+    : name === "practice" ? practiceScreen(+arg)
+    : name === "practicesall" ? practicesAllScreen()
     : name === "patterns" ? patternsScreen()
     : name === "pattern" ? patternScreen(+arg)
     : name === "bible" ? bibleScreen()

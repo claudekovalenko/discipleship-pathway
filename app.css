@@ -224,3 +224,10 @@ a.tag{text-decoration:none}
 @media (min-width:640px){.two{grid-template-columns:1fr 1fr}}
 .patrow.love{border:2px solid var(--accent);background:var(--accent-soft)}
 .patrow.love .strip i:not(.on){background:var(--surface)}
+
+/* Practices: with Jesus / afterward */
+.pair{display:grid;gap:8px}
+@media (min-width:720px){.pair{grid-template-columns:1fr 1fr;gap:16px;align-items:start}}
+.side{margin:14px 0 8px;font-size:12px;font-weight:600;letter-spacing:.06em;text-transform:uppercase;color:var(--muted)}
+.side b{color:var(--accent)}
+.tabbar a span{white-space:nowrap}

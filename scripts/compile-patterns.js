@@ -1,4 +1,4 @@
-// Builds PATTERNS.md: every pattern with every verse, from data.js.
+// Builds PATTERNS.md: every pattern and practice with every verse, from data.js.
 // Run from the repository root:  node scripts/compile-patterns.js
 const fs = require("fs");
 const path = require("path");
@@ -22,6 +22,7 @@ md += `> “You shall love the Lord your God with all your heart and with all yo
 md += `Patterns 1 and 2 are that focus. The rest flow from it.\n\n`;
 md += `## Contents\n\n`;
 d.PATTERNS.forEach((pt, n) => { md += `${n + 1}. [“${pt[0]}” (${pt[1]})](#${anchor(`${n + 1} ${pt[0]}`)})\n`; });
+md += `\nThen: [Practices: With Jesus, and Afterward](#practices-with-jesus-and-afterward)\n`;
 
 d.PATTERNS.forEach((pt, n) => {
   const refs = pt[2];
@@ -35,6 +36,15 @@ d.PATTERNS.forEach((pt, n) => {
   });
 });
 
+md += `\n---\n\n# Practices: With Jesus, and Afterward\n\n`;
+md += `${d.PRACTICES.length} practices. For each, what Jesus did with his disciples in the Gospels, then what his followers did afterward in Acts to Revelation.\n\n`;
+d.PRACTICES.forEach((pr, n) => {
+  md += `## ${n + 1}. ${pr[0]}\n\n*${pr[1]}*\n\n`;
+  [["With Jesus (the Gospels)", pr[2]], ["Afterward (Acts to Revelation)", pr[3]]].forEach(([label, list]) => {
+    md += `### ${label}\n\n`;
+    list.forEach(r => { md += `**${r}**\n> ${byRef.get(r)[2]}\n\n`; });
+  });
+});
 md += `\n---\n\nScripture quotations are from the ESV® Bible (The Holy Bible, English Standard Version®), © 2001 by Crossway, a publishing ministry of Good News Publishers. Used by permission. All rights reserved. Some passages are shortened with an ellipsis (…). Read each one in its full context.\n`;
 fs.writeFileSync(path.join(root, "PATTERNS.md"), md);
-console.log(`Wrote PATTERNS.md: ${d.PATTERNS.length} patterns`);
+console.log(`Wrote PATTERNS.md: ${d.PATTERNS.length} patterns, ${d.PRACTICES.length} practices`);

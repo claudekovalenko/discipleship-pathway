@@ -31,6 +31,8 @@ Patterns 1 and 2 are that focus. The rest flow from it.
 21. [“Love the sojourner” (Deuteronomy 10:19)](#21-love-the-sojourner)
 22. [“God chose what is weak in the world to shame the strong” (1 Corinthians 1:27)](#22-god-chose-what-is-weak-in-the-world-to-shame-the-strong)
 
+Then: [Practices: With Jesus, and Afterward](#practices-with-jesus-and-afterward)
+
 ---
 
 ## 1. You shall love the LORD your God with all your heart
@@ -1132,6 +1134,515 @@ Patterns 1 and 2 are that focus. The rest flow from it.
 
 **1 Timothy 4:12**
 > “Let no one despise you for your youth, but set the believers an example in speech, in conduct, in love, in faith, in purity.”
+
+
+---
+
+# Practices: With Jesus, and Afterward
+
+17 practices. For each, what Jesus did with his disciples in the Gospels, then what his followers did afterward in Acts to Revelation.
+
+## 1. That they might be with him
+
+*Mark 3:14*
+
+### With Jesus (the Gospels)
+
+**Mark 3:14**
+> “And he appointed twelve (whom he also named apostles) so that they might be with him and he might send them out to preach”
+
+**Luke 8:1**
+> “Soon afterward he went on through cities and villages, proclaiming and bringing the good news of the kingdom of God. And the twelve were with him,”
+
+**John 1:39**
+> “He said to them, ‘Come and you will see.’ So they came and saw where he was staying, and they stayed with him that day, for it was about the tenth hour.”
+
+### Afterward (Acts to Revelation)
+
+**Acts 2:46**
+> “And day by day, attending the temple together and breaking bread in their homes, they received their food with glad and generous hearts,”
+
+**Acts 4:13**
+> “Now when they saw the boldness of Peter and John, and perceived that they were uneducated, common men, they were astonished. And they recognized that they had been with Jesus.”
+
+**Acts 20:18**
+> “…You yourselves know how I lived among you the whole time from the first day that I set foot in Asia,”
+
+**1 Thessalonians 2:8**
+> “So, being affectionately desirous of you, we were ready to share with you not only the gospel of God but also our own selves, because you had become very dear to us.”
+
+## 2. He opened his mouth and taught them
+
+*Matthew 5:2*
+
+### With Jesus (the Gospels)
+
+**Matthew 5:1–2**
+> “Seeing the crowds, he went up on the mountain, and when he sat down, his disciples came to him. And he opened his mouth and taught them, saying:”
+
+**Matthew 28:18–20**
+> “All authority in heaven and on earth has been given to me. Go therefore and make disciples of all nations, baptizing them in the name of the Father and of the Son and of the Holy Spirit, teaching them to observe all that I have commanded you…”
+
+**Mark 4:34**
+> “He did not speak to them without a parable, but privately to his own disciples he explained everything.”
+
+**Luke 24:27**
+> “And beginning with Moses and all the Prophets, he interpreted to them in all the Scriptures the things concerning himself.”
+
+### Afterward (Acts to Revelation)
+
+**Acts 2:42**
+> “And they devoted themselves to the apostles' teaching and the fellowship, to the breaking of bread and the prayers.”
+
+**Acts 5:42**
+> “And every day, in the temple and from house to house, they did not cease teaching and preaching that Jesus is the Christ.”
+
+**Acts 11:25–26**
+> “So Barnabas went to Tarsus to look for Saul, and when he had found him, he brought him to Antioch. For a whole year they met with the church and taught a great many people. And in Antioch the disciples were first called Christians.”
+
+**Acts 18:11**
+> “And he stayed a year and six months, teaching the word of God among them.”
+
+**Acts 20:20**
+> “how I did not shrink from declaring to you anything that was profitable, and teaching you in public and from house to house,”
+
+**Colossians 1:28**
+> “Him we proclaim, warning everyone and teaching everyone with all wisdom, that we may present everyone mature in Christ.”
+
+**2 Timothy 2:2**
+> “and what you have heard from me in the presence of many witnesses entrust to faithful men, who will be able to teach others also.”
+
+## 3. Lord, teach us to pray
+
+*Luke 11:1*
+
+### With Jesus (the Gospels)
+
+**Matthew 26:41**
+> “Watch and pray that you may not enter into temptation. The spirit indeed is willing, but the flesh is weak.”
+
+**Mark 1:35**
+> “And rising very early in the morning, while it was still dark, he departed and went out to a desolate place, and there he prayed.”
+
+**Luke 6:12–13**
+> “In these days he went out to the mountain to pray, and all night he continued in prayer to God. And when day came, he called his disciples and chose from them twelve, whom he also named apostles”
+
+**Luke 11:1**
+> “Now Jesus was praying in a certain place, and when he finished, one of his disciples said to him, ‘Lord, teach us to pray, as John taught his disciples.’”
+
+### Afterward (Acts to Revelation)
+
+**Acts 1:14**
+> “All these with one accord were devoting themselves to prayer, together with the women and Mary the mother of Jesus, and his brothers.”
+
+**Acts 4:31**
+> “And when they had prayed, the place in which they were gathered together was shaken, and they were all filled with the Holy Spirit and continued to speak the word of God with boldness.”
+
+**Acts 6:4**
+> “But we will devote ourselves to prayer and to the ministry of the word.”
+
+**Acts 12:5**
+> “So Peter was kept in prison, but earnest prayer for him was made to God by the church.”
+
+**Colossians 4:2–3**
+> “Continue steadfastly in prayer, being watchful in it with thanksgiving. At the same time, pray also for us, that God may open to us a door for the word, to declare the mystery of Christ,”
+
+**James 5:16**
+> “Therefore, confess your sins to one another and pray for one another, that you may be healed.”
+
+## 4. Then they will fast
+
+*Matthew 9:15*
+
+### With Jesus (the Gospels)
+
+**Matthew 6:17–18**
+> “But when you fast, anoint your head and wash your face, that your fasting may not be seen by others but by your Father who is in secret. And your Father who sees in secret will reward you.”
+
+**Matthew 9:15**
+> “And Jesus said to them, ‘Can the wedding guests mourn as long as the bridegroom is with them? The days will come when the bridegroom is taken away from them, and then they will fast.’”
+
+### Afterward (Acts to Revelation)
+
+**Acts 13:2–3**
+> “While they were worshiping the Lord and fasting, the Holy Spirit said, ‘Set apart for me Barnabas and Saul for the work to which I have called them.’ Then after fasting and praying they laid their hands on them and sent them off.”
+
+**Acts 14:23**
+> “And when they had appointed elders for them in every church, with prayer and fasting they committed them to the Lord in whom they had believed.”
+
+## 5. He chose from them twelve
+
+*Luke 6:13*
+
+### With Jesus (the Gospels)
+
+**Mark 3:14**
+> “And he appointed twelve (whom he also named apostles) so that they might be with him and he might send them out to preach”
+
+**Luke 6:12–13**
+> “In these days he went out to the mountain to pray, and all night he continued in prayer to God. And when day came, he called his disciples and chose from them twelve, whom he also named apostles”
+
+**John 17:20**
+> “I do not ask for these only, but also for those who will believe in me through their word,”
+
+**John 21:17**
+> “…Jesus said to him, ‘Feed my sheep.’”
+
+### Afterward (Acts to Revelation)
+
+**Acts 1:24**
+> “And they prayed and said, ‘You, Lord, who know the hearts of all, show which one of these two you have chosen’”
+
+**Acts 6:2–3**
+> “And the twelve summoned the full number of the disciples and said, ‘It is not right that we should give up preaching the word of God to serve tables. Therefore, brothers, pick out from among you seven men of good repute, full of the Spirit and of wisdom, whom we will appoint to this duty.’”
+
+**Acts 6:6**
+> “These they set before the apostles, and they prayed and laid their hands on them.”
+
+**Acts 14:23**
+> “And when they had appointed elders for them in every church, with prayer and fasting they committed them to the Lord in whom they had believed.”
+
+**2 Timothy 2:2**
+> “and what you have heard from me in the presence of many witnesses entrust to faithful men, who will be able to teach others also.”
+
+**Titus 1:5**
+> “This is why I left you in Crete, so that you might put what remained into order, and appoint elders in every town as I directed you—”
+
+## 6. He began to send them out two by two
+
+*Mark 6:7*
+
+### With Jesus (the Gospels)
+
+**Mark 6:7**
+> “And he called the twelve and began to send them out two by two, and gave them authority over the unclean spirits.”
+
+**Luke 9:2**
+> “and he sent them out to proclaim the kingdom of God and to heal.”
+
+**Luke 10:1**
+> “After this the Lord appointed seventy-two others and sent them on ahead of him, two by two, into every town and place where he himself was about to go.”
+
+**John 20:21**
+> “Peace be with you. As the Father has sent me, even so I am sending you.”
+
+### Afterward (Acts to Revelation)
+
+**Acts 8:14**
+> “Now when the apostles at Jerusalem heard that Samaria had received the word of God, they sent to them Peter and John,”
+
+**Acts 13:2–3**
+> “While they were worshiping the Lord and fasting, the Holy Spirit said, ‘Set apart for me Barnabas and Saul for the work to which I have called them.’ Then after fasting and praying they laid their hands on them and sent them off.”
+
+**Acts 15:39–40**
+> “…Barnabas took Mark with him and sailed away to Cyprus, but Paul chose Silas and departed, having been commended by the brothers to the grace of the Lord.”
+
+**Acts 19:22**
+> “And having sent into Macedonia two of his helpers, Timothy and Erastus, he himself stayed in Asia for a while.”
+
+## 7. Whoever receives you receives me
+
+*Matthew 10:40*
+
+### With Jesus (the Gospels)
+
+**Matthew 10:40**
+> “Whoever receives you receives me, and whoever receives me receives him who sent me.”
+
+**Luke 10:5**
+> “Whatever house you enter, first say, ‘Peace be to this house!’”
+
+**Luke 10:7**
+> “And remain in the same house, eating and drinking what they provide, for the laborer deserves his wages. Do not go from house to house.”
+
+### Afterward (Acts to Revelation)
+
+**Acts 16:15**
+> “And after she was baptized, and her household as well, she urged us, saying, ‘If you have judged me to be faithful to the Lord, come to my house and stay.’ And she prevailed upon us.”
+
+**Acts 28:30–31**
+> “He lived there two whole years at his own expense, and welcomed all who came to him, proclaiming the kingdom of God and teaching about the Lord Jesus Christ with all boldness and without hindrance.”
+
+**Romans 12:13**
+> “Contribute to the needs of the saints and seek to show hospitality.”
+
+**3 John 8**
+> “Therefore we ought to support people like these, that we may be fellow workers for the truth.”
+
+## 8. Let us go on to the next towns
+
+*Mark 1:38*
+
+### With Jesus (the Gospels)
+
+**Mark 1:38**
+> “And he said to them, ‘Let us go on to the next towns, that I may preach there also, for that is why I came out.’”
+
+**Luke 5:29**
+> “And Levi made him a great feast in his house, and there was a large company of tax collectors and others reclining at table with them.”
+
+**Luke 19:9**
+> “And Jesus said to him, ‘Today salvation has come to this house, since he also is a son of Abraham.’”
+
+### Afterward (Acts to Revelation)
+
+**Acts 4:20**
+> “for we cannot but speak of what we have seen and heard.”
+
+**Acts 4:31**
+> “And when they had prayed, the place in which they were gathered together was shaken, and they were all filled with the Holy Spirit and continued to speak the word of God with boldness.”
+
+**Acts 5:42**
+> “And every day, in the temple and from house to house, they did not cease teaching and preaching that Jesus is the Christ.”
+
+**Acts 17:2–3**
+> “And Paul went in, as was his custom, and on three Sabbath days he reasoned with them from the Scriptures, explaining and proving that it was necessary for the Christ to suffer and to rise from the dead, and saying, ‘This Jesus, whom I proclaim to you, is the Christ.’”
+
+**Acts 17:17**
+> “So he reasoned in the synagogue with the Jews and the devout persons, and in the marketplace every day with those who happened to be there.”
+
+**Acts 20:20**
+> “how I did not shrink from declaring to you anything that was profitable, and teaching you in public and from house to house,”
+
+## 9. Told him all that they had done
+
+*Mark 6:30*
+
+### With Jesus (the Gospels)
+
+**Mark 6:30**
+> “The apostles returned to Jesus and told him all that they had done and taught.”
+
+**Luke 10:17**
+> “The seventy-two returned with joy, saying, ‘Lord, even the demons are subject to us in your name!’”
+
+### Afterward (Acts to Revelation)
+
+**Acts 14:27**
+> “And when they arrived and gathered the church together, they declared all that God had done with them, and how he had opened a door of faith to the Gentiles.”
+
+**Acts 15:4**
+> “When they came to Jerusalem, they were welcomed by the church and the apostles and the elders, and they declared all that God had done with them.”
+
+**Acts 21:19**
+> “After greeting them, he related one by one the things that God had done among the Gentiles through his ministry.”
+
+## 10. Baptizing them in the name of the Father and of the Son and of the Holy Spirit
+
+*Matthew 28:19*
+
+### With Jesus (the Gospels)
+
+**Matthew 28:18–20**
+> “All authority in heaven and on earth has been given to me. Go therefore and make disciples of all nations, baptizing them in the name of the Father and of the Son and of the Holy Spirit, teaching them to observe all that I have commanded you…”
+
+**John 4:1–2**
+> “Now when Jesus learned that the Pharisees had heard that Jesus was making and baptizing more disciples than John (although Jesus himself did not baptize, but only his disciples),”
+
+### Afterward (Acts to Revelation)
+
+**Acts 2:38**
+> “Repent and be baptized every one of you in the name of Jesus Christ for the forgiveness of your sins, and you will receive the gift of the Holy Spirit.”
+
+**Acts 2:41**
+> “So those who received his word were baptized, and there were added that day about three thousand souls.”
+
+**Acts 8:12**
+> “But when they believed Philip as he preached good news about the kingdom of God and the name of Jesus Christ, they were baptized, both men and women.”
+
+**Acts 16:33**
+> “And he took them the same hour of the night and washed their wounds; and he was baptized at once, he and all his family.”
+
+**Acts 18:8**
+> “Crispus, the ruler of the synagogue, believed in the Lord, together with his entire household. And many of the Corinthians hearing Paul believed and were baptized.”
+
+**Romans 6:4**
+> “We were buried therefore with him by baptism into death, in order that, just as Christ was raised from the dead by the glory of the Father, we too might walk in newness of life.”
+
+## 11. He took the bread and blessed and broke it
+
+*Luke 24:30*
+
+### With Jesus (the Gospels)
+
+**Luke 5:29**
+> “And Levi made him a great feast in his house, and there was a large company of tax collectors and others reclining at table with them.”
+
+**Luke 22:19**
+> “And he took bread, and when he had given thanks, he broke it and gave it to them, saying, ‘This is my body, which is given for you. Do this in remembrance of me.’”
+
+**Luke 24:30–31**
+> “When he was at table with them, he took the bread and blessed and broke it and gave it to them. And their eyes were opened, and they recognized him.”
+
+### Afterward (Acts to Revelation)
+
+**Acts 2:42**
+> “And they devoted themselves to the apostles' teaching and the fellowship, to the breaking of bread and the prayers.”
+
+**Acts 2:46**
+> “And day by day, attending the temple together and breaking bread in their homes, they received their food with glad and generous hearts,”
+
+**Acts 20:7**
+> “On the first day of the week, when we were gathered together to break bread, Paul talked with them, intending to depart on the next day, and he prolonged his speech until midnight.”
+
+**1 Corinthians 11:23**
+> “For I received from the Lord what I also delivered to you, that the Lord Jesus on the night when he was betrayed took bread,”
+
+## 12. When they had sung a hymn
+
+*Matthew 26:30*
+
+### With Jesus (the Gospels)
+
+**Matthew 26:30**
+> “And when they had sung a hymn, they went out to the Mount of Olives.”
+
+### Afterward (Acts to Revelation)
+
+**Acts 16:25**
+> “About midnight Paul and Silas were praying and singing hymns to God, and the prisoners were listening to them,”
+
+**Ephesians 5:19**
+> “addressing one another in psalms and hymns and spiritual songs, singing and making melody to the Lord with your heart,”
+
+**Colossians 3:16**
+> “Let the word of Christ dwell in you richly, teaching and admonishing one another in all wisdom, singing psalms and hymns and spiritual songs, with thankfulness in your hearts to God.”
+
+## 13. You also ought to wash one another's feet
+
+*John 13:14*
+
+### With Jesus (the Gospels)
+
+**Mark 10:45**
+> “For even the Son of Man came not to be served but to serve, and to give his life as a ransom for many.”
+
+**John 13:14–15**
+> “If I then, your Lord and Teacher, have washed your feet, you also ought to wash one another's feet. For I have given you an example, that you also should do just as I have done to you.”
+
+### Afterward (Acts to Revelation)
+
+**Acts 6:2–3**
+> “And the twelve summoned the full number of the disciples and said, ‘It is not right that we should give up preaching the word of God to serve tables. Therefore, brothers, pick out from among you seven men of good repute, full of the Spirit and of wisdom, whom we will appoint to this duty.’”
+
+**Galatians 5:13**
+> “For you were called to freedom, brothers. Only do not use your freedom as an opportunity for the flesh, but through love serve one another.”
+
+**1 Peter 4:10**
+> “As each has received a gift, use it to serve one another, as good stewards of God's varied grace:”
+
+## 14. They had everything in common
+
+*Acts 4:32*
+
+### With Jesus (the Gospels)
+
+**Matthew 25:35**
+> “For I was hungry and you gave me food, I was thirsty and you gave me drink, I was a stranger and you welcomed me,”
+
+**Luke 8:3**
+> “and Joanna, the wife of Chuza, Herod's household manager, and Susanna, and many others, who provided for them out of their means.”
+
+### Afterward (Acts to Revelation)
+
+**Acts 2:44–45**
+> “And all who believed were together and had all things in common. And they were selling their possessions and belongings and distributing the proceeds to all, as any had need.”
+
+**Acts 4:32**
+> “Now the full number of those who believed were of one heart and soul, and no one said that any of the things that belonged to him was his own, but they had everything in common.”
+
+**Acts 11:29**
+> “So the disciples determined, every one according to his ability, to send relief to the brothers living in Judea.”
+
+**2 Corinthians 9:7**
+> “Each one must give as he has decided in his heart, not reluctantly or under compulsion, for God loves a cheerful giver.”
+
+**Galatians 2:10**
+> “Only, they asked us to remember the poor, the very thing I was eager to do.”
+
+## 15. Go and tell him his fault
+
+*Matthew 18:15*
+
+### With Jesus (the Gospels)
+
+**Matthew 18:15**
+> “If your brother sins against you, go and tell him his fault, between you and him alone. If he listens to you, you have gained your brother.”
+
+**Luke 22:32**
+> “but I have prayed for you that your faith may not fail. And when you have turned again, strengthen your brothers.”
+
+**John 21:17**
+> “…Jesus said to him, ‘Feed my sheep.’”
+
+### Afterward (Acts to Revelation)
+
+**2 Corinthians 2:7–8**
+> “so you should rather turn to forgive and comfort him, or he may be overwhelmed by excessive sorrow. So I beg you to reaffirm your love for him.”
+
+**Galatians 2:11**
+> “But when Cephas came to Antioch, I opposed him to his face, because he stood condemned.”
+
+**Galatians 6:1–2**
+> “Brothers, if anyone is caught in any transgression, you who are spiritual should restore him in a spirit of gentleness… Bear one another's burdens, and so fulfill the law of Christ.”
+
+**James 5:19–20**
+> “My brothers, if anyone among you wanders from the truth and someone brings him back, let him know that whoever brings back a sinner from his wandering will save his soul from death and will cover a multitude of sins.”
+
+## 16. Strengthen your brothers
+
+*Luke 22:32*
+
+### With Jesus (the Gospels)
+
+**Luke 22:32**
+> “but I have prayed for you that your faith may not fail. And when you have turned again, strengthen your brothers.”
+
+### Afterward (Acts to Revelation)
+
+**Acts 14:21–22**
+> “When they had preached the gospel to that city and had made many disciples, they returned… strengthening the souls of the disciples, encouraging them to continue in the faith…”
+
+**Acts 15:36**
+> “And after some days Paul said to Barnabas, ‘Let us return and visit the brothers in every city where we proclaimed the word of the Lord, and see how they are.’”
+
+**Acts 15:41**
+> “And he went through Syria and Cilicia, strengthening the churches.”
+
+**Acts 16:5**
+> “So the churches were strengthened in the faith, and they increased in numbers daily.”
+
+**1 Thessalonians 3:2**
+> “and we sent Timothy, our brother and God's coworker in the gospel of Christ, to establish and exhort you in your faith,”
+
+## 17. If they persecuted me, they will also persecute you
+
+*John 15:20*
+
+### With Jesus (the Gospels)
+
+**Matthew 5:11–12**
+> “Blessed are you when others revile you and persecute you and utter all kinds of evil against you falsely on my account. Rejoice and be glad, for your reward is great in heaven, for so they persecuted the prophets who were before you.”
+
+**Matthew 10:16**
+> “Behold, I am sending you out as sheep in the midst of wolves, so be wise as serpents and innocent as doves.”
+
+**John 15:20**
+> “Remember the word that I said to you: ‘A servant is not greater than his master.’ If they persecuted me, they will also persecute you. If they kept my word, they will also keep yours.”
+
+### Afterward (Acts to Revelation)
+
+**Acts 5:41**
+> “Then they left the presence of the council, rejoicing that they were counted worthy to suffer dishonor for the name.”
+
+**Acts 16:25**
+> “About midnight Paul and Silas were praying and singing hymns to God, and the prisoners were listening to them,”
+
+**2 Timothy 2:3**
+> “Share in suffering as a good soldier of Christ Jesus.”
+
+**1 Peter 4:12–13**
+> “Beloved, do not be surprised at the fiery trial when it comes upon you to test you, as though something strange were happening to you. But rejoice insofar as you share Christ's sufferings, that you may also rejoice and be glad when his glory is revealed.”
 
 
 ---
