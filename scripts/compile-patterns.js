@@ -22,7 +22,7 @@ md += `> “You shall love the Lord your God with all your heart and with all yo
 md += `Patterns 1 and 2 are that focus. The rest flow from it.\n\n`;
 md += `## Contents\n\n`;
 d.PATTERNS.forEach((pt, n) => { md += `${n + 1}. [“${pt[0]}” (${pt[1]})](#${anchor(`${n + 1} ${pt[0]}`)})\n`; });
-md += `\nThen: [Practices: With Jesus, and Afterward](#practices-with-jesus-and-afterward)\n`;
+md += `\nThen: [Practices: With Jesus, and Afterward](#practices-with-jesus-and-afterward) · [Growth Toward Maturity](#growth-toward-maturity)\n`;
 
 d.PATTERNS.forEach((pt, n) => {
   const refs = pt[2];
@@ -32,7 +32,7 @@ d.PATTERNS.forEach((pt, n) => {
   [["Old Testament", ot], ["New Testament", nt]].forEach(([label, list]) => {
     if (!list.length) return;
     md += `### ${label}\n\n`;
-    list.forEach(r => { md += `**${r}**\n> ${byRef.get(r)[2]}\n\n`; });
+    list.forEach(r => { md += `**${r}**\n> ${byRef.get(r)[1]}\n\n`; });
   });
 });
 
@@ -42,9 +42,20 @@ d.PRACTICES.forEach((pr, n) => {
   md += `## ${n + 1}. ${pr[0]}\n\n*${pr[1]}*\n\n`;
   [["With Jesus (the Gospels)", pr[2]], ["Afterward (Acts to Revelation)", pr[3]]].forEach(([label, list]) => {
     md += `### ${label}\n\n`;
-    list.forEach(r => { md += `**${r}**\n> ${byRef.get(r)[2]}\n\n`; });
+    list.forEach(r => { md += `**${r}**\n> ${byRef.get(r)[1]}\n\n`; });
   });
 });
+const G = d.GROWTH;
+const verses = list => list.map(r => `**${r}**\n> ${byRef.get(r)[1]}\n\n`).join("");
+md += `\n---\n\n# Growth Toward Maturity\n\n`;
+md += `## The range of maturity\n\n${verses(G.range)}`;
+md += `## How Jesus discipled the Twelve\n\nIn the order they appear in the Gospels.\n\n`;
+G.jesus.forEach(([ph, rf, list], n) => { md += `### ${n + 1}. “${ph}” (${rf})\n\n${verses(list)}`; });
+md += `## Before and after\n\nThe same disciples in the Gospels, then in Acts and their letters.\n\n`;
+G.pairs.forEach(([who, before, after]) => { md += `### ${who}\n\n**Before (the Gospels)**\n\n${verses(before)}**After (Acts and the letters)**\n\n${verses(after)}`; });
+md += `## Seasons of preparation\n\nEach life in the order it happened.\n\n`;
+G.seasons.forEach(([who, list]) => { md += `### ${who}\n\n${verses(list)}`; });
+md += `## A mature disciple\n\n${verses(G.mature)}`;
 md += `\n---\n\nScripture quotations are from the ESV® Bible (The Holy Bible, English Standard Version®), © 2001 by Crossway, a publishing ministry of Good News Publishers. Used by permission. All rights reserved. Some passages are shortened with an ellipsis (…). Read each one in its full context.\n`;
 fs.writeFileSync(path.join(root, "PATTERNS.md"), md);
-console.log(`Wrote PATTERNS.md: ${d.PATTERNS.length} patterns, ${d.PRACTICES.length} practices`);
+console.log(`Wrote PATTERNS.md: ${d.PATTERNS.length} patterns, ${d.PRACTICES.length} practices, growth`);

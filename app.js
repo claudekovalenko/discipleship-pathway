@@ -17,6 +17,7 @@ const cmdOf = id => COMMANDS[id - 1];
 const REF_IDX = new Map(PASSAGES.map((p, i) => [p[0], i]));
 const PAT_IDS = PATTERNS.map(pt => pt[2].map(r => REF_IDX.get(r)));
 const CMD_IDS = COMMANDS.map(c => c[4].map(r => REF_IDX.get(r)));
+const ids = refs => refs.map(r => REF_IDX.get(r));
 const PR_IDS = PRACTICES.map(pr => [pr[2].map(r => REF_IDX.get(r)), pr[3].map(r => REF_IDX.get(r))]);
 
 const isNT = i => P_BOOK[i] >= NT_START;
@@ -85,6 +86,10 @@ function homeScreen() {
     <p class="label" style="margin-top:26px">How Jesus made disciples, and what his followers did afterward</p>
     <a class="cmdrow" href="#practices" style="--c:var(--accent)">
       <span class="txt"><b>${PRACTICES.length} practices</b><small>With Jesus in the Gospels · Afterward in Acts to Revelation</small></span>${chev}</a>
+
+    <p class="label" style="margin-top:26px">Growth toward maturity</p>
+    <a class="cmdrow" href="#growth" style="--c:var(--accent)">
+      <span class="txt"><b>How disciples grow</b><small>The range of maturity · how Jesus discipled the Twelve · seasons of preparation</small></span>${chev}</a>
 
     <p class="label" style="margin-top:26px">Patterns through the whole Bible</p>
     <a class="cmdrow" href="#patterns" style="--c:var(--accent)">
@@ -208,9 +213,57 @@ function practicesAllScreen() {
       ${practiceBody(n)}</section>`).join("")}` };
 }
 
+/* ---------- Growth toward maturity ---------- */
+const GROWTH_PARTS = [
+  ["range", "The range of maturity", "Infants, children, young men, fathers, the mature", GROWTH.range.length],
+  ["jesus", "How Jesus discipled the Twelve", `${GROWTH.jesus.length} steps, in the order of the Gospels`, GROWTH.jesus.length],
+  ["pairs", "Before and after", "The same disciples in the Gospels, then in Acts and their letters", GROWTH.pairs.length],
+  ["seasons", "Seasons of preparation", GROWTH.seasons.map(s => s[0]).join(" · "), GROWTH.seasons.length],
+  ["mature", "A mature disciple", "Fully trained, complete, mature in Christ", GROWTH.mature.length]];
+
+function growthScreen() {
+  return { title: "Growth", tab: "growth", html: `
+    <div class="hello"><h2>Growth toward maturity</h2><p>How disciples grow, from Scripture alone.</p></div>
+    ${GROWTH_PARTS.map(([k, t, s]) => `<a class="cmdrow" href="#grow-${k}" style="--c:var(--accent)">
+      <span class="txt"><b>${t}</b><small>${s}</small></span>${chev}</a>`).join("")}` };
+}
+
+function growScreen(k) {
+  const part = GROWTH_PARTS.find(p => p[0] === k); if (!part) return growthScreen();
+  const head = `<div class="hello"><h2>${part[1]}</h2></div>`;
+  let body = "";
+  if (k === "range" || k === "mature") body = grouped(ids(GROWTH[k]));
+  if (k === "jesus") body = `<p class="muted">In the order they appear in the Gospels, from the first call to the sending.</p>
+    <ol class="steps">${GROWTH.jesus.map(([ph, rf, list]) => `<li><h3 class="phrase">“${ph}”</h3><span class="ref">${rf}</span>
+      ${ids(list).map(passage).join("")}</li>`).join("")}</ol>`;
+  if (k === "pairs") body = GROWTH.pairs.map(([who, before, after]) => `<section class="compiled">
+      <h2 class="phrase">${who}</h2>
+      <div class="pair">
+        <div><p class="side"><b>Before</b> · the Gospels</p>${ids(before).map(passage).join("")}</div>
+        <div><p class="side"><b>After</b> · Acts and the letters</p>${ids(after).map(passage).join("")}</div>
+      </div></section>`).join("");
+  if (k === "seasons") body = `<p class="muted">Each life in the order it happened, not book order.</p>
+    ${GROWTH.seasons.map(([who, list], n) => `<a class="cmdrow" href="#season-${n}" style="--c:var(--accent)">
+      <span class="txt"><b>${who}</b><small>${list[0]} → ${list[list.length - 1]} · ${list.length} passages</small></span>${chev}</a>`).join("")}`;
+  return { title: part[1], tab: "growth", back: "#growth", html: head + body };
+}
+
+function seasonScreen(n) {
+  const s = GROWTH.seasons[n]; if (!s) return growScreen("seasons");
+  return { title: s[0], tab: "growth", back: "#grow-seasons", html: `
+    <div class="hello"><p class="label">Seasons of preparation</p><h2>${s[0]}</h2><p>In the order of his life.</p></div>
+    <div class="thread">${ids(s[1]).map(passage).join("")}</div>
+    <div class="pager">
+      ${n > 0 ? `<a href="#season-${n - 1}">← ${GROWTH.seasons[n - 1][0]}</a>` : ""}
+      ${n < GROWTH.seasons.length - 1 ? `<a class="next" style="--c:var(--accent)" href="#season-${n + 1}">${GROWTH.seasons[n + 1][0]} →</a>` : ""}
+    </div>` };
+}
+
 function bibleScreen() {
   return { title: "The Whole Bible", tab: "bible", html: `
-    <p class="muted" style="margin-top:0">Tap a book to read its passages. A book shows 0 when none of its verses state one of the themes here.</p>
+    <a class="cmdrow" href="#search" style="--c:var(--accent)">
+      <span class="txt"><b>Search</b><small>Any word, book, or reference</small></span>${chev}</a>
+    <p class="muted">Tap a book to read its passages. A book shows 0 when none of its verses state one of the themes here.</p>
     ${SECTIONS.map((s, si) => `
       <div class="era">${s[0]} <span class="muted">· ${s[1]}</span></div>
       <div class="books">${BOOKS.map((b, bi) => b[2] !== si ? "" : `
@@ -231,7 +284,7 @@ function bookScreen(bi) {
 }
 
 function searchScreen() {
-  return { title: "Search", tab: "search", html: `
+  return { title: "Search", tab: "bible", back: "#bible", html: `
     <div class="search">
       <input id="q" type="search" placeholder="Search a word, book, or reference" value="${search.q.replace(/"/g, "&quot;")}" aria-label="Search the passages">
       <div class="chips">
@@ -264,6 +317,9 @@ function route() {
     : name === "practicesall" ? practicesAllScreen()
     : name === "patterns" ? patternsScreen()
     : name === "pattern" ? patternScreen(+arg)
+    : name === "growth" ? growthScreen()
+    : name === "grow" ? growScreen(arg)
+    : name === "season" ? seasonScreen(+arg)
     : name === "bible" ? bibleScreen()
     : name === "book" ? bookScreen(+arg)
     : name === "search" ? searchScreen()

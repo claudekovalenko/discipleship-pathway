@@ -49,9 +49,15 @@ An installable app (PWA) that works offline once it has been opened.
   Each shows a bar of all 66 books marking where it appears, then every passage in order.
 - **Whole Bible · Old Testament · New Testament:** every pattern and command page has this switch. Links keep the choice, e.g. `#pattern-6-nt` opens "I will build my church" in the New Testament.
 - **Practices:** seventeen practices of discipleship, each named by a phrase of Scripture. For each one, what Jesus did with his disciples (the Gospels) is set beside what his followers did afterward (Acts to Revelation): being with him, teaching, prayer, fasting, choosing and appointing, sending out two by two, receiving and hospitality, going to the next towns, reporting back, baptizing, breaking bread, singing, serving, sharing possessions, correcting and restoring, strengthening, and suffering. There is also an all-practices page (`#practicesall`).
+- **Growth:** how disciples grow toward maturity, from Scripture alone:
+  - *The range of maturity:* infants and milk, children, young men and fathers, solid food for the mature.
+  - *How Jesus discipled the Twelve:* thirteen steps in the order of the Gospels, from "Come and you will see" to "stay in the city until you are clothed with power."
+  - *Before and after:* the same disciples in the Gospels, then in Acts and their letters.
+  - *Seasons of preparation:* Joseph, Moses, Joshua, David, Elisha, Jesus, Paul and Timothy, each in the order of his life.
+  - *A mature disciple:* fully trained, complete, mature in Christ.
 - **All patterns compiled:** every pattern and every verse on one page in the app (`#compiled`, or `#compiled-nt` for the New Testament only; it prints cleanly from a browser), and as a document: [PATTERNS.md](PATTERNS.md).
 - **Bible:** all 66 books, grouped by section (Law, History, Wisdom & Poetry, Major Prophets, Minor Prophets, Gospels, Acts, Paul's Letters, General Letters, Revelation). Tap a book to read its passages. A book shows 0 when none of its verses state one of the themes.
-- **Search:** any word, book, or reference, filtered by command.
+- **Search** (inside the Bible tab): any word, book, or reference, filtered by command.
 
 Each passage is shown as Scripture alone: the ESV text and its reference, with no added headings or notes.
 
@@ -88,10 +94,11 @@ All content is in `data.js`.
    - a command: the fifth item of its row in `COMMANDS`
    - a pattern: the third item of its row in `PATTERNS`
    - a practice: the "with Jesus" list (Gospels only) or the "afterward" list (Acts to Revelation only) in `PRACTICES`
+   - growth: a list in `GROWTH` (seasons are in the order of each life, not book order)
 
 A passage that is in no list is never shown, so remove it from `PASSAGES` too.
 
-**After any change,** run `node scripts/compile-patterns.js` to rebuild `PATTERNS.md`, and bump `CACHE` in `sw.js` (e.g. `dp-v13` → `dp-v14`) so installed apps download the update.
+**After any change,** run `node scripts/compile-patterns.js` to rebuild `PATTERNS.md`, and bump `CACHE` in `sw.js` (e.g. `dp-v14` → `dp-v15`) so installed apps download the update.
 
 ## Scripture copyright
 
