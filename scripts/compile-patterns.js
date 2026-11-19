@@ -49,11 +49,11 @@ d.PRACTICES.forEach((pr, n) => {
   const M = d.MATURE, vm = list => list.map(r => `**${r}${byRef.get(r)[2] ? " (" + byRef.get(r)[2] + ")" : ""}**\n> ${byRef.get(r)[1]}\n\n`).join("");
   const all = [...M.disciple, ...M.marks];
   md += `\n---\n\n# The Mature Disciple\n\nNamed in Scripture's own words: Jesus' definitions of a disciple, and the verses that use the words mature, perfect, complete, fully trained, fathers, and strong.\n\n`;
-  md += `## At a glance\n\n**Jesus' marks of a disciple**\n\n${M.disciple.map(([q, rf], n) => `${n + 1}. “${q}” (${rf})`).join("\n")}\n\n`;
-  md += `**Marks of maturity**\n\n${M.marks.map(([q, rf], n) => `${n + 1 + M.disciple.length}. “${q}” (${rf})`).join("\n")}\n\n`;
+  md += `## At a glance\n\n**Jesus' marks of a disciple**\n\n${M.disciple.map(([q, rf, , lab], n) => `${n + 1}. **${lab}**: “${q}” (${rf})`).join("\n")}\n\n`;
+  md += `**Marks of maturity**\n\n${M.marks.map(([q, rf, , lab], n) => `${n + 1 + M.disciple.length}. **${lab}**: “${q}” (${rf})`).join("\n")}\n\n`;
   md += `## What every disciple grows toward\n\n${vm(M.toward)}`;
   md += `## The marks, with every verse\n\n`;
-  all.forEach(([q, rf, refs], n) => { md += `### ${n + 1}. “${q}” (${rf})\n\n${vm(refs)}`; });
+  all.forEach(([q, rf, refs, lab], n) => { md += `### ${n + 1}. ${lab}\n\n“${q}” (${rf})\n\n${vm(refs)}`; });
   md += `## Signs of immaturity\n\n${vm(M.immature)}`;
 }
 md += `\n---\n\n# From New Believer to Mature Disciple\n\nEach step shows where Scripture places it, what the word says, and how Jesus did it with the Twelve.\n\n`;

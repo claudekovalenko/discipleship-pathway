@@ -227,7 +227,7 @@ function growthScreen() {
     <div class="hello"><h2>From new believer to mature disciple</h2>
       <p>Each step shows where Scripture places it, what the word says, and how Jesus did it with the Twelve.</p></div>
     <a class="cmdrow lead" href="#mature" style="--c:var(--accent)">
-      <span class="txt"><b>The mature disciple</b><small>What a disciple grows toward, and ${MATURE.disciple.length + MATURE.marks.length} marks named in Scripture's own words</small></span>${chev}</a>
+      <span class="txt"><b>The mature disciple</b><small>${MATURE.disciple.length + MATURE.marks.length} marks: abides in the Word, loves others, discerns good and evil, teaches others…</small></span>${chev}</a>
     <a class="cmdrow" href="#stepsall" style="--c:var(--accent)">
       <span class="txt"><b>The whole pathway on one page</b><small>All ${PATHWAY.length} steps with every verse</small></span>${chev}</a>
     <ol class="steps path">${PATHWAY.map((s, n) => `<li><a href="#step-${n}">
@@ -288,25 +288,49 @@ function healthScreen() {
     ${grouped(ids(HEALTH))}` };
 }
 
-/* The mature disciple: marks named in Scripture's own words, summary first, then the verses. */
+/* The mature disciple: each mark has a plain name, an icon, and the Scripture quote it comes from. */
+const ICONS = {
+  book: '<path d="M4 5a2 2 0 0 1 2-2h13v15H6a2 2 0 0 0-2 2zM4 20a2 2 0 0 1 2-2h13v3H6a2 2 0 0 1-2-1"/>',
+  heart: '<path d="M12 20s-7-4.4-7-9.6A4 4 0 0 1 12 8a4 4 0 0 1 7 2.4C19 15.6 12 20 12 20z"/>',
+  fruit: '<path d="M12 8c-3-2-8-1-8 4 0 5 4 9 6 9 1 0 1.4-.5 2-.5s1 .5 2 .5c2 0 6-4 6-9 0-5-5-6-8-4zM12 8c0-2 1-4 3-5"/>',
+  cross: '<path d="M12 3v18M7 8h10"/>',
+  give: '<path d="M3 15l4-1 5 2.5 5-1.5 4 1M3 15v5h4M12 3v7M9 7l3 3 3-3"/>',
+  sun: '<circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"/>',
+  scales: '<path d="M12 4v16M7 20h10M5 7h14M5 7l-3 6a3 3 0 0 0 6 0zM19 7l-3 6a3 3 0 0 0 6 0z"/>',
+  anchor: '<circle cx="12" cy="5" r="2"/><path d="M12 7v14M5 13a7 7 0 0 0 14 0M9 10h6"/>',
+  speechheart: '<path d="M4 4h16v12H10l-6 4z"/><path d="M12 13s-3-1.7-3-3.6a1.5 1.5 0 0 1 3-.8 1.5 1.5 0 0 1 3 .8c0 1.9-3 3.6-3 3.6z"/>',
+  speechline: '<path d="M4 4h16v12H10l-6 4zM8 10h8"/>',
+  mountain: '<path d="M2 20l7-12 4 6 3-4 6 10z"/>',
+  hands: '<path d="M2 12l4-4 4 2 2-1 2 1 4-2 4 4-8 7z"/><path d="M10 10l4 4"/>',
+  check: '<circle cx="12" cy="12" r="9"/><path d="M8 12.5l3 3 5-6"/>',
+  flag: '<path d="M5 21V4M5 4h12l-2.5 4L17 12H5"/>',
+  board: '<path d="M3 4h18v12H3zM8 20l4-4 4 4M7 9h6"/>',
+  support: '<path d="M2 16h4l5 2h5l6-4M6 16v-3a6 6 0 0 1 12 0"/><circle cx="12" cy="7" r="2.5"/>',
+  compass: '<circle cx="12" cy="12" r="9"/><path d="M15.5 8.5l-2 5-5 2 2-5z"/>',
+  steps: '<path d="M8 3c2 0 2.5 6 0 6S6 3 8 3zM16 11c2 0 2.5 6 0 6s-2-6 0-6zM7 11h2M15 19h2"/>',
+  tool: '<path d="M14.5 6.5a4 4 0 0 0-5 5L3 18l3 3 6.5-6.5a4 4 0 0 0 5-5l-2.5 2.5-3-3z"/>',
+  tree: '<path d="M12 21V9M12 13l-4-3M12 11l4-3M7 9a5 5 0 1 1 10 0 5 5 0 0 1-10 0z"/>',
+  sprout: '<path d="M12 21v-9M12 12c0-4 3-7 7-7 0 4-3 7-7 7zM12 15c0-3-2.5-5.5-6-5.5 0 3.5 2.5 5.5 6 5.5z"/>'};
+const bubble = (icon, n) => `<span class="bubble h${n % 6}" aria-hidden="true"><svg viewBox="0 0 24 24">${ICONS[icon] || ""}</svg></span>`;
+
 function matureScreen() {
-  const mark = ([q, rf, refs], n) => `<section class="compiled mark" id="mk${n}">
-      <h3 class="phrase"><span class="num">${n + 1}</span>“${q}”</h3><span class="ref">${rf}</span>
-      ${ids(refs).map(passage).join("")}</section>`;
   const D = MATURE.disciple.length;
+  const tile = ([q, rf, , label, icon], n) => `<button type="button" class="tile2" data-jump="mk${n}">
+      ${bubble(icon, n)}<b>${label}</b><small>${rf}</small></button>`;
+  const mark = ([q, rf, refs, label, icon], n) => `<section class="compiled mark" id="mk${n}">
+      <div class="markhead">${bubble(icon, n)}<div><span class="num">${n + 1}</span><h3>${label}</h3></div></div>
+      <p class="quote">“${q}”</p><span class="ref">${rf}</span>
+      ${ids(refs).map(passage).join("")}</section>`;
   return { title: "The Mature Disciple", tab: "growth", back: "#growth", html: `
     <div class="hello"><h2>The mature disciple</h2>
-      <p>Named in Scripture's own words: Jesus' definitions of a disciple, and the verses that use the words mature, perfect, complete, fully trained, fathers, and strong.</p></div>
+      <p>Each mark has a plain name, and under it the words of Scripture it comes from. Tap a mark to read its verses.</p></div>
 
-    <div class="card summary">
-      <p class="label">At a glance</p>
-      <p class="side"><b>Jesus' marks of a disciple</b></p>
-      <ol class="sumlist">${MATURE.disciple.map(([q, rf], n) => `<li value="${n + 1}"><span class="jump" role="button" tabindex="0" data-jump="mk${n}">“${q}”</span> <span class="ref">${rf}</span></li>`).join("")}</ol>
-      <p class="side"><b>Marks of maturity</b></p>
-      <ol class="sumlist">${MATURE.marks.map(([q, rf], n) => `<li value="${n + D + 1}"><span class="jump" role="button" tabindex="0" data-jump="mk${n + D}">“${q}”</span> <span class="ref">${rf}</span></li>`).join("")}</ol>
-    </div>
+    <p class="label">Jesus' marks of a disciple</p>
+    <div class="tiles2">${MATURE.disciple.map((m, n) => tile(m, n)).join("")}</div>
+    <p class="label" style="margin-top:18px">Marks of maturity</p>
+    <div class="tiles2">${MATURE.marks.map((m, n) => tile(m, n + D)).join("")}</div>
 
-    <p class="label" style="margin-top:22px">What every disciple grows toward</p>
+    <p class="label" style="margin-top:26px">What every disciple grows toward</p>
     ${ids(MATURE.toward).map(passage).join("")}
 
     <p class="label" style="margin-top:22px">Jesus' marks of a disciple</p>

@@ -676,35 +676,36 @@ const HEALTH = ["Psalm 139:23–24","Lamentations 3:40","2 Corinthians 13:5","Ga
 // Scripture's own maturity words (mature, perfect, complete, fully trained, fathers, strong)
 // or is one of Jesus' own definitions of a disciple.
 //   toward:   what every disciple grows toward
-//   disciple: Jesus' marks of a disciple: [quote, where it is from, references]
-//   marks:    marks of maturity: [quote, where it is from, references]
+//   disciple: Jesus' marks of a disciple: [quote, where it is from, references, short name, icon]
+//   marks:    marks of maturity: [quote, where it is from, references, short name, icon]
+//   The short name is a plain-words label for the mark; the quote beneath it is the source.
 //   immature: signs of immaturity
 const MATURE = {
   toward: ["Romans 8:29","2 Corinthians 3:18","Ephesians 4:13–14","Colossians 1:28"],
   disciple: [
-    ["If you abide in my word, you are truly my disciples","John 8:31",["John 8:31"]],
-    ["By this all people will know that you are my disciples","John 13:35",["John 13:34–35"]],
-    ["That you bear much fruit and so prove to be my disciples","John 15:8",["John 15:4–5, 8"]],
-    ["Whoever does not carry their cross and follow me cannot be my disciple","Luke 14:27 NIV",["Luke 9:23","Luke 14:27"]],
-    ["Those of you who do not give up everything you have cannot be my disciples","Luke 14:33 NIV",["Luke 14:33"]]
+    ["If you abide in my word, you are truly my disciples","John 8:31",["John 8:31"],"Abides in the Word","book"],
+    ["By this all people will know that you are my disciples","John 13:35",["John 13:34–35"],"Loves others","heart"],
+    ["That you bear much fruit and so prove to be my disciples","John 15:8",["John 15:4–5, 8"],"Bears fruit","fruit"],
+    ["Whoever does not carry their cross and follow me cannot be my disciple","Luke 14:27 NIV",["Luke 9:23","Luke 14:27"],"Carries the cross","cross"],
+    ["Those of you who do not give up everything you have cannot be my disciples","Luke 14:33 NIV",["Luke 14:33"],"Gives up everything","give"]
   ],
   marks: [
-    ["Fathers, because you know him who is from the beginning","1 John 2:13",["1 John 2:13–14"]],
-    ["Solid food is for the mature","Hebrews 5:14",["Hebrews 5:12–14","1 Corinthians 14:20"]],
-    ["So that we may no longer be children, tossed to and fro","Ephesians 4:14",["Ephesians 4:13–14","Titus 1:9"]],
-    ["Speaking the truth in love","Ephesians 4:15",["Ephesians 4:15–16"]],
-    ["Perfect, able to keep their whole body in check","James 3:2 NIV",["James 3:2"]],
-    ["That you may be perfect and complete, lacking in nothing","James 1:4",["James 1:4"]],
-    ["Be perfect, therefore, as your heavenly Father is perfect","Matthew 5:48 NIV",["Matthew 5:44, 48"]],
-    ["His love is made complete in us","1 John 4:12 NIV",["1 John 2:5","1 John 4:12"]],
-    ["I press on toward the goal","Philippians 3:14 NIV",["Philippians 3:12, 15","Philippians 3:13–14"]],
-    ["By this time you ought to be teachers","Hebrews 5:12",["Hebrews 5:12–14","2 Timothy 2:2"]],
-    ["We who are strong ought to bear with the failings of the weak","Romans 15:1 NIV",["Romans 15:1","Galatians 6:1–2"]],
-    ["Stand mature and fully assured in all the will of God","Colossians 4:12",["Colossians 4:12"]],
-    ["Everyone when he is fully trained will be like his teacher","Luke 6:40",["Luke 6:40"]],
-    ["Complete, equipped for every good work","2 Timothy 3:17",["2 Timothy 3:16–17"]],
-    ["Sound in faith, in love and in endurance","Titus 2:2 NIV",["Titus 2:2","1 Timothy 3:1–2","1 Timothy 3:6"]],
-    ["If these qualities are yours and are increasing","2 Peter 1:8",["2 Peter 1:5–8","Galatians 5:22–23"]]
+    ["Fathers, because you know him who is from the beginning","1 John 2:13",["1 John 2:13–14"],"Knows God deeply","sun"],
+    ["Solid food is for the mature","Hebrews 5:14",["Hebrews 5:12–14","1 Corinthians 14:20"],"Discerns good and evil","scales"],
+    ["So that we may no longer be children, tossed to and fro","Ephesians 4:14",["Ephesians 4:13–14","Titus 1:9"],"Stands firm in the truth","anchor"],
+    ["Speaking the truth in love","Ephesians 4:15",["Ephesians 4:15–16"],"Speaks the truth in love","speechheart"],
+    ["Perfect, able to keep their whole body in check","James 3:2 NIV",["James 3:2"],"Controls the tongue","speechline"],
+    ["That you may be perfect and complete, lacking in nothing","James 1:4",["James 1:4"],"Endures trials","mountain"],
+    ["Be perfect, therefore, as your heavenly Father is perfect","Matthew 5:48 NIV",["Matthew 5:44, 48"],"Loves even enemies","hands"],
+    ["His love is made complete in us","1 John 4:12 NIV",["1 John 2:5","1 John 4:12"],"Obeys out of love","check"],
+    ["I press on toward the goal","Philippians 3:14 NIV",["Philippians 3:12, 15","Philippians 3:13–14"],"Keeps pressing on","flag"],
+    ["By this time you ought to be teachers","Hebrews 5:12",["Hebrews 5:12–14","2 Timothy 2:2"],"Teaches others","board"],
+    ["We who are strong ought to bear with the failings of the weak","Romans 15:1 NIV",["Romans 15:1","Galatians 6:1–2"],"Bears with the weak","support"],
+    ["Stand mature and fully assured in all the will of God","Colossians 4:12",["Colossians 4:12"],"Settled in God's will","compass"],
+    ["Everyone when he is fully trained will be like his teacher","Luke 6:40",["Luke 6:40"],"Becomes like Jesus","steps"],
+    ["Complete, equipped for every good work","2 Timothy 3:17",["2 Timothy 3:16–17"],"Ready for every good work","tool"],
+    ["Sound in faith, in love and in endurance","Titus 2:2 NIV",["Titus 2:2","1 Timothy 3:1–2","1 Timothy 3:6"],"Sound and steady","tree"],
+    ["If these qualities are yours and are increasing","2 Peter 1:8",["2 Peter 1:5–8","Galatians 5:22–23"],"Growing in character","sprout"]
   ],
   immature: ["1 Corinthians 3:1–2","1 Corinthians 3:3","Hebrews 5:12–14"]
 };
