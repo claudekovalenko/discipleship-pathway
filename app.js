@@ -41,10 +41,11 @@ function strip(ids, big) {
     ${big ? `<div class="strip-labels"><span>Genesis</span><span>Old Testament · New Testament</span><span>Revelation</span></div>` : ""}`;
 }
 
-/* One passage: the ESV text and its reference, nothing else. */
+const TRANSLATIONS = { NIV: "New International Version", KJV: "King James Version" };
+/* One passage: the text and its reference, nothing else. */
 function passage(i) {
   const p = PASSAGES[i];
-  return `<article class="pass"><p class="verse">${p[1]}</p><span class="ref">${p[0]}${p[2] ? ` <abbr class="tr" title="New International Version">${p[2]}</abbr>` : ""}</span></article>`;
+  return `<article class="pass"><p class="verse">${p[1]}</p><span class="ref">${p[0]}${p[2] ? ` <abbr class="tr" title="${TRANSLATIONS[p[2]]}">${p[2]}</abbr>` : ""}</span></article>`;
 }
 
 /* Passages grouped under their canon section headings. */
@@ -84,6 +85,8 @@ function homeScreen() {
         <span class="txt"><b>“${c[1]}”</b><small>${c[2]} · ${c[4].length} passages</small></span>${chev}</a>`).join("")}
 
     <p class="label" style="margin-top:26px">How Jesus made disciples, and what his followers did afterward</p>
+    <a class="cmdrow" href="#making" style="--c:var(--accent)">
+      <span class="txt"><b>The disciple maker's responsibility</b><small>Before God · as a father in the faith · as a father at home</small></span>${chev}</a>
     <a class="cmdrow" href="#practices" style="--c:var(--accent)">
       <span class="txt"><b>${PRACTICES.length} practices</b><small>With Jesus in the Gospels · Afterward in Acts to Revelation</small></span>${chev}</a>
 
@@ -100,7 +103,7 @@ function homeScreen() {
       <span class="txt"><b>All patterns compiled</b><small>Every pattern and every verse on one page</small></span>${chev}</a>
     <a class="cmdrow" href="#bible" style="--c:var(--accent)">
       <span class="txt"><b>Genesis to Revelation</b><small>All ${BOOKS.length} books · ${PASSAGES.length} passages</small></span>${chev}</a>
-    <p class="fine">Scripture quotations are from the ESV® Bible (The Holy Bible, English Standard Version®), © 2001 by Crossway, a publishing ministry of Good News Publishers. Used by permission. All rights reserved. Passages marked NIV are taken from The Holy Bible, New International Version® NIV®. Copyright © 1973, 1978, 1984, 2011 by Biblica, Inc.™ Used by permission. All rights reserved worldwide. Some passages are shortened with an ellipsis (…). Read each one in its full context.</p>` };
+    <p class="fine">Scripture quotations are from the ESV® Bible (The Holy Bible, English Standard Version®), © 2001 by Crossway, a publishing ministry of Good News Publishers. Used by permission. All rights reserved. Passages marked NIV are taken from The Holy Bible, New International Version® NIV®. Copyright © 1973, 1978, 1984, 2011 by Biblica, Inc.™ Used by permission. All rights reserved worldwide. Passages marked KJV are from the King James Version, which is in the public domain. Some passages are shortened with an ellipsis (…). Read each one in its full context.</p>` };
 }
 
 function cmdScreen(id) {
@@ -186,7 +189,7 @@ function practiceBody(n) {
 }
 
 function practicesScreen() {
-  return { title: "Practices", tab: "practices", html: `
+  return { title: "Practices", tab: "making", back: "#making", html: `
     <p class="muted" style="margin-top:0">What Jesus did with his disciples, and what his followers did afterward.</p>
     <a class="cmdrow" href="#practicesall" style="--c:var(--accent)">
       <span class="txt"><b>All practices compiled</b><small>All ${PRACTICES.length} practices and every verse on one page</small></span>${chev}</a>
@@ -197,7 +200,7 @@ function practicesScreen() {
 
 function practiceScreen(n) {
   const pr = PRACTICES[n]; if (!pr) return practicesScreen();
-  return { title: `“${pr[0]}”`, tab: "practices", back: "#practices", html: `
+  return { title: `“${pr[0]}”`, tab: "making", back: "#practices", html: `
     <div class="hello"><h2 class="phrase">“${pr[0]}”</h2><span class="ref">${pr[1]}</span></div>
     ${practiceBody(n)}
     <div class="pager">
@@ -207,7 +210,7 @@ function practiceScreen(n) {
 }
 
 function practicesAllScreen() {
-  return { title: "All Practices", tab: "practices", back: "#practices", html: `
+  return { title: "All Practices", tab: "making", back: "#practices", html: `
     <div class="hello"><h2>All practices compiled</h2><p>${PRACTICES.length} practices</p></div>
     <ol class="toc">${PRACTICES.map((pr, n) => `<li><button type="button" data-jump="pr${n}">“${pr[0]}”</button></li>`).join("")}</ol>
     ${PRACTICES.map((pr, n) => `<section class="compiled" id="pr${n}">
@@ -325,7 +328,9 @@ function matureScreen() {
     <div class="hello"><h2>The mature disciple</h2>
       <p>Each mark has a plain name, and under it the words of Scripture it comes from. Tap a mark to read its verses.</p></div>
 
-    <p class="label">Jesus' marks of a disciple</p>
+    <a class="cmdrow" href="#qualify" style="--c:var(--accent)">
+      <span class="txt"><b>Qualifying characteristics</b><small>Scripture's qualification lists: above reproach, able to teach, not a new believer…</small></span>${chev}</a>
+    <p class="label" style="margin-top:18px">Jesus' marks of a disciple</p>
     <div class="tiles2">${MATURE.disciple.map((m, n) => tile(m, n)).join("")}</div>
     <p class="label" style="margin-top:18px">Marks of maturity</p>
     <div class="tiles2">${MATURE.marks.map((m, n) => tile(m, n + D)).join("")}</div>
@@ -341,6 +346,58 @@ function matureScreen() {
 
     <p class="label" style="margin-top:22px">Signs of immaturity</p>
     ${ids(MATURE.immature).map(passage).join("")}` };
+}
+
+/* ---------- Discipling: the disciple maker's responsibility ---------- */
+function makingScreen() {
+  return { title: "Discipling", tab: "making", html: `
+    <div class="hello"><h2>The disciple maker</h2><p>Responsibility before God, as a father in the faith, and as a father at home, in Scripture's words.</p></div>
+    ${RESP.map(([name, sub, groups], n) => `<a class="cmdrow${n === 0 ? " lead" : ""}" href="#resp-${n}" style="--c:var(--accent)">
+      <span class="txt"><b>${name}</b><small>${sub} · ${groups.length} parts</small></span>${chev}</a>`).join("")}
+    <a class="cmdrow" href="#respall" style="--c:var(--accent)">
+      <span class="txt"><b>All of it on one page</b><small>Every part and every verse</small></span>${chev}</a>
+
+    <p class="label" style="margin-top:26px">How Jesus and the apostles made disciples</p>
+    <a class="cmdrow" href="#practices" style="--c:var(--accent)">
+      <span class="txt"><b>${PRACTICES.length} practices</b><small>With Jesus in the Gospels · Afterward in Acts to Revelation</small></span>${chev}</a>
+    <a class="cmdrow" href="#qualify" style="--c:var(--accent)">
+      <span class="txt"><b>Qualifying characteristics</b><small>The qualifications Scripture gives for those who lead and serve</small></span>${chev}</a>` };
+}
+
+function respBody(n) {
+  return `<ol class="steps">${RESP[n][2].map(([q, rf, refs]) => `<li><h3 class="phrase">“${q}”</h3><span class="ref">${rf}</span>
+    ${ids(refs).map(passage).join("")}</li>`).join("")}</ol>`;
+}
+
+function respScreen(n) {
+  const s = RESP[n]; if (!s) return makingScreen();
+  return { title: s[0], tab: "making", back: "#making", html: `
+    <div class="hello"><p class="label">The disciple maker</p><h2>${s[0]}</h2><p>${s[1]}</p></div>
+    ${respBody(n)}
+    <div class="pager">
+      ${n > 0 ? `<a href="#resp-${n - 1}">← ${RESP[n - 1][0]}</a>` : ""}
+      ${n < RESP.length - 1 ? `<a class="next" style="--c:var(--accent)" href="#resp-${n + 1}">${RESP[n + 1][0]} →</a>` : ""}
+    </div>` };
+}
+
+function respAllScreen() {
+  return { title: "The Disciple Maker", tab: "making", back: "#making", html: `
+    <div class="hello"><h2>The disciple maker</h2></div>
+    ${RESP.map((s, n) => `<section class="compiled"><h2 class="phrase">${s[0]}</h2><p class="muted">${s[1]}</p>${respBody(n)}</section>`).join("")}` };
+}
+
+/* Qualifying characteristics: plain name, Scripture's wording, and where it is written. */
+function qualifyScreen() {
+  const pid = r => "pq" + QUALIFY.passages.indexOf(r);
+  return { title: "Qualifying Characteristics", tab: "making", back: "#making", html: `
+    <div class="hello"><h2>Qualifying characteristics</h2>
+      <p>Scripture gives these as qualifications for overseers (1 Timothy 3; Titus 1), deacons (1 Timothy 3), older believers (Titus 2), the Lord's servant (2 Timothy 2), and those chosen to serve (Acts 6). Each has a plain name, with Scripture's own wording under it. Tap one to read the passage.</p></div>
+    ${QUALIFY.groups.map(([g, icon, items], gi) => `
+      <div class="qhead">${bubble(icon, gi)}<p class="label">${g}</p></div>
+      <div class="tiles2">${items.map(([nm, q, cite, refs]) => `<button type="button" class="tile2 q" data-jump="${pid(refs[0])}">
+        <b>${nm}</b><span class="kq">“${q}”</span><small>${cite}</small></button>`).join("")}</div>`).join("")}
+    <p class="label" style="margin-top:26px">The passages</p>
+    ${QUALIFY.passages.map(r => `<div id="${pid(r)}" class="anchor">${passage(REF_IDX.get(r))}</div>`).join("")}` };
 }
 
 function stepsAllScreen() {
@@ -444,6 +501,10 @@ function route() {
     : name === "growth" ? growthScreen()
     : name === "step" ? stepScreen(+arg)
     : name === "mature" ? matureScreen()
+    : name === "making" ? makingScreen()
+    : name === "resp" ? respScreen(+arg)
+    : name === "respall" ? respAllScreen()
+    : name === "qualify" ? qualifyScreen()
     : name === "arcs" ? arcsScreen()
     : name === "arc" ? arcScreen(+arg)
     : name === "health" ? healthScreen()

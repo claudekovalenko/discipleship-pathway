@@ -272,3 +272,11 @@ a.tag{text-decoration:none}
 .markhead h3{margin:0;font-size:20px;line-height:1.2}
 .mark .quote{font-family:Georgia,"Iowan Old Style",serif;font-size:17px;font-weight:600;margin:10px 0 2px}
 .mark > .ref{margin-bottom:8px}
+
+/* Qualifying characteristics */
+.qhead{display:flex;align-items:center;gap:10px;margin:22px 0 10px}
+.qhead .label{margin:0}
+.tile2.q{gap:3px}
+.tile2 .kq{font-family:Georgia,"Iowan Old Style",serif;font-size:14px;line-height:1.3;color:var(--ink)}
+.anchor{scroll-margin-top:calc(var(--top) + var(--sat) + 8px)}
+.anchor.flash .pass{outline:2px solid var(--accent);outline-offset:2px}

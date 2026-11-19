@@ -48,7 +48,14 @@ An installable app (PWA) that works offline once it has been opened.
 
   Each shows a bar of all 66 books marking where it appears, then every passage in order.
 - **Whole Bible · Old Testament · New Testament:** every pattern and command page has this switch. Links keep the choice, e.g. `#pattern-6-nt` opens "I will build my church" in the New Testament.
-- **Practices:** seventeen practices of discipleship, each named by a phrase of Scripture. For each one, what Jesus did with his disciples (the Gospels) is set beside what his followers did afterward (Acts to Revelation): being with him, teaching, prayer, fasting, choosing and appointing, sending out two by two, receiving and hospitality, going to the next towns, reporting back, baptizing, breaking bread, singing, serving, sharing possessions, correcting and restoring, strengthening, and suffering. There is also an all-practices page (`#practicesall`).
+- **Practices** (inside the Discipling tab): seventeen practices of discipleship, each named by a phrase of Scripture. For each one, what Jesus did with his disciples (the Gospels) is set beside what his followers did afterward (Acts to Revelation): being with him, teaching, prayer, fasting, choosing and appointing, sending out two by two, receiving and hospitality, going to the next towns, reporting back, baptizing, breaking bread, singing, serving, sharing possessions, correcting and restoring, strengthening, and suffering. There is also an all-practices page (`#practicesall`).
+- **Discipling** tab: the disciple maker's responsibility, in three parts, each in Scripture's words:
+  - *Before God:* the account a disciple maker gives (Ezekiel 3, Acts 20, Hebrews 13, James 3, 2 Timothy 4, 1 Corinthians 3–4, Matthew 18, Colossians 1, 1 Peter 5).
+  - *As a father in the faith:* "in Christ Jesus I have begotten you through the gospel," "as a father doth his children," "until Christ be formed in you."
+  - *As a father at home:* "bring them up in the nurture and admonition of the Lord," and Eli's warning, "he restrained them not."
+
+  The Practices (what Jesus did with his disciples, and what they did afterward) and the Qualifying characteristics are here too.
+- **Qualifying characteristics** (`#qualify`): Scripture's qualification lists for overseers, deacons, older believers, the Lord's servant, and those chosen to serve, gathered into five groups (character, home and relationships, free from, in the Word, proven over time). Each has a plain name with Scripture's wording under it.
 - **The mature disciple** (top of the Pathway tab, `#mature`): what every disciple grows toward, then 21 marks named in Scripture's own words. Five are Jesus' own definitions of a disciple ("you are truly my disciples," "cannot be my disciple"), and sixteen come from verses that use the words mature, perfect, complete, fully trained, fathers, or strong. Each mark has a plain name and icon (such as "Abides in the Word" or "Discerns good and evil") with the Scripture quote it comes from beneath it, shown as tiles first and the full verses below, followed by Scripture's signs of immaturity.
 - **Pathway:** from new believer to mature disciple, in ten steps, each named by a phrase of Scripture. Every step shows *where Scripture places this step* (the verses that show the order, such as Acts 2:37–42, Colossians 2:6–7, Hebrews 5:12–14 and 1 Timothy 3:6, 10), *what the word says*, and *with Jesus* (how he did it with the Twelve). There is also a one-page version (`#stepsall`). Under "Going deeper":
   - *The range of maturity:* infants and milk, children, young men and fathers, solid food for the mature.
@@ -93,7 +100,7 @@ All content is in `data.js`.
 
 **The rule for every theme:** a verse is listed under a command, pattern, or practice only when its own words plainly state that theme, so a reader can see the link without any explanation. If a verse needs an argument to connect it, leave it out.
 
-1. Add the verse to `PASSAGES` in canonical order: `["Reference", "“ESV text”"]`, or `["Reference", "“NIV text”", "NIV"]` for an NIV verse. The app works out the book from the reference.
+1. Add the verse to `PASSAGES` in canonical order: `["Reference", "“ESV text”"]`, or `["Reference", "“NIV text”", "NIV"]` for an NIV verse, or `["Reference", "“KJV text”", "KJV"]` for a KJV verse. The app works out the book from the reference.
 2. Add its reference to the list it belongs to:
    - a command: the fifth item of its row in `COMMANDS`
    - a pattern: the third item of its row in `PATTERNS`
@@ -111,6 +118,8 @@ A passage that is in no list is never shown, so remove it from `PASSAGES` too.
 
 Scripture quotations are from the ESV® Bible (The Holy Bible, English Standard Version®), © 2001 by Crossway, a publishing ministry of Good News Publishers. Used by permission. All rights reserved.
 
+Passages marked KJV are from the King James Version, which is in the public domain.
+
 Passages marked NIV are taken from The Holy Bible, New International Version® NIV®. Copyright © 1973, 1978, 1984, 2011 by Biblica, Inc.™ Used by permission. All rights reserved worldwide.
 
-Crossway and Biblica each allow up to 500 verses of their translation to be quoted without written permission, as long as the quotations don't make up a complete book of the Bible or 25% or more of the total text of the work. The app currently quotes about 466 ESV verses and 82 NIV verses. **Add new verses in the NIV**, since the ESV is near its limit. Most of this app's text is Scripture, so request permission from both publishers before distributing it widely. Keep both notices on the home screen.
+Crossway and Biblica each allow up to 500 verses of their translation to be quoted without written permission, as long as the quotations don't make up a complete book of the Bible or 25% or more of the total text of the work. The app currently quotes about 466 ESV verses, 82 NIV verses, and 54 KJV verses. **Add new verses in the KJV** (public domain, no limit), since the ESV is near its limit. Most of this app's text is Scripture, so request permission from both publishers before distributing it widely. Keep both notices on the home screen.

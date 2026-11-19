@@ -1,6 +1,6 @@
 # Patterns Through the Whole Bible
 
-22 patterns, each named by a phrase of Scripture and traced from Genesis to Revelation. Scripture quotations are from the ESV unless marked NIV.
+22 patterns, each named by a phrase of Scripture and traced from Genesis to Revelation. Scripture quotations are from the ESV unless marked NIV or KJV.
 
 > “You shall love the Lord your God with all your heart and with all your soul and with all your mind. This is the great and first commandment. And a second is like it: You shall love your neighbor as yourself. On these two commandments depend all the Law and the Prophets.” (Matthew 22:37–40)
 
@@ -1890,6 +1890,273 @@ Named in Scripture's own words: Jesus' definitions of a disciple, and the verses
 
 ---
 
+# Qualifying Characteristics
+
+Scripture gives these as qualifications for overseers (1 Timothy 3; Titus 1), deacons (1 Timothy 3), older believers (Titus 2), the Lord's servant (2 Timothy 2), and those chosen to serve (Acts 6). Each has a plain name, with Scripture's own wording beside it.
+
+## Character
+
+- **Above reproach**: “Blameless” (1 Timothy 3:2; Titus 1:6–7)
+- **Watchful and sober-minded**: “Vigilant, sober” (1 Timothy 3:2)
+- **Self-controlled**: “Temperate” (Titus 1:8)
+- **Respectable**: “Of good behaviour” (1 Timothy 3:2)
+- **Gentle, not violent**: “No striker; but patient” (1 Timothy 3:3)
+- **Not quarrelsome**: “Not a brawler” (1 Timothy 3:3)
+- **Not quick-tempered**: “Not soon angry” (Titus 1:7)
+- **Not self-willed**: “Not selfwilled” (Titus 1:7)
+- **Gentle with everyone**: “Gentle unto all men” (2 Timothy 2:24)
+- **Honest in speech**: “Not doubletongued” (1 Timothy 3:8)
+- **Serious and dignified**: “Grave” (1 Timothy 3:8)
+- **Loves what is good**: “A lover of good men” (Titus 1:8)
+- **Just and holy**: “Just, holy” (Titus 1:8)
+
+## Home and relationships
+
+- **Faithful to his wife**: “The husband of one wife” (1 Timothy 3:2; Titus 1:6)
+- **Leads his household well**: “One that ruleth well his own house” (1 Timothy 3:4)
+- **Hospitable**: “Given to hospitality” (1 Timothy 3:2; Titus 1:8)
+- **Well thought of by outsiders**: “A good report of them which are without” (1 Timothy 3:7; Acts 6:3)
+
+## Free from
+
+- **Not a drunkard**: “Not given to wine” (1 Timothy 3:3; Titus 1:7)
+- **Not greedy for money**: “Not greedy of filthy lucre” (1 Timothy 3:3, 8)
+- **Not covetous**: “Not covetous” (1 Timothy 3:3)
+
+## In the Word
+
+- **Able to teach**: “Apt to teach” (1 Timothy 3:2; 2 Timothy 2:24)
+- **Holds firmly to the Word**: “Hold firmly to the trustworthy message” (Titus 1:9 NIV)
+- **Keeps the faith with a clear conscience**: “Holding the mystery of the faith in a pure conscience” (1 Timothy 3:9)
+- **Corrects opponents gently**: “In meekness instructing those that oppose themselves” (2 Timothy 2:25)
+- **Teaches what is good**: “Teachers of good things” (Titus 2:3)
+
+## Proven over time
+
+- **Not a new believer**: “Not a novice” (1 Timothy 3:6)
+- **Tested first**: “Let them also be tested first” (1 Timothy 3:10)
+- **Full of the Spirit and wisdom**: “Full of the Spirit and of wisdom” (Acts 6:3)
+- **Sound in faith, love and endurance**: “Sound in faith, in love and in endurance” (Titus 2:2 NIV)
+
+## The passages
+
+**Acts 6:2–3**
+> “And the twelve summoned the full number of the disciples and said, ‘It is not right that we should give up preaching the word of God to serve tables. Therefore, brothers, pick out from among you seven men of good repute, full of the Spirit and of wisdom, whom we will appoint to this duty.’”
+
+**1 Timothy 3:2–7 (KJV)**
+> “A bishop then must be blameless, the husband of one wife, vigilant, sober, of good behaviour, given to hospitality, apt to teach; Not given to wine, no striker, not greedy of filthy lucre; but patient, not a brawler, not covetous; One that ruleth well his own house, having his children in subjection with all gravity; (For if a man know not how to rule his own house, how shall he take care of the church of God?) Not a novice, lest being lifted up with pride he fall into the condemnation of the devil. Moreover he must have a good report of them which are without; lest he fall into reproach and the snare of the devil.”
+
+**1 Timothy 3:8–9 (KJV)**
+> “Likewise must the deacons be grave, not doubletongued, not given to much wine, not greedy of filthy lucre; Holding the mystery of the faith in a pure conscience.”
+
+**1 Timothy 3:10**
+> “And let them also be tested first; then let them serve as deacons if they prove themselves blameless.”
+
+**2 Timothy 2:24–25 (KJV)**
+> “And the servant of the Lord must not strive; but be gentle unto all men, apt to teach, patient, In meekness instructing those that oppose themselves; if God peradventure will give them repentance to the acknowledging of the truth;”
+
+**Titus 1:6–8 (KJV)**
+> “If any be blameless, the husband of one wife, having faithful children not accused of riot or unruly. For a bishop must be blameless, as the steward of God; not selfwilled, not soon angry, not given to wine, no striker, not given to filthy lucre; But a lover of hospitality, a lover of good men, sober, just, holy, temperate;”
+
+**Titus 1:9 (NIV)**
+> “He must hold firmly to the trustworthy message as it has been taught, so that he can encourage others by sound doctrine and refute those who oppose it.”
+
+**Titus 2:2 (NIV)**
+> “Teach the older men to be temperate, worthy of respect, self-controlled, and sound in faith, in love and in endurance.”
+
+**Titus 2:3–5 (KJV)**
+> “The aged women likewise, that they be in behaviour as becometh holiness, not false accusers, not given to much wine, teachers of good things; That they may teach the young women to be sober, to love their husbands, to love their children, To be discreet, chaste, keepers at home, good, obedient to their own husbands, that the word of God be not blasphemed.”
+
+
+---
+
+# The Disciple Maker
+
+Responsibility before God, as a father in the faith, and as a father at home.
+
+## Before God
+
+Standing before God: the account a disciple maker gives.
+
+### 1. “His blood will I require at thine hand” (Ezekiel 3:18 KJV)
+
+**Ezekiel 3:17 (KJV)**
+> “Son of man, I have made thee a watchman unto the house of Israel: therefore hear the word at my mouth, and give them warning from me.”
+
+**Ezekiel 3:18–19 (KJV)**
+> “When I say unto the wicked, Thou shalt surely die; and thou givest him not warning, nor speakest to warn the wicked from his wicked way, to save his life; the same wicked man shall die in his iniquity; but his blood will I require at thine hand. Yet if thou warn the wicked, and he turn not from his wickedness, nor from his wicked way, he shall die in his iniquity; but thou hast delivered thy soul.”
+
+**Acts 20:26–27 (KJV)**
+> “Wherefore I take you to record this day, that I am pure from the blood of all men. For I have not shunned to declare unto you all the counsel of God.”
+
+**Acts 20:31 (KJV)**
+> “Therefore watch, and remember, that by the space of three years I ceased not to warn every one night and day with tears.”
+
+**Hebrews 13:17**
+> “Obey your leaders and submit to them, for they are keeping watch over your souls, as those who will have to give an account.…”
+
+**James 3:1 (KJV)**
+> “My brethren, be not many masters, knowing that we shall receive the greater condemnation.”
+
+### 2. “I charge thee therefore before God” (2 Timothy 4:1 KJV)
+
+**2 Timothy 4:1–2 (KJV)**
+> “I charge thee therefore before God, and the Lord Jesus Christ, who shall judge the quick and the dead at his appearing and his kingdom; Preach the word; be instant in season, out of season; reprove, rebuke, exhort with all longsuffering and doctrine.”
+
+**2 Timothy 2:15 (KJV)**
+> “Study to shew thyself approved unto God, a workman that needeth not to be ashamed, rightly dividing the word of truth.”
+
+**1 Timothy 4:16**
+> “Keep a close watch on yourself and on the teaching. Persist in this, for by so doing you will save both yourself and your hearers.”
+
+**1 Timothy 6:20**
+> “O Timothy, guard the deposit entrusted to you.…”
+
+**2 Timothy 1:14**
+> “By the Holy Spirit who dwells within us, guard the good deposit entrusted to you.”
+
+### 3. “It is required in stewards, that a man be found faithful” (1 Corinthians 4:2 KJV)
+
+**1 Corinthians 4:1–2 (KJV)**
+> “Let a man so account of us, as of the ministers of Christ, and stewards of the mysteries of God. Moreover it is required in stewards, that a man be found faithful.”
+
+**Luke 12:48 (KJV)**
+> “…For unto whomsoever much is given, of him shall be much required: and to whom men have committed much, of him they will ask the more.”
+
+**Matthew 25:21 (KJV)**
+> “His lord said unto him, Well done, thou good and faithful servant: thou hast been faithful over a few things, I will make thee ruler over many things: enter thou into the joy of thy lord.”
+
+### 4. “The fire shall try every man's work” (1 Corinthians 3:13 KJV)
+
+**1 Corinthians 3:10–11**
+> “According to the grace of God given to me, like a skilled master builder I laid a foundation, and someone else is building upon it. Let each one take care how he builds upon it. For no one can lay a foundation other than that which is laid, which is Jesus Christ.”
+
+**1 Corinthians 3:13 (KJV)**
+> “Every man's work shall be made manifest: for the day shall declare it, because it shall be revealed by fire; and the fire shall try every man's work of what sort it is.”
+
+**2 Corinthians 5:10 (KJV)**
+> “For we must all appear before the judgment seat of Christ; that every one may receive the things done in his body, according to that he hath done, whether it be good or bad.”
+
+### 5. “Whoso shall offend one of these little ones” (Matthew 18:6 KJV)
+
+**Matthew 18:6 (KJV)**
+> “But whoso shall offend one of these little ones which believe in me, it were better for him that a millstone were hanged about his neck, and that he were drowned in the depth of the sea.”
+
+### 6. “Whereunto I also labour” (Colossians 1:29 KJV)
+
+**Colossians 1:28**
+> “Him we proclaim, warning everyone and teaching everyone with all wisdom, that we may present everyone mature in Christ.”
+
+**Colossians 1:29 (KJV)**
+> “Whereunto I also labour, striving according to his working, which worketh in me mightily.”
+
+### 7. “A crown of glory that fadeth not away” (1 Peter 5:4 KJV)
+
+**1 Peter 5:2–3**
+> “shepherd the flock of God that is among you, exercising oversight, not under compulsion, but willingly… not domineering over those in your charge, but being examples to the flock.”
+
+**1 Peter 5:4 (KJV)**
+> “And when the chief Shepherd shall appear, ye shall receive a crown of glory that fadeth not away.”
+
+**1 Thessalonians 2:19–20 (KJV)**
+> “For what is our hope, or joy, or crown of rejoicing? Are not even ye in the presence of our Lord Jesus Christ at his coming? For ye are our glory and joy.”
+
+## As a father in the faith
+
+Fathers, mothers, and children in the faith.
+
+### 1. “In Christ Jesus I have begotten you through the gospel” (1 Corinthians 4:15 KJV)
+
+**1 Corinthians 4:14–17 (KJV)**
+> “I write not these things to shame you, but as my beloved sons I warn you. For though ye have ten thousand instructers in Christ, yet have ye not many fathers: for in Christ Jesus I have begotten you through the gospel. Wherefore I beseech you, be ye followers of me. For this cause have I sent unto you Timotheus, who is my beloved son, and faithful in the Lord, who shall bring you into remembrance of my ways which be in Christ, as I teach every where in every church.”
+
+**Philemon 10 (KJV)**
+> “I beseech thee for my son Onesimus, whom I have begotten in my bonds:”
+
+### 2. “As a father doth his children” (1 Thessalonians 2:11 KJV)
+
+**1 Thessalonians 2:8**
+> “So, being affectionately desirous of you, we were ready to share with you not only the gospel of God but also our own selves, because you had become very dear to us.”
+
+**1 Thessalonians 2:11–12 (KJV)**
+> “As ye know how we exhorted and comforted and charged every one of you, as a father doth his children, That ye would walk worthy of God, who hath called you unto his kingdom and glory.”
+
+### 3. “Even as a nurse cherisheth her children” (1 Thessalonians 2:7 KJV)
+
+**1 Thessalonians 2:7 (KJV)**
+> “But we were gentle among you, even as a nurse cherisheth her children:”
+
+### 4. “Until Christ be formed in you” (Galatians 4:19 KJV)
+
+**Galatians 4:19 (KJV)**
+> “My little children, of whom I travail in birth again until Christ be formed in you,”
+
+### 5. “I will very gladly spend and be spent for you” (2 Corinthians 12:15 KJV)
+
+**2 Corinthians 12:14–15 (KJV)**
+> “…for the children ought not to lay up for the parents, but the parents for the children. And I will very gladly spend and be spent for you; though the more abundantly I love you, the less I be loved.”
+
+### 6. “My own son in the faith” (1 Timothy 1:2 KJV)
+
+**1 Timothy 1:2 (KJV)**
+> “Unto Timothy, my own son in the faith: Grace, mercy, and peace, from God our Father and Jesus Christ our Lord.”
+
+**1 Timothy 1:18**
+> “This charge I entrust to you, Timothy, my child, in accordance with the prophecies previously made about you, that by them you may wage the good warfare,”
+
+**Philippians 2:22**
+> “But you know Timothy's proven worth, how as a son with a father he has served with me in the gospel.”
+
+**1 John 2:1 (KJV)**
+> “My little children, these things write I unto you, that ye sin not. And if any man sin, we have an advocate with the Father, Jesus Christ the righteous:”
+
+**3 John 4**
+> “I have no greater joy than to hear that my children are walking in the truth.”
+
+## As a father at home
+
+Fathers and their children.
+
+### 1. “Bring them up in the nurture and admonition of the Lord” (Ephesians 6:4 KJV)
+
+**Genesis 18:19**
+> “For I have chosen him, that he may command his children and his household after him to keep the way of the LORD by doing righteousness and justice…”
+
+**Deuteronomy 6:5–7**
+> “You shall love the LORD your God with all your heart and with all your soul and with all your might. And these words that I command you today shall be on your heart. You shall teach them diligently to your children, and shall talk of them when you sit in your house, and when you walk by the way, and when you lie down, and when you rise.”
+
+**Proverbs 22:6**
+> “Train up a child in the way he should go; even when he is old he will not depart from it.”
+
+**Ephesians 6:4 (KJV)**
+> “And, ye fathers, provoke not your children to wrath: but bring them up in the nurture and admonition of the Lord.”
+
+### 2. “Provoke not your children to anger” (Colossians 3:21 KJV)
+
+**Psalm 103:13 (KJV)**
+> “Like as a father pitieth his children, so the LORD pitieth them that fear him.”
+
+**Colossians 3:21 (KJV)**
+> “Fathers, provoke not your children to anger, lest they be discouraged.”
+
+### 3. “One that ruleth well his own house” (1 Timothy 3:4 KJV)
+
+**1 Timothy 3:2–7 (KJV)**
+> “A bishop then must be blameless, the husband of one wife, vigilant, sober, of good behaviour, given to hospitality, apt to teach; Not given to wine, no striker, not greedy of filthy lucre; but patient, not a brawler, not covetous; One that ruleth well his own house, having his children in subjection with all gravity; (For if a man know not how to rule his own house, how shall he take care of the church of God?) Not a novice, lest being lifted up with pride he fall into the condemnation of the devil. Moreover he must have a good report of them which are without; lest he fall into reproach and the snare of the devil.”
+
+### 4. “As for me and my house, we will serve the LORD” (Joshua 24:15)
+
+**Joshua 24:15**
+> “…But as for me and my house, we will serve the LORD.”
+
+### 5. “He restrained them not” (1 Samuel 3:13 KJV)
+
+**1 Samuel 3:13 (KJV)**
+> “For I have told him that I will judge his house for ever for the iniquity which he knoweth; because his sons made themselves vile, and he restrained them not.”
+
+
+---
+
 # From New Believer to Mature Disciple
 
 Each step shows where Scripture places it, what the word says, and how Jesus did it with the Twelve.
@@ -2918,4 +3185,4 @@ Each life in the order it happened.
 
 ---
 
-Scripture quotations are from the ESV® Bible (The Holy Bible, English Standard Version®), © 2001 by Crossway, a publishing ministry of Good News Publishers. Used by permission. All rights reserved. Passages marked (NIV) are taken from The Holy Bible, New International Version® NIV®. Copyright © 1973, 1978, 1984, 2011 by Biblica, Inc.™ Used by permission. All rights reserved worldwide. Some passages are shortened with an ellipsis (…). Read each one in its full context.
+Scripture quotations are from the ESV® Bible (The Holy Bible, English Standard Version®), © 2001 by Crossway, a publishing ministry of Good News Publishers. Used by permission. All rights reserved. Passages marked (KJV) are from the King James Version, in the public domain. Passages marked (NIV) are taken from The Holy Bible, New International Version® NIV®. Copyright © 1973, 1978, 1984, 2011 by Biblica, Inc.™ Used by permission. All rights reserved worldwide. Some passages are shortened with an ellipsis (…). Read each one in its full context.
