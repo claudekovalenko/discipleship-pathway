@@ -31,7 +31,7 @@ Patterns 1 and 2 are that focus. The rest flow from it.
 21. [“Love the sojourner” (Deuteronomy 10:19)](#21-love-the-sojourner)
 22. [“God chose what is weak in the world to shame the strong” (1 Corinthians 1:27)](#22-god-chose-what-is-weak-in-the-world-to-shame-the-strong)
 
-Then: [Practices: With Jesus, and Afterward](#practices-with-jesus-and-afterward) · [From New Believer to Mature Disciple](#from-new-believer-to-mature-disciple) · [Character Arcs](#character-arcs) · [Growth Toward Maturity](#growth-toward-maturity)
+Then: [The Mature Disciple](#the-mature-disciple) · [Practices: With Jesus, and Afterward](#practices-with-jesus-and-afterward) · [From New Believer to Mature Disciple](#from-new-believer-to-mature-disciple) · [Character Arcs](#character-arcs) · [Growth Toward Maturity](#growth-toward-maturity)
 
 ---
 
@@ -1646,6 +1646,204 @@ Then: [Practices: With Jesus, and Afterward](#practices-with-jesus-and-afterward
 
 **1 Peter 4:12–13**
 > “Beloved, do not be surprised at the fiery trial when it comes upon you to test you, as though something strange were happening to you. But rejoice insofar as you share Christ's sufferings, that you may also rejoice and be glad when his glory is revealed.”
+
+
+---
+
+# The Mature Disciple
+
+Named in Scripture's own words: Jesus' definitions of a disciple, and the verses that use the words mature, perfect, complete, fully trained, fathers, and strong.
+
+## At a glance
+
+**Jesus' marks of a disciple**
+
+1. “If you abide in my word, you are truly my disciples” (John 8:31)
+2. “By this all people will know that you are my disciples” (John 13:35)
+3. “That you bear much fruit and so prove to be my disciples” (John 15:8)
+4. “Whoever does not carry their cross and follow me cannot be my disciple” (Luke 14:27 NIV)
+5. “Those of you who do not give up everything you have cannot be my disciples” (Luke 14:33 NIV)
+
+**Marks of maturity**
+
+6. “Fathers, because you know him who is from the beginning” (1 John 2:13)
+7. “Solid food is for the mature” (Hebrews 5:14)
+8. “So that we may no longer be children, tossed to and fro” (Ephesians 4:14)
+9. “Speaking the truth in love” (Ephesians 4:15)
+10. “Perfect, able to keep their whole body in check” (James 3:2 NIV)
+11. “That you may be perfect and complete, lacking in nothing” (James 1:4)
+12. “Be perfect, therefore, as your heavenly Father is perfect” (Matthew 5:48 NIV)
+13. “His love is made complete in us” (1 John 4:12 NIV)
+14. “I press on toward the goal” (Philippians 3:14 NIV)
+15. “By this time you ought to be teachers” (Hebrews 5:12)
+16. “We who are strong ought to bear with the failings of the weak” (Romans 15:1 NIV)
+17. “Stand mature and fully assured in all the will of God” (Colossians 4:12)
+18. “Everyone when he is fully trained will be like his teacher” (Luke 6:40)
+19. “Complete, equipped for every good work” (2 Timothy 3:17)
+20. “Sound in faith, in love and in endurance” (Titus 2:2 NIV)
+21. “If these qualities are yours and are increasing” (2 Peter 1:8)
+
+## What every disciple grows toward
+
+**Romans 8:29 (NIV)**
+> “For those God foreknew he also predestined to be conformed to the image of his Son, that he might be the firstborn among many brothers and sisters.”
+
+**2 Corinthians 3:18 (NIV)**
+> “And we all, who with unveiled faces contemplate the Lord’s glory, are being transformed into his image with ever-increasing glory, which comes from the Lord, who is the Spirit.”
+
+**Ephesians 4:13–14**
+> “until we all attain to the unity of the faith and of the knowledge of the Son of God, to mature manhood, to the measure of the stature of the fullness of Christ, so that we may no longer be children, tossed to and fro by the waves and carried about by every wind of doctrine,…”
+
+**Colossians 1:28**
+> “Him we proclaim, warning everyone and teaching everyone with all wisdom, that we may present everyone mature in Christ.”
+
+## The marks, with every verse
+
+### 1. “If you abide in my word, you are truly my disciples” (John 8:31)
+
+**John 8:31**
+> “If you abide in my word, you are truly my disciples.”
+
+### 2. “By this all people will know that you are my disciples” (John 13:35)
+
+**John 13:34–35**
+> “A new commandment I give to you, that you love one another: just as I have loved you, you also are to love one another. By this all people will know that you are my disciples, if you have love for one another.”
+
+### 3. “That you bear much fruit and so prove to be my disciples” (John 15:8)
+
+**John 15:4–5, 8**
+> “Abide in me, and I in you… By this my Father is glorified, that you bear much fruit and so prove to be my disciples.”
+
+### 4. “Whoever does not carry their cross and follow me cannot be my disciple” (Luke 14:27 NIV)
+
+**Luke 9:23**
+> “If anyone would come after me, let him deny himself and take up his cross daily and follow me.”
+
+**Luke 14:27 (NIV)**
+> “And whoever does not carry their cross and follow me cannot be my disciple.”
+
+### 5. “Those of you who do not give up everything you have cannot be my disciples” (Luke 14:33 NIV)
+
+**Luke 14:33 (NIV)**
+> “In the same way, those of you who do not give up everything you have cannot be my disciples.”
+
+### 6. “Fathers, because you know him who is from the beginning” (1 John 2:13)
+
+**1 John 2:13–14**
+> “I am writing to you, fathers, because you know him who is from the beginning. I am writing to you, young men, because you have overcome the evil one. I write to you, children, because you know the Father. I write to you, fathers, because you know him who is from the beginning. I write to you, young men, because you are strong, and the word of God abides in you, and you have overcome the evil one.”
+
+### 7. “Solid food is for the mature” (Hebrews 5:14)
+
+**Hebrews 5:12–14**
+> “For though by this time you ought to be teachers, you need someone to teach you again the basic principles of the oracles of God. You need milk, not solid food, for everyone who lives on milk is unskilled in the word of righteousness, since he is a child. But solid food is for the mature, for those who have their powers of discernment trained by constant practice to distinguish good from evil.”
+
+**1 Corinthians 14:20 (NIV)**
+> “Brothers and sisters, stop thinking like children. In regard to evil be infants, but in your thinking be adults.”
+
+### 8. “So that we may no longer be children, tossed to and fro” (Ephesians 4:14)
+
+**Ephesians 4:13–14**
+> “until we all attain to the unity of the faith and of the knowledge of the Son of God, to mature manhood, to the measure of the stature of the fullness of Christ, so that we may no longer be children, tossed to and fro by the waves and carried about by every wind of doctrine,…”
+
+**Titus 1:9 (NIV)**
+> “He must hold firmly to the trustworthy message as it has been taught, so that he can encourage others by sound doctrine and refute those who oppose it.”
+
+### 9. “Speaking the truth in love” (Ephesians 4:15)
+
+**Ephesians 4:15–16**
+> “Rather, speaking the truth in love, we are to grow up in every way into him who is the head, into Christ, from whom the whole body, joined and held together by every joint with which it is equipped, when each part is working properly, makes the body grow so that it builds itself up in love.”
+
+### 10. “Perfect, able to keep their whole body in check” (James 3:2 NIV)
+
+**James 3:2 (NIV)**
+> “We all stumble in many ways. Anyone who is never at fault in what they say is perfect, able to keep their whole body in check.”
+
+### 11. “That you may be perfect and complete, lacking in nothing” (James 1:4)
+
+**James 1:4**
+> “And let steadfastness have its full effect, that you may be perfect and complete, lacking in nothing.”
+
+### 12. “Be perfect, therefore, as your heavenly Father is perfect” (Matthew 5:48 NIV)
+
+**Matthew 5:44, 48 (NIV)**
+> “But I tell you, love your enemies and pray for those who persecute you,… Be perfect, therefore, as your heavenly Father is perfect.”
+
+### 13. “His love is made complete in us” (1 John 4:12 NIV)
+
+**1 John 2:5 (NIV)**
+> “But if anyone obeys his word, love for God is truly made complete in them. This is how we know we are in him:”
+
+**1 John 4:12 (NIV)**
+> “No one has ever seen God; but if we love one another, God lives in us and his love is made complete in us.”
+
+### 14. “I press on toward the goal” (Philippians 3:14 NIV)
+
+**Philippians 3:12, 15**
+> “Not that I have already obtained this or am already perfect, but I press on to make it my own, because Christ Jesus has made me his own.… Let those of us who are mature think this way,…”
+
+**Philippians 3:13–14 (NIV)**
+> “Brothers and sisters, I do not consider myself yet to have taken hold of it. But one thing I do: Forgetting what is behind and straining toward what is ahead, I press on toward the goal to win the prize for which God has called me heavenward in Christ Jesus.”
+
+### 15. “By this time you ought to be teachers” (Hebrews 5:12)
+
+**Hebrews 5:12–14**
+> “For though by this time you ought to be teachers, you need someone to teach you again the basic principles of the oracles of God. You need milk, not solid food, for everyone who lives on milk is unskilled in the word of righteousness, since he is a child. But solid food is for the mature, for those who have their powers of discernment trained by constant practice to distinguish good from evil.”
+
+**2 Timothy 2:2**
+> “and what you have heard from me in the presence of many witnesses entrust to faithful men, who will be able to teach others also.”
+
+### 16. “We who are strong ought to bear with the failings of the weak” (Romans 15:1 NIV)
+
+**Romans 15:1 (NIV)**
+> “We who are strong ought to bear with the failings of the weak and not to please ourselves.”
+
+**Galatians 6:1–2**
+> “Brothers, if anyone is caught in any transgression, you who are spiritual should restore him in a spirit of gentleness… Bear one another's burdens, and so fulfill the law of Christ.”
+
+### 17. “Stand mature and fully assured in all the will of God” (Colossians 4:12)
+
+**Colossians 4:12**
+> “…always struggling on your behalf in his prayers, that you may stand mature and fully assured in all the will of God.”
+
+### 18. “Everyone when he is fully trained will be like his teacher” (Luke 6:40)
+
+**Luke 6:40**
+> “A disciple is not above his teacher, but everyone when he is fully trained will be like his teacher.”
+
+### 19. “Complete, equipped for every good work” (2 Timothy 3:17)
+
+**2 Timothy 3:16–17**
+> “All Scripture is breathed out by God and profitable for teaching, for reproof, for correction, and for training in righteousness, that the man of God may be complete, equipped for every good work.”
+
+### 20. “Sound in faith, in love and in endurance” (Titus 2:2 NIV)
+
+**Titus 2:2 (NIV)**
+> “Teach the older men to be temperate, worthy of respect, self-controlled, and sound in faith, in love and in endurance.”
+
+**1 Timothy 3:1–2**
+> “The saying is trustworthy: If anyone aspires to the office of overseer, he desires a noble task. Therefore an overseer must be above reproach, the husband of one wife, sober-minded, self-controlled, respectable, hospitable, able to teach,”
+
+**1 Timothy 3:6**
+> “He must not be a recent convert, or he may become puffed up with conceit and fall into the condemnation of the devil.”
+
+### 21. “If these qualities are yours and are increasing” (2 Peter 1:8)
+
+**2 Peter 1:5–8**
+> “For this very reason, make every effort to supplement your faith with virtue, and virtue with knowledge, and knowledge with self-control, and self-control with steadfastness, and steadfastness with godliness, and godliness with brotherly affection, and brotherly affection with love. For if these qualities are yours and are increasing, they keep you from being ineffective or unfruitful in the knowledge of our Lord Jesus Christ.”
+
+**Galatians 5:22–23**
+> “But the fruit of the Spirit is love, joy, peace, patience, kindness, goodness, faithfulness, gentleness, self-control; against such things there is no law.”
+
+## Signs of immaturity
+
+**1 Corinthians 3:1–2**
+> “But I, brothers, could not address you as spiritual people, but as people of the flesh, as infants in Christ. I fed you with milk, not solid food, for you were not ready for it. And even now you are not yet ready,”
+
+**1 Corinthians 3:3 (NIV)**
+> “You are still worldly. For since there is jealousy and quarreling among you, are you not worldly? Are you not acting like mere humans?”
+
+**Hebrews 5:12–14**
+> “For though by this time you ought to be teachers, you need someone to teach you again the basic principles of the oracles of God. You need milk, not solid food, for everyone who lives on milk is unskilled in the word of righteousness, since he is a child. But solid food is for the mature, for those who have their powers of discernment trained by constant practice to distinguish good from evil.”
 
 
 ---

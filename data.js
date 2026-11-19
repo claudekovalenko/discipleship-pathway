@@ -233,6 +233,7 @@ const PASSAGES = [
   ["Matthew 5:1–2","“Seeing the crowds, he went up on the mountain, and when he sat down, his disciples came to him. And he opened his mouth and taught them, saying:”"],
   ["Matthew 5:11–12","“Blessed are you when others revile you and persecute you and utter all kinds of evil against you falsely on my account. Rejoice and be glad, for your reward is great in heaven, for so they persecuted the prophets who were before you.”"],
   ["Matthew 5:19","“Therefore whoever relaxes one of the least of these commandments and teaches others to do the same will be called least in the kingdom of heaven, but whoever does them and teaches them will be called great in the kingdom of heaven.”"],
+  ["Matthew 5:44, 48","“But I tell you, love your enemies and pray for those who persecute you,… Be perfect, therefore, as your heavenly Father is perfect.”","NIV"],
   ["Matthew 6:17–18","“But when you fast, anoint your head and wash your face, that your fasting may not be seen by others but by your Father who is in secret. And your Father who sees in secret will reward you.”"],
   ["Matthew 7:24","“Everyone then who hears these words of mine and does them will be like a wise man who built his house on the rock.”"],
   ["Matthew 9:15","“And Jesus said to them, ‘Can the wedding guests mourn as long as the bridegroom is with them? The days will come when the bridegroom is taken away from them, and then they will fast.’”"],
@@ -288,6 +289,8 @@ const PASSAGES = [
   ["Luke 11:1","“Now Jesus was praying in a certain place, and when he finished, one of his disciples said to him, ‘Lord, teach us to pray, as John taught his disciples.’”"],
   ["Luke 11:28","“But he said, ‘Blessed rather are those who hear the word of God and keep it!’”"],
   ["Luke 12:33","“Sell your possessions, and give to the needy.…”"],
+  ["Luke 14:27","“And whoever does not carry their cross and follow me cannot be my disciple.”","NIV"],
+  ["Luke 14:33","“In the same way, those of you who do not give up everything you have cannot be my disciples.”","NIV"],
   ["Luke 19:9","“And Jesus said to him, ‘Today salvation has come to this house, since he also is a son of Abraham.’”"],
   ["Luke 22:19","“And he took bread, and when he had given thanks, he broke it and gave it to them, saying, ‘This is my body, which is given for you. Do this in remembrance of me.’”"],
   ["Luke 22:20","“And likewise the cup after they had eaten, saying, ‘This cup that is poured out for you is the new covenant in my blood.’”"],
@@ -399,25 +402,30 @@ const PASSAGES = [
   ["Acts 28:30–31","“He lived there two whole years at his own expense, and welcomed all who came to him, proclaiming the kingdom of God and teaching about the Lord Jesus Christ with all boldness and without hindrance.”"],
   ["Romans 6:4","“We were buried therefore with him by baptism into death, in order that, just as Christ was raised from the dead by the glory of the Father, we too might walk in newness of life.”"],
   ["Romans 7:24","“What a wretched man I am! Who will rescue me from this body that is subject to death?”","NIV"],
+  ["Romans 8:29","“For those God foreknew he also predestined to be conformed to the image of his Son, that he might be the firstborn among many brothers and sisters.”","NIV"],
   ["Romans 10:14–15","“How then will they call on him in whom they have not believed? And how are they to believe in him of whom they have never heard? And how are they to hear without someone preaching? And how are they to preach unless they are sent? As it is written, ‘How beautiful are the feet of those who preach the good news!’”"],
   ["Romans 10:17","“Consequently, faith comes from hearing the message, and the message is heard through the word about Christ.”","NIV"],
   ["Romans 12:6","“We have different gifts, according to the grace given to each of us.…”","NIV"],
   ["Romans 12:10","“Love one another with brotherly affection. Outdo one another in showing honor.”"],
   ["Romans 12:13","“Contribute to the needs of the saints and seek to show hospitality.”"],
   ["Romans 13:8, 10","“Owe no one anything, except to love each other, for the one who loves another has fulfilled the law.… Love does no wrong to a neighbor; therefore love is the fulfilling of the law.”"],
+  ["Romans 15:1","“We who are strong ought to bear with the failings of the weak and not to please ourselves.”","NIV"],
   ["Romans 15:20","“and thus I make it my ambition to preach the gospel, not where Christ has already been named, lest I build on someone else's foundation,”"],
   ["Romans 16:5","“Greet also the church in their house.…”"],
   ["1 Corinthians 1:26–27","“For consider your calling, brothers: not many of you were wise according to worldly standards, not many were powerful, not many were of noble birth. But God chose what is foolish in the world to shame the wise; God chose what is weak in the world to shame the strong;”"],
   ["1 Corinthians 2:4–5","“and my speech and my message were not in plausible words of wisdom, but in demonstration of the Spirit and of power, so that your faith might not rest in the wisdom of men but in the power of God.”"],
   ["1 Corinthians 3:1–2","“But I, brothers, could not address you as spiritual people, but as people of the flesh, as infants in Christ. I fed you with milk, not solid food, for you were not ready for it. And even now you are not yet ready,”"],
+  ["1 Corinthians 3:3","“You are still worldly. For since there is jealousy and quarreling among you, are you not worldly? Are you not acting like mere humans?”","NIV"],
   ["1 Corinthians 3:6","“I planted, Apollos watered, but God gave the growth.”"],
   ["1 Corinthians 3:10–11","“According to the grace of God given to me, like a skilled master builder I laid a foundation, and someone else is building upon it. Let each one take care how he builds upon it. For no one can lay a foundation other than that which is laid, which is Jesus Christ.”"],
   ["1 Corinthians 11:1","“Be imitators of me, as I am of Christ.”"],
   ["1 Corinthians 11:23","“For I received from the Lord what I also delivered to you, that the Lord Jesus on the night when he was betrayed took bread,”"],
+  ["1 Corinthians 14:20","“Brothers and sisters, stop thinking like children. In regard to evil be infants, but in your thinking be adults.”","NIV"],
   ["1 Corinthians 15:3","“For I delivered to you as of first importance what I also received:…”"],
   ["1 Corinthians 15:3–4","“For what I received I passed on to you as of first importance: that Christ died for our sins according to the Scriptures, that he was buried, that he was raised on the third day according to the Scriptures,”","NIV"],
   ["2 Corinthians 2:7–8","“so you should rather turn to forgive and comfort him, or he may be overwhelmed by excessive sorrow. So I beg you to reaffirm your love for him.”"],
   ["2 Corinthians 3:3","“And you show that you are a letter from Christ delivered by us, written not with ink but with the Spirit of the living God, not on tablets of stone but on tablets of human hearts.”"],
+  ["2 Corinthians 3:18","“And we all, who with unveiled faces contemplate the Lord’s glory, are being transformed into his image with ever-increasing glory, which comes from the Lord, who is the Spirit.”","NIV"],
   ["2 Corinthians 4:7","“But we have this treasure in jars of clay, to show that the surpassing power belongs to God and not to us.”"],
   ["2 Corinthians 9:7","“Each one must give as he has decided in his heart, not reluctantly or under compulsion, for God loves a cheerful giver.”"],
   ["2 Corinthians 12:9","“But he said to me, ‘My grace is sufficient for you, for my power is made perfect in weakness.’…”"],
@@ -442,6 +450,7 @@ const PASSAGES = [
   ["Philippians 1:1","“Paul and Timothy, servants of Christ Jesus, To all the saints in Christ Jesus who are at Philippi, with the overseers and deacons:”"],
   ["Philippians 2:22","“But you know Timothy's proven worth, how as a son with a father he has served with me in the gospel.”"],
   ["Philippians 3:12, 15","“Not that I have already obtained this or am already perfect, but I press on to make it my own, because Christ Jesus has made me his own.… Let those of us who are mature think this way,…”"],
+  ["Philippians 3:13–14","“Brothers and sisters, I do not consider myself yet to have taken hold of it. But one thing I do: Forgetting what is behind and straining toward what is ahead, I press on toward the goal to win the prize for which God has called me heavenward in Christ Jesus.”","NIV"],
   ["Philippians 4:9","“What you have learned and received and heard and seen in me—practice these things, and the God of peace will be with you.”"],
   ["Colossians 1:6","“which has come to you, as indeed in the whole world it is bearing fruit and increasing—as it also does among you, since the day you heard it and understood the grace of God in truth,”"],
   ["Colossians 1:28","“Him we proclaim, warning everyone and teaching everyone with all wisdom, that we may present everyone mature in Christ.”"],
@@ -482,6 +491,8 @@ const PASSAGES = [
   ["2 Timothy 4:7","“I have fought the good fight, I have finished the race, I have kept the faith.”","NIV"],
   ["2 Timothy 4:11","“Only Luke is with me. Get Mark and bring him with you, because he is helpful to me in my ministry.”","NIV"],
   ["Titus 1:5","“This is why I left you in Crete, so that you might put what remained into order, and appoint elders in every town as I directed you—”"],
+  ["Titus 1:9","“He must hold firmly to the trustworthy message as it has been taught, so that he can encourage others by sound doctrine and refute those who oppose it.”","NIV"],
+  ["Titus 2:2","“Teach the older men to be temperate, worthy of respect, self-controlled, and sound in faith, in love and in endurance.”","NIV"],
   ["Titus 2:3–4","“Older women likewise are to be reverent in behavior… They are to teach what is good, and so train the young women…”"],
   ["Titus 2:7","“Show yourself in all respects to be a model of good works, and in your teaching show integrity, dignity,”"],
   ["Hebrews 3:13","“But exhort one another every day, as long as it is called ‘today,’ that none of you may be hardened by the deceitfulness of sin.”"],
@@ -497,6 +508,7 @@ const PASSAGES = [
   ["James 1:4","“And let steadfastness have its full effect, that you may be perfect and complete, lacking in nothing.”"],
   ["James 1:22","“But be doers of the word, and not hearers only, deceiving yourselves.”"],
   ["James 2:8","“If you really fulfill the royal law according to the Scripture, ‘You shall love your neighbor as yourself,’ you are doing well.”"],
+  ["James 3:2","“We all stumble in many ways. Anyone who is never at fault in what they say is perfect, able to keep their whole body in check.”","NIV"],
   ["James 5:16","“Therefore, confess your sins to one another and pray for one another, that you may be healed.”"],
   ["James 5:17","“Elijah was a human being, even as we are. He prayed earnestly that it would not rain, and it did not rain on the land for three and a half years.”","NIV"],
   ["James 5:19–20","“My brothers, if anyone among you wanders from the truth and someone brings him back, let him know that whoever brings back a sinner from his wandering will save his soul from death and will cover a multitude of sins.”"],
@@ -510,10 +522,12 @@ const PASSAGES = [
   ["2 Peter 1:5–8","“For this very reason, make every effort to supplement your faith with virtue, and virtue with knowledge, and knowledge with self-control, and self-control with steadfastness, and steadfastness with godliness, and godliness with brotherly affection, and brotherly affection with love. For if these qualities are yours and are increasing, they keep you from being ineffective or unfruitful in the knowledge of our Lord Jesus Christ.”"],
   ["2 Peter 3:18","“But grow in the grace and knowledge of our Lord and Savior Jesus Christ. To him be glory both now and forever! Amen.”","NIV"],
   ["1 John 1:3","“that which we have seen and heard we proclaim also to you, so that you too may have fellowship with us; and indeed our fellowship is with the Father and with his Son Jesus Christ.”"],
+  ["1 John 2:5","“But if anyone obeys his word, love for God is truly made complete in them. This is how we know we are in him:”","NIV"],
   ["1 John 2:6","“whoever says he abides in him ought to walk in the same way in which he walked.”"],
   ["1 John 2:13–14","“I am writing to you, fathers, because you know him who is from the beginning. I am writing to you, young men, because you have overcome the evil one. I write to you, children, because you know the Father. I write to you, fathers, because you know him who is from the beginning. I write to you, young men, because you are strong, and the word of God abides in you, and you have overcome the evil one.”"],
   ["1 John 3:18","“Little children, let us not love in word or talk but in deed and in truth.”"],
   ["1 John 4:7","“Beloved, let us love one another, for love is from God, and whoever loves has been born of God and knows God.”"],
+  ["1 John 4:12","“No one has ever seen God; but if we love one another, God lives in us and his love is made complete in us.”","NIV"],
   ["1 John 4:19","“We love because he first loved us.”"],
   ["1 John 4:20–21","“If anyone says, ‘I love God,’ and hates his brother, he is a liar; for he who does not love his brother whom he has seen cannot love God whom he has not seen. And this commandment we have from him: whoever loves God must also love his brother.”"],
   ["1 John 5:3","“For this is the love of God, that we keep his commandments. And his commandments are not burdensome.”"],
@@ -657,3 +671,40 @@ const ARCS = [
 
 // Examine yourselves: the checks for spiritual health that Scripture itself gives.
 const HEALTH = ["Psalm 139:23–24","Lamentations 3:40","2 Corinthians 13:5","Galatians 5:22–23","Hebrews 3:13","Revelation 2:4"];
+
+// The mature disciple, defined by Scripture. A mark is listed only when its verse uses
+// Scripture's own maturity words (mature, perfect, complete, fully trained, fathers, strong)
+// or is one of Jesus' own definitions of a disciple.
+//   toward:   what every disciple grows toward
+//   disciple: Jesus' marks of a disciple: [quote, where it is from, references]
+//   marks:    marks of maturity: [quote, where it is from, references]
+//   immature: signs of immaturity
+const MATURE = {
+  toward: ["Romans 8:29","2 Corinthians 3:18","Ephesians 4:13–14","Colossians 1:28"],
+  disciple: [
+    ["If you abide in my word, you are truly my disciples","John 8:31",["John 8:31"]],
+    ["By this all people will know that you are my disciples","John 13:35",["John 13:34–35"]],
+    ["That you bear much fruit and so prove to be my disciples","John 15:8",["John 15:4–5, 8"]],
+    ["Whoever does not carry their cross and follow me cannot be my disciple","Luke 14:27 NIV",["Luke 9:23","Luke 14:27"]],
+    ["Those of you who do not give up everything you have cannot be my disciples","Luke 14:33 NIV",["Luke 14:33"]]
+  ],
+  marks: [
+    ["Fathers, because you know him who is from the beginning","1 John 2:13",["1 John 2:13–14"]],
+    ["Solid food is for the mature","Hebrews 5:14",["Hebrews 5:12–14","1 Corinthians 14:20"]],
+    ["So that we may no longer be children, tossed to and fro","Ephesians 4:14",["Ephesians 4:13–14","Titus 1:9"]],
+    ["Speaking the truth in love","Ephesians 4:15",["Ephesians 4:15–16"]],
+    ["Perfect, able to keep their whole body in check","James 3:2 NIV",["James 3:2"]],
+    ["That you may be perfect and complete, lacking in nothing","James 1:4",["James 1:4"]],
+    ["Be perfect, therefore, as your heavenly Father is perfect","Matthew 5:48 NIV",["Matthew 5:44, 48"]],
+    ["His love is made complete in us","1 John 4:12 NIV",["1 John 2:5","1 John 4:12"]],
+    ["I press on toward the goal","Philippians 3:14 NIV",["Philippians 3:12, 15","Philippians 3:13–14"]],
+    ["By this time you ought to be teachers","Hebrews 5:12",["Hebrews 5:12–14","2 Timothy 2:2"]],
+    ["We who are strong ought to bear with the failings of the weak","Romans 15:1 NIV",["Romans 15:1","Galatians 6:1–2"]],
+    ["Stand mature and fully assured in all the will of God","Colossians 4:12",["Colossians 4:12"]],
+    ["Everyone when he is fully trained will be like his teacher","Luke 6:40",["Luke 6:40"]],
+    ["Complete, equipped for every good work","2 Timothy 3:17",["2 Timothy 3:16–17"]],
+    ["Sound in faith, in love and in endurance","Titus 2:2 NIV",["Titus 2:2","1 Timothy 3:1–2","1 Timothy 3:6"]],
+    ["If these qualities are yours and are increasing","2 Peter 1:8",["2 Peter 1:5–8","Galatians 5:22–23"]]
+  ],
+  immature: ["1 Corinthians 3:1–2","1 Corinthians 3:3","Hebrews 5:12–14"]
+};

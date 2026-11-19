@@ -22,7 +22,7 @@ md += `> “You shall love the Lord your God with all your heart and with all yo
 md += `Patterns 1 and 2 are that focus. The rest flow from it.\n\n`;
 md += `## Contents\n\n`;
 d.PATTERNS.forEach((pt, n) => { md += `${n + 1}. [“${pt[0]}” (${pt[1]})](#${anchor(`${n + 1} ${pt[0]}`)})\n`; });
-md += `\nThen: [Practices: With Jesus, and Afterward](#practices-with-jesus-and-afterward) · [From New Believer to Mature Disciple](#from-new-believer-to-mature-disciple) · [Character Arcs](#character-arcs) · [Growth Toward Maturity](#growth-toward-maturity)\n`;
+md += `\nThen: [The Mature Disciple](#the-mature-disciple) · [Practices: With Jesus, and Afterward](#practices-with-jesus-and-afterward) · [From New Believer to Mature Disciple](#from-new-believer-to-mature-disciple) · [Character Arcs](#character-arcs) · [Growth Toward Maturity](#growth-toward-maturity)\n`;
 
 d.PATTERNS.forEach((pt, n) => {
   const refs = pt[2];
@@ -45,6 +45,17 @@ d.PRACTICES.forEach((pr, n) => {
     list.forEach(r => { md += `**${r}${byRef.get(r)[2] ? " (" + byRef.get(r)[2] + ")" : ""}**\n> ${byRef.get(r)[1]}${byRef.get(r)[2] ? ` (${byRef.get(r)[2]})` : ""}\n\n`; });
   });
 });
+{
+  const M = d.MATURE, vm = list => list.map(r => `**${r}${byRef.get(r)[2] ? " (" + byRef.get(r)[2] + ")" : ""}**\n> ${byRef.get(r)[1]}\n\n`).join("");
+  const all = [...M.disciple, ...M.marks];
+  md += `\n---\n\n# The Mature Disciple\n\nNamed in Scripture's own words: Jesus' definitions of a disciple, and the verses that use the words mature, perfect, complete, fully trained, fathers, and strong.\n\n`;
+  md += `## At a glance\n\n**Jesus' marks of a disciple**\n\n${M.disciple.map(([q, rf], n) => `${n + 1}. “${q}” (${rf})`).join("\n")}\n\n`;
+  md += `**Marks of maturity**\n\n${M.marks.map(([q, rf], n) => `${n + 1 + M.disciple.length}. “${q}” (${rf})`).join("\n")}\n\n`;
+  md += `## What every disciple grows toward\n\n${vm(M.toward)}`;
+  md += `## The marks, with every verse\n\n`;
+  all.forEach(([q, rf, refs], n) => { md += `### ${n + 1}. “${q}” (${rf})\n\n${vm(refs)}`; });
+  md += `## Signs of immaturity\n\n${vm(M.immature)}`;
+}
 md += `\n---\n\n# From New Believer to Mature Disciple\n\nEach step shows where Scripture places it, what the word says, and how Jesus did it with the Twelve.\n\n`;
 d.PATHWAY.forEach(([ph, rf, order, word, jesus], n) => {
   md += `## Step ${n + 1}. “${ph}” (${rf})\n\n`;

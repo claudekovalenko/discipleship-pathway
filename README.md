@@ -49,6 +49,7 @@ An installable app (PWA) that works offline once it has been opened.
   Each shows a bar of all 66 books marking where it appears, then every passage in order.
 - **Whole Bible · Old Testament · New Testament:** every pattern and command page has this switch. Links keep the choice, e.g. `#pattern-6-nt` opens "I will build my church" in the New Testament.
 - **Practices:** seventeen practices of discipleship, each named by a phrase of Scripture. For each one, what Jesus did with his disciples (the Gospels) is set beside what his followers did afterward (Acts to Revelation): being with him, teaching, prayer, fasting, choosing and appointing, sending out two by two, receiving and hospitality, going to the next towns, reporting back, baptizing, breaking bread, singing, serving, sharing possessions, correcting and restoring, strengthening, and suffering. There is also an all-practices page (`#practicesall`).
+- **The mature disciple** (top of the Pathway tab, `#mature`): what every disciple grows toward, then 21 marks named in Scripture's own words. Five are Jesus' own definitions of a disciple ("you are truly my disciples," "cannot be my disciple"), and sixteen come from verses that use the words mature, perfect, complete, fully trained, fathers, or strong. Each mark is titled by a quote from its verse, with an at-a-glance summary first and the full verses below, followed by Scripture's signs of immaturity.
 - **Pathway:** from new believer to mature disciple, in ten steps, each named by a phrase of Scripture. Every step shows *where Scripture places this step* (the verses that show the order, such as Acts 2:37–42, Colossians 2:6–7, Hebrews 5:12–14 and 1 Timothy 3:6, 10), *what the word says*, and *with Jesus* (how he did it with the Twelve). There is also a one-page version (`#stepsall`). Under "Going deeper":
   - *The range of maturity:* infants and milk, children, young men and fathers, solid food for the mature.
   - *How Jesus discipled the Twelve:* thirteen steps in the order of the Gospels, from "Come and you will see" to "stay in the city until you are clothed with power."
@@ -98,12 +99,13 @@ All content is in `data.js`.
    - a pattern: the third item of its row in `PATTERNS`
    - a practice: the "with Jesus" list (Gospels only) or the "afterward" list (Acts to Revelation only) in `PRACTICES`
    - the pathway: a step in `PATHWAY` (where Scripture places it, what the word says, with Jesus)
+   - the mature disciple: a mark in `MATURE` (only verses that use Scripture's maturity words, or Jesus' definitions of a disciple)
    - a character arc: a moment in `ARCS`, titled by a phrase from its own verse, in the order of the life
    - growth: a list in `GROWTH` (seasons are in the order of each life, not book order)
 
 A passage that is in no list is never shown, so remove it from `PASSAGES` too.
 
-**After any change,** run `node scripts/compile-patterns.js` to rebuild `PATTERNS.md`, and bump `CACHE` in `sw.js` (e.g. `dp-v16` → `dp-v17`) so installed apps download the update.
+**After any change,** run `node scripts/compile-patterns.js` to rebuild `PATTERNS.md`, and bump `CACHE` in `sw.js` (e.g. `dp-v17` → `dp-v18`) so installed apps download the update.
 
 ## Scripture copyright
 
@@ -111,4 +113,4 @@ Scripture quotations are from the ESV® Bible (The Holy Bible, English Standard 
 
 Passages marked NIV are taken from The Holy Bible, New International Version® NIV®. Copyright © 1973, 1978, 1984, 2011 by Biblica, Inc.™ Used by permission. All rights reserved worldwide.
 
-Crossway and Biblica each allow up to 500 verses of their translation to be quoted without written permission, as long as the quotations don't make up a complete book of the Bible or 25% or more of the total text of the work. The app currently quotes about 466 ESV verses and 66 NIV verses. **Add new verses in the NIV**, since the ESV is near its limit. Most of this app's text is Scripture, so request permission from both publishers before distributing it widely. Keep both notices on the home screen.
+Crossway and Biblica each allow up to 500 verses of their translation to be quoted without written permission, as long as the quotations don't make up a complete book of the Bible or 25% or more of the total text of the work. The app currently quotes about 466 ESV verses and 82 NIV verses. **Add new verses in the NIV**, since the ESV is near its limit. Most of this app's text is Scripture, so request permission from both publishers before distributing it widely. Keep both notices on the home screen.

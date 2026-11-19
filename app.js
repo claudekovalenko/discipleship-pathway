@@ -88,6 +88,8 @@ function homeScreen() {
       <span class="txt"><b>${PRACTICES.length} practices</b><small>With Jesus in the Gospels · Afterward in Acts to Revelation</small></span>${chev}</a>
 
     <p class="label" style="margin-top:26px">The pathway</p>
+    <a class="cmdrow" href="#mature" style="--c:var(--accent)">
+      <span class="txt"><b>The mature disciple</b><small>What we grow toward, in Scripture's own words</small></span>${chev}</a>
     <a class="cmdrow" href="#growth" style="--c:var(--accent)">
       <span class="txt"><b>From new believer to mature disciple</b><small>${PATHWAY.length} steps, each tested against the word</small></span>${chev}</a>
 
@@ -218,13 +220,14 @@ const GROWTH_PARTS = [
   ["range", "The range of maturity", "Infants, children, young men, fathers, the mature", GROWTH.range.length],
   ["jesus", "How Jesus discipled the Twelve", `${GROWTH.jesus.length} steps, in the order of the Gospels`, GROWTH.jesus.length],
   ["pairs", "Before and after", "The same disciples in the Gospels, then in Acts and their letters", GROWTH.pairs.length],
-  ["seasons", "Seasons of preparation", GROWTH.seasons.map(s => s[0]).join(" · "), GROWTH.seasons.length],
-  ["mature", "A mature disciple", "Fully trained, complete, mature in Christ", GROWTH.mature.length]];
+  ["seasons", "Seasons of preparation", GROWTH.seasons.map(s => s[0]).join(" · "), GROWTH.seasons.length]];
 
 function growthScreen() {
   return { title: "Pathway", tab: "growth", html: `
     <div class="hello"><h2>From new believer to mature disciple</h2>
       <p>Each step shows where Scripture places it, what the word says, and how Jesus did it with the Twelve.</p></div>
+    <a class="cmdrow lead" href="#mature" style="--c:var(--accent)">
+      <span class="txt"><b>The mature disciple</b><small>What a disciple grows toward, and ${MATURE.disciple.length + MATURE.marks.length} marks named in Scripture's own words</small></span>${chev}</a>
     <a class="cmdrow" href="#stepsall" style="--c:var(--accent)">
       <span class="txt"><b>The whole pathway on one page</b><small>All ${PATHWAY.length} steps with every verse</small></span>${chev}</a>
     <ol class="steps path">${PATHWAY.map((s, n) => `<li><a href="#step-${n}">
@@ -285,6 +288,37 @@ function healthScreen() {
     ${grouped(ids(HEALTH))}` };
 }
 
+/* The mature disciple: marks named in Scripture's own words, summary first, then the verses. */
+function matureScreen() {
+  const mark = ([q, rf, refs], n) => `<section class="compiled mark" id="mk${n}">
+      <h3 class="phrase"><span class="num">${n + 1}</span>“${q}”</h3><span class="ref">${rf}</span>
+      ${ids(refs).map(passage).join("")}</section>`;
+  const D = MATURE.disciple.length;
+  return { title: "The Mature Disciple", tab: "growth", back: "#growth", html: `
+    <div class="hello"><h2>The mature disciple</h2>
+      <p>Named in Scripture's own words: Jesus' definitions of a disciple, and the verses that use the words mature, perfect, complete, fully trained, fathers, and strong.</p></div>
+
+    <div class="card summary">
+      <p class="label">At a glance</p>
+      <p class="side"><b>Jesus' marks of a disciple</b></p>
+      <ol class="sumlist">${MATURE.disciple.map(([q, rf], n) => `<li value="${n + 1}"><button type="button" data-jump="mk${n}">“${q}”</button> <span class="ref">${rf}</span></li>`).join("")}</ol>
+      <p class="side"><b>Marks of maturity</b></p>
+      <ol class="sumlist">${MATURE.marks.map(([q, rf], n) => `<li value="${n + D + 1}"><button type="button" data-jump="mk${n + D}">“${q}”</button> <span class="ref">${rf}</span></li>`).join("")}</ol>
+    </div>
+
+    <p class="label" style="margin-top:22px">What every disciple grows toward</p>
+    ${ids(MATURE.toward).map(passage).join("")}
+
+    <p class="label" style="margin-top:22px">Jesus' marks of a disciple</p>
+    ${MATURE.disciple.map((m, n) => mark(m, n)).join("")}
+
+    <p class="label" style="margin-top:22px">Marks of maturity</p>
+    ${MATURE.marks.map((m, n) => mark(m, n + D)).join("")}
+
+    <p class="label" style="margin-top:22px">Signs of immaturity</p>
+    ${ids(MATURE.immature).map(passage).join("")}` };
+}
+
 function stepsAllScreen() {
   return { title: "The Whole Pathway", tab: "growth", back: "#growth", html: `
     <div class="hello"><h2>From new believer to mature disciple</h2><p>${PATHWAY.length} steps</p></div>
@@ -294,6 +328,7 @@ function stepsAllScreen() {
 }
 
 function growScreen(k) {
+  if (k === "mature") return matureScreen();
   const part = GROWTH_PARTS.find(p => p[0] === k); if (!part) return growthScreen();
   const head = `<div class="hello"><h2>${part[1]}</h2></div>`;
   let body = "";
@@ -384,6 +419,7 @@ function route() {
     : name === "pattern" ? patternScreen(+arg)
     : name === "growth" ? growthScreen()
     : name === "step" ? stepScreen(+arg)
+    : name === "mature" ? matureScreen()
     : name === "arcs" ? arcsScreen()
     : name === "arc" ? arcScreen(+arg)
     : name === "health" ? healthScreen()

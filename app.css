@@ -247,3 +247,15 @@ a.tag{text-decoration:none}
 .steps.path a:active{background:var(--accent-soft)}
 .steps.path .phrase{display:block;font-size:17px;font-weight:600}
 .ref .tr{font-size:11px;font-weight:700;letter-spacing:.06em;color:var(--accent);text-decoration:none;border:1px solid var(--accent);border-radius:4px;padding:0 4px;margin-left:4px}
+
+/* The mature disciple */
+.cmdrow.lead{border:2px solid var(--accent);background:var(--accent-soft)}
+.summary .side{margin:10px 0 6px}
+.sumlist{margin:0;padding-left:26px}
+.sumlist li{margin:6px 0;color:var(--accent);font:700 13px system-ui,sans-serif}
+.sumlist button{background:none;border:0;padding:0;text-align:left;cursor:pointer;color:var(--ink);font-family:Georgia,"Iowan Old Style",serif;font-size:16px;font-weight:600;line-height:1.35}
+.sumlist .ref{display:inline;font-weight:600;color:var(--muted)}
+.mark{padding-top:14px}
+.mark .phrase{display:flex;gap:10px;align-items:baseline;font-family:Georgia,"Iowan Old Style",serif;font-size:19px;line-height:1.3;margin:0 0 2px}
+.mark > .ref{margin-bottom:8px}
+.sumlist button{display:inline}
