@@ -55,6 +55,9 @@ An installable app (PWA) that works offline once it has been opened.
   - *Before and after:* the same disciples in the Gospels, then in Acts and their letters.
   - *Seasons of preparation:* Joseph, Moses, Joshua, David, Elisha, Jesus, Paul and Timothy, each in the order of his life.
   - *A mature disciple:* fully trained, complete, mature in Christ.
+- **Spiritual health** (on the Pathway tab):
+  - *Character arcs:* Peter, David, Moses, Elijah, Jonah, Paul, John Mark, and two warnings (Saul and Solomon), each traced through life in order, strong moments and falls alike. Every moment is titled by a phrase from its own verse.
+  - *Examine yourselves:* the checks for spiritual health that Scripture itself gives.
 - **All patterns compiled:** every pattern and every verse on one page in the app (`#compiled`, or `#compiled-nt` for the New Testament only; it prints cleanly from a browser), and as a document: [PATTERNS.md](PATTERNS.md).
 - **Bible:** all 66 books, grouped by section (Law, History, Wisdom & Poetry, Major Prophets, Minor Prophets, Gospels, Acts, Paul's Letters, General Letters, Revelation). Tap a book to read its passages. A book shows 0 when none of its verses state one of the themes.
 - **Search** (inside the Bible tab): any word, book, or reference, filtered by command.
@@ -95,11 +98,12 @@ All content is in `data.js`.
    - a pattern: the third item of its row in `PATTERNS`
    - a practice: the "with Jesus" list (Gospels only) or the "afterward" list (Acts to Revelation only) in `PRACTICES`
    - the pathway: a step in `PATHWAY` (where Scripture places it, what the word says, with Jesus)
+   - a character arc: a moment in `ARCS`, titled by a phrase from its own verse, in the order of the life
    - growth: a list in `GROWTH` (seasons are in the order of each life, not book order)
 
 A passage that is in no list is never shown, so remove it from `PASSAGES` too.
 
-**After any change,** run `node scripts/compile-patterns.js` to rebuild `PATTERNS.md`, and bump `CACHE` in `sw.js` (e.g. `dp-v15` → `dp-v16`) so installed apps download the update.
+**After any change,** run `node scripts/compile-patterns.js` to rebuild `PATTERNS.md`, and bump `CACHE` in `sw.js` (e.g. `dp-v16` → `dp-v17`) so installed apps download the update.
 
 ## Scripture copyright
 
@@ -107,4 +111,4 @@ Scripture quotations are from the ESV® Bible (The Holy Bible, English Standard 
 
 Passages marked NIV are taken from The Holy Bible, New International Version® NIV®. Copyright © 1973, 1978, 1984, 2011 by Biblica, Inc.™ Used by permission. All rights reserved worldwide.
 
-Crossway and Biblica each allow up to 500 verses of their translation to be quoted without written permission, as long as the quotations don't make up a complete book of the Bible or 25% or more of the total text of the work. The app currently quotes about 466 ESV verses and 14 NIV verses. **Add new verses in the NIV**, since the ESV is near its limit. Most of this app's text is Scripture, so request permission from both publishers before distributing it widely. Keep both notices on the home screen.
+Crossway and Biblica each allow up to 500 verses of their translation to be quoted without written permission, as long as the quotations don't make up a complete book of the Bible or 25% or more of the total text of the work. The app currently quotes about 466 ESV verses and 66 NIV verses. **Add new verses in the NIV**, since the ESV is near its limit. Most of this app's text is Scripture, so request permission from both publishers before distributing it widely. Keep both notices on the home screen.

@@ -22,7 +22,7 @@ md += `> “You shall love the Lord your God with all your heart and with all yo
 md += `Patterns 1 and 2 are that focus. The rest flow from it.\n\n`;
 md += `## Contents\n\n`;
 d.PATTERNS.forEach((pt, n) => { md += `${n + 1}. [“${pt[0]}” (${pt[1]})](#${anchor(`${n + 1} ${pt[0]}`)})\n`; });
-md += `\nThen: [Practices: With Jesus, and Afterward](#practices-with-jesus-and-afterward) · [From New Believer to Mature Disciple](#from-new-believer-to-mature-disciple) · [Growth Toward Maturity](#growth-toward-maturity)\n`;
+md += `\nThen: [Practices: With Jesus, and Afterward](#practices-with-jesus-and-afterward) · [From New Believer to Mature Disciple](#from-new-believer-to-mature-disciple) · [Character Arcs](#character-arcs) · [Growth Toward Maturity](#growth-toward-maturity)\n`;
 
 d.PATTERNS.forEach((pt, n) => {
   const refs = pt[2];
@@ -52,6 +52,13 @@ d.PATHWAY.forEach(([ph, rf, order, word, jesus], n) => {
   md += `### What the word says\n\n${word.map(r => `**${r}${byRef.get(r)[2] ? " (" + byRef.get(r)[2] + ")" : ""}**\n> ${byRef.get(r)[1]}\n\n`).join("")}`;
   md += `### With Jesus\n\n${jesus.map(r => `**${r}${byRef.get(r)[2] ? " (" + byRef.get(r)[2] + ")" : ""}**\n> ${byRef.get(r)[1]}\n\n`).join("")}`;
 });
+const vv = list => list.map(r => `**${r}${byRef.get(r)[2] ? " (" + byRef.get(r)[2] + ")" : ""}**\n> ${byRef.get(r)[1]}\n\n`).join("");
+md += `\n---\n\n# Character Arcs\n\nEach life in the order it happened. Each moment is titled by a phrase from its own verse.\n\n`;
+d.ARCS.forEach(([who, moments]) => {
+  md += `## ${who}\n\n`;
+  moments.forEach(([q, refs], i) => { md += `### ${i + 1}. “${q}”\n\n${vv(refs)}`; });
+});
+md += `## Examine yourselves\n\n${vv(d.HEALTH)}`;
 const G = d.GROWTH;
 const verses = list => list.map(r => `**${r}**\n> ${byRef.get(r)[1]}${byRef.get(r)[2] ? ` (${byRef.get(r)[2]})` : ""}\n\n`).join("");
 md += `\n---\n\n# Growth Toward Maturity\n\n`;

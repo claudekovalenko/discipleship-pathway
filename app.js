@@ -230,6 +230,12 @@ function growthScreen() {
     <ol class="steps path">${PATHWAY.map((s, n) => `<li><a href="#step-${n}">
       <b class="phrase">“${s[0]}”</b><span class="ref">${s[1]}</span></a></li>`).join("")}</ol>
 
+    <p class="label" style="margin-top:26px">Spiritual health</p>
+    <a class="cmdrow" href="#arcs" style="--c:var(--accent)">
+      <span class="txt"><b>Character arcs</b><small>${ARCS.map(x => x[0].split(",")[0]).join(" · ")}</small></span>${chev}</a>
+    <a class="cmdrow" href="#health" style="--c:var(--accent)">
+      <span class="txt"><b>Examine yourselves</b><small>The checks for spiritual health that Scripture gives</small></span>${chev}</a>
+
     <p class="label" style="margin-top:26px">Going deeper</p>
     ${GROWTH_PARTS.map(([k, t, s]) => `<a class="cmdrow" href="#grow-${k}" style="--c:var(--accent)">
       <span class="txt"><b>${t}</b><small>${s}</small></span>${chev}</a>`).join("")}` };
@@ -252,6 +258,31 @@ function stepScreen(n) {
       ${n > 0 ? `<a href="#step-${n - 1}">← Step ${n}</a>` : ""}
       ${n < PATHWAY.length - 1 ? `<a class="next" style="--c:var(--accent)" href="#step-${n + 1}">Step ${n + 2} →</a>` : ""}
     </div>` };
+}
+
+/* Character arcs: a life as Scripture records it, in order. */
+function arcsScreen() {
+  return { title: "Character Arcs", tab: "growth", back: "#growth", html: `
+    <div class="hello"><h2>Character arcs</h2><p>Each life in the order it happened. Each moment is titled by a phrase from its own verse.</p></div>
+    ${ARCS.map(([who, moments], n) => `<a class="cmdrow" href="#arc-${n}" style="--c:var(--accent)">
+      <span class="txt"><b>${who}</b><small>“${moments[0][0]}” → “${moments[moments.length - 1][0]}” · ${moments.length} moments</small></span>${chev}</a>`).join("")}` };
+}
+
+function arcScreen(n) {
+  const arc = ARCS[n]; if (!arc) return arcsScreen();
+  return { title: arc[0], tab: "growth", back: "#arcs", html: `
+    <div class="hello"><p class="label">Character arc</p><h2>${arc[0]}</h2><p>In the order of his life.</p></div>
+    <ol class="steps">${arc[1].map(([q, refs]) => `<li><h3 class="phrase">“${q}”</h3>${ids(refs).map(passage).join("")}</li>`).join("")}</ol>
+    <div class="pager">
+      ${n > 0 ? `<a href="#arc-${n - 1}">← ${ARCS[n - 1][0].split(",")[0]}</a>` : ""}
+      ${n < ARCS.length - 1 ? `<a class="next" style="--c:var(--accent)" href="#arc-${n + 1}">${ARCS[n + 1][0].split(",")[0]} →</a>` : ""}
+    </div>` };
+}
+
+function healthScreen() {
+  return { title: "Examine Yourselves", tab: "growth", back: "#growth", html: `
+    <div class="hello"><h2>Examine yourselves</h2></div>
+    ${grouped(ids(HEALTH))}` };
 }
 
 function stepsAllScreen() {
@@ -353,6 +384,9 @@ function route() {
     : name === "pattern" ? patternScreen(+arg)
     : name === "growth" ? growthScreen()
     : name === "step" ? stepScreen(+arg)
+    : name === "arcs" ? arcsScreen()
+    : name === "arc" ? arcScreen(+arg)
+    : name === "health" ? healthScreen()
     : name === "stepsall" ? stepsAllScreen()
     : name === "grow" ? growScreen(arg)
     : name === "season" ? seasonScreen(+arg)

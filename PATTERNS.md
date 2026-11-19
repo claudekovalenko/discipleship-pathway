@@ -31,7 +31,7 @@ Patterns 1 and 2 are that focus. The rest flow from it.
 21. [“Love the sojourner” (Deuteronomy 10:19)](#21-love-the-sojourner)
 22. [“God chose what is weak in the world to shame the strong” (1 Corinthians 1:27)](#22-god-chose-what-is-weak-in-the-world-to-shame-the-strong)
 
-Then: [Practices: With Jesus, and Afterward](#practices-with-jesus-and-afterward) · [From New Believer to Mature Disciple](#from-new-believer-to-mature-disciple) · [Growth Toward Maturity](#growth-toward-maturity)
+Then: [Practices: With Jesus, and Afterward](#practices-with-jesus-and-afterward) · [From New Believer to Mature Disciple](#from-new-believer-to-mature-disciple) · [Character Arcs](#character-arcs) · [Growth Toward Maturity](#growth-toward-maturity)
 
 ---
 
@@ -1916,6 +1916,365 @@ Each step shows where Scripture places it, what the word says, and how Jesus did
 
 **Luke 24:49**
 > “And behold, I am sending the promise of my Father upon you. But stay in the city until you are clothed with power from on high.”
+
+
+---
+
+# Character Arcs
+
+Each life in the order it happened. Each moment is titled by a phrase from its own verse.
+
+## Peter
+
+### 1. “I am a sinful man!”
+
+**Luke 5:8 (NIV)**
+> “When Simon Peter saw this, he fell at Jesus’ knees and said, ‘Go away from me, Lord; I am a sinful man!’”
+
+### 2. “Lord, save me!”
+
+**Matthew 14:30 (NIV)**
+> “But when he saw the wind, he was afraid and, beginning to sink, cried out, ‘Lord, save me!’”
+
+### 3. “You are the Messiah”
+
+**Matthew 16:16 (NIV)**
+> “Simon Peter answered, ‘You are the Messiah, the Son of the living God.’”
+
+### 4. “Get behind me, Satan!”
+
+**Mark 8:33**
+> “But turning and seeing his disciples, he rebuked Peter and said, ‘Get behind me, Satan! For you are not setting your mind on the things of God, but on the things of man.’”
+
+### 5. “I do not know him”
+
+**Luke 22:57**
+> “But he denied it, saying, ‘Woman, I do not know him.’”
+
+### 6. “He went outside and wept bitterly”
+
+**Luke 22:61–62 (NIV)**
+> “The Lord turned and looked straight at Peter. Then Peter remembered the word the Lord had spoken to him: ‘Before the rooster crows today, you will disown me three times.’ And he went outside and wept bitterly.”
+
+### 7. “Do you love me?”
+
+**John 21:17**
+> “He said to him the third time, ‘Simon, son of John, do you love me?’ Peter was grieved because he said to him the third time, ‘Do you love me?’ and he said to him, ‘Lord, you know everything; you know that I love you.’ Jesus said to him, ‘Feed my sheep.’”
+
+### 8. “We cannot but speak”
+
+**Acts 4:13**
+> “Now when they saw the boldness of Peter and John, and perceived that they were uneducated, common men, they were astonished. And they recognized that they had been with Jesus.”
+
+**Acts 4:19–20**
+> “But Peter and John answered them, ‘Whether it is right in the sight of God to listen to you rather than to God, you must judge, for we cannot but speak of what we have seen and heard.’”
+
+### 9. “I opposed him to his face”
+
+**Galatians 2:11**
+> “But when Cephas came to Antioch, I opposed him to his face, because he stood condemned.”
+
+### 10. “Shepherd the flock of God”
+
+**1 Peter 5:2–3**
+> “shepherd the flock of God that is among you, exercising oversight, not under compulsion, but willingly… not domineering over those in your charge, but being examples to the flock.”
+
+### 11. “Grow in the grace and knowledge”
+
+**2 Peter 3:18 (NIV)**
+> “But grow in the grace and knowledge of our Lord and Savior Jesus Christ. To him be glory both now and forever! Amen.”
+
+## David
+
+### 1. “The LORD looks on the heart”
+
+**1 Samuel 16:7**
+> “…For the LORD sees not as man sees: man looks on the outward appearance, but the LORD looks on the heart.”
+
+**1 Samuel 16:11**
+> “Then Samuel said to Jesse, ‘Are all your sons here?’ And he said, ‘There remains yet the youngest, but behold, he is keeping the sheep.’…”
+
+### 2. “The Spirit of the LORD came powerfully upon David”
+
+**1 Samuel 16:13 (NIV)**
+> “So Samuel took the horn of oil and anointed him in the presence of his brothers, and from that day on the Spirit of the LORD came powerfully upon David.…”
+
+### 3. “I come against you in the name of the LORD”
+
+**1 Samuel 17:37**
+> “And David said, ‘The LORD who delivered me from the paw of the lion and from the paw of the bear will deliver me from the hand of this Philistine.’…”
+
+**1 Samuel 17:45 (NIV)**
+> “David said to the Philistine, ‘You come against me with sword and spear and javelin, but I come against you in the name of the LORD Almighty, the God of the armies of Israel, whom you have defied.’”
+
+### 4. “The LORD forbid that I should… lay my hand on him”
+
+**1 Samuel 24:6 (NIV)**
+> “He said to his men, ‘The LORD forbid that I should do such a thing to my master, the LORD’s anointed, or lay my hand on him; for he is the anointed of the LORD.’”
+
+### 5. “The thing David had done displeased the LORD”
+
+**2 Samuel 11:27 (NIV)**
+> “…But the thing David had done displeased the LORD.”
+
+### 6. “You are the man!”
+
+**2 Samuel 12:7 (NIV)**
+> “Then Nathan said to David, ‘You are the man!…’”
+
+### 7. “I have sinned against the LORD”
+
+**2 Samuel 12:13 (NIV)**
+> “Then David said to Nathan, ‘I have sinned against the LORD.’ Nathan replied, ‘The LORD has taken away your sin. You are not going to die.’”
+
+### 8. “Create in me a pure heart”
+
+**Psalm 51:10 (NIV)**
+> “Create in me a pure heart, O God, and renew a steadfast spirit within me.”
+
+### 9. “A man after my own heart”
+
+**Acts 13:22 (NIV)**
+> “After removing Saul, he made David their king. God testified concerning him: ‘I have found David son of Jesse, a man after my own heart; he will do everything I want him to do.’”
+
+### 10. “David had served God’s purpose in his own generation”
+
+**Acts 13:36 (NIV)**
+> “Now when David had served God’s purpose in his own generation, he fell asleep;…”
+
+## Moses
+
+### 1. “He chose to be mistreated along with the people of God”
+
+**Hebrews 11:24–25 (NIV)**
+> “By faith Moses, when he had grown up, refused to be known as the son of Pharaoh’s daughter. He chose to be mistreated along with the people of God rather than to enjoy the fleeting pleasures of sin.”
+
+### 2. “He killed the Egyptian”
+
+**Exodus 2:12 (NIV)**
+> “Looking this way and that and seeing no one, he killed the Egyptian and hid him in the sand.”
+
+### 3. “They did not understand”
+
+**Acts 7:25**
+> “He supposed that his brothers would understand that God was giving them salvation by his hand, but they did not understand.”
+
+### 4. “Please send someone else”
+
+**Exodus 4:13 (NIV)**
+> “But Moses said, ‘Pardon your servant, Lord. Please send someone else.’”
+
+### 5. “You are not able to do it alone”
+
+**Exodus 18:17–18**
+> “Moses' father-in-law said to him, ‘What you are doing is not good. You and the people with you will wear yourselves out, for the thing is too heavy for you. You are not able to do it alone.’”
+
+### 6. “Very meek”
+
+**Numbers 12:3**
+> “Now the man Moses was very meek, more than all people who were on the face of the earth.”
+
+### 7. “You did not trust in me enough”
+
+**Numbers 20:12 (NIV)**
+> “But the LORD said to Moses and Aaron, ‘Because you did not trust in me enough to honor me as holy in the sight of the Israelites, you will not bring this community into the land I give them.’”
+
+### 8. “Whom the LORD knew face to face”
+
+**Deuteronomy 34:10**
+> “And there has not arisen a prophet since in Israel like Moses, whom the LORD knew face to face,”
+
+## Elijah
+
+### 1. “How long will you waver between two opinions?”
+
+**1 Kings 18:21 (NIV)**
+> “Elijah went before the people and said, ‘How long will you waver between two opinions? If the LORD is God, follow him; but if Baal is God, follow him.’…”
+
+### 2. “Take my life”
+
+**1 Kings 19:4 (NIV)**
+> “…He came to a broom bush, sat down under it and prayed that he might die. ‘I have had enough, LORD,’ he said. ‘Take my life; I am no better than my ancestors.’”
+
+### 3. “Get up and eat”
+
+**1 Kings 19:5 (NIV)**
+> “…All at once an angel touched him and said, ‘Get up and eat.’”
+
+### 4. “A gentle whisper”
+
+**1 Kings 19:12 (NIV)**
+> “After the earthquake came a fire, but the LORD was not in the fire. And after the fire came a gentle whisper.”
+
+### 5. “Cast his cloak upon him”
+
+**1 Kings 19:19, 21**
+> “So he departed from there and found Elisha the son of Shaphat, who was plowing… Elijah passed by him and cast his cloak upon him.… Then he arose and went after Elijah and assisted him.”
+
+### 6. “A human being, even as we are”
+
+**James 5:17 (NIV)**
+> “Elijah was a human being, even as we are. He prayed earnestly that it would not rain, and it did not rain on the land for three and a half years.”
+
+## Jonah
+
+### 1. “Jonah ran away from the LORD”
+
+**Jonah 1:3 (NIV)**
+> “But Jonah ran away from the LORD and headed for Tarshish.…”
+
+### 2. “In my distress I called to the LORD”
+
+**Jonah 2:2 (NIV)**
+> “…In my distress I called to the LORD, and he answered me.…”
+
+### 3. “Jonah obeyed the word of the LORD”
+
+**Jonah 3:3 (NIV)**
+> “Jonah obeyed the word of the LORD and went to Nineveh.…”
+
+### 4. “He became angry”
+
+**Jonah 4:1 (NIV)**
+> “But to Jonah this seemed very wrong, and he became angry.”
+
+### 5. “Should I not have concern for the great city of Nineveh”
+
+**Jonah 4:11 (NIV)**
+> “And should I not have concern for the great city of Nineveh, in which there are more than a hundred and twenty thousand people who cannot tell their right hand from their left—and also many animals?”
+
+## Paul
+
+### 1. “Saul began to destroy the church”
+
+**Acts 8:3 (NIV)**
+> “But Saul began to destroy the church. Going from house to house, he dragged off both men and women and put them in prison.”
+
+### 2. “At once he began to preach”
+
+**Acts 9:20 (NIV)**
+> “At once he began to preach in the synagogues that Jesus is the Son of God.”
+
+### 3. “After three years”
+
+**Galatians 1:17–18**
+> “nor did I go up to Jerusalem to those who were apostles before me, but I went away into Arabia, and returned again to Damascus. Then after three years I went up to Jerusalem to visit Cephas and remained with him fifteen days.”
+
+### 4. “Barnabas took him”
+
+**Acts 9:27**
+> “But Barnabas took him and brought him to the apostles and declared to them how on the road he had seen the Lord, who spoke to him, and how at Damascus he had preached boldly in the name of Jesus.”
+
+### 5. “What a wretched man I am!”
+
+**Romans 7:24 (NIV)**
+> “What a wretched man I am! Who will rescue me from this body that is subject to death?”
+
+### 6. “Of whom I am the worst”
+
+**1 Timothy 1:15 (NIV)**
+> “Here is a trustworthy saying that deserves full acceptance: Christ Jesus came into the world to save sinners—of whom I am the worst.”
+
+### 7. “Not that I have already obtained this”
+
+**Philippians 3:12, 15**
+> “Not that I have already obtained this or am already perfect, but I press on to make it my own, because Christ Jesus has made me his own.… Let those of us who are mature think this way,…”
+
+### 8. “I have kept the faith”
+
+**2 Timothy 4:7 (NIV)**
+> “I have fought the good fight, I have finished the race, I have kept the faith.”
+
+## John Mark
+
+### 1. “John left them”
+
+**Acts 13:13 (NIV)**
+> “From Paphos, Paul and his companions sailed to Perga in Pamphylia, where John left them to return to Jerusalem.”
+
+### 2. “He had deserted them”
+
+**Acts 15:37–38 (NIV)**
+> “Barnabas wanted to take John, also called Mark, with them, but Paul did not think it wise to take him, because he had deserted them in Pamphylia and had not continued with them in the work.”
+
+### 3. “Barnabas took Mark with him”
+
+**Acts 15:39–40**
+> “…Barnabas took Mark with him and sailed away to Cyprus, but Paul chose Silas and departed, having been commended by the brothers to the grace of the Lord.”
+
+### 4. “He is helpful to me in my ministry”
+
+**2 Timothy 4:11 (NIV)**
+> “Only Luke is with me. Get Mark and bring him with you, because he is helpful to me in my ministry.”
+
+## Saul, a warning
+
+### 1. “Changed into a different person”
+
+**1 Samuel 10:6 (NIV)**
+> “The Spirit of the LORD will come powerfully upon you, and you will prophesy with them; and you will be changed into a different person.”
+
+### 2. “You have done a foolish thing”
+
+**1 Samuel 13:13 (NIV)**
+> “‘You have done a foolish thing,’ Samuel said. ‘You have not kept the command the LORD your God gave you;…’”
+
+### 3. “Once small in your own eyes”
+
+**1 Samuel 15:17 (NIV)**
+> “Samuel said, ‘Although you were once small in your own eyes, did you not become the head of the tribes of Israel?…’”
+
+### 4. “To obey is better than sacrifice”
+
+**1 Samuel 15:22 (NIV)**
+> “But Samuel replied: ‘Does the LORD delight in burnt offerings and sacrifices as much as in obeying the LORD? To obey is better than sacrifice, and to heed is better than the fat of rams.’”
+
+### 5. “The Spirit of the LORD had departed from Saul”
+
+**1 Samuel 16:14 (NIV)**
+> “Now the Spirit of the LORD had departed from Saul, and an evil spirit from the LORD tormented him.”
+
+## Solomon, a warning
+
+### 1. “Solomon showed his love for the LORD”
+
+**1 Kings 3:3 (NIV)**
+> “Solomon showed his love for the LORD by walking according to the instructions given him by his father David,…”
+
+### 2. “Give your servant a discerning heart”
+
+**1 Kings 3:9 (NIV)**
+> “So give your servant a discerning heart to govern your people and to distinguish between right and wrong.…”
+
+### 3. “His wives turned his heart”
+
+**1 Kings 11:4 (NIV)**
+> “As Solomon grew old, his wives turned his heart after other gods, and his heart was not fully devoted to the LORD his God, as the heart of David his father had been.”
+
+### 4. “His heart had turned away from the LORD”
+
+**1 Kings 11:9 (NIV)**
+> “The LORD became angry with Solomon because his heart had turned away from the LORD, the God of Israel, who had appeared to him twice.”
+
+## Examine yourselves
+
+**Psalm 139:23–24 (NIV)**
+> “Search me, God, and know my heart; test me and know my anxious thoughts. See if there is any offensive way in me, and lead me in the way everlasting.”
+
+**Lamentations 3:40 (NIV)**
+> “Let us examine our ways and test them, and let us return to the LORD.”
+
+**2 Corinthians 13:5 (NIV)**
+> “Examine yourselves to see whether you are in the faith; test yourselves.…”
+
+**Galatians 5:22–23**
+> “But the fruit of the Spirit is love, joy, peace, patience, kindness, goodness, faithfulness, gentleness, self-control; against such things there is no law.”
+
+**Hebrews 3:13**
+> “But exhort one another every day, as long as it is called ‘today,’ that none of you may be hardened by the deceitfulness of sin.”
+
+**Revelation 2:4**
+> “But I have this against you, that you have abandoned the love you had at first.”
 
 
 ---
