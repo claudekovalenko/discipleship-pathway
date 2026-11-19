@@ -231,3 +231,4 @@ a.tag{text-decoration:none}
 .side{margin:14px 0 8px;font-size:12px;font-weight:600;letter-spacing:.06em;text-transform:uppercase;color:var(--muted)}
 .side b{color:var(--accent)}
 .tabbar a span{white-space:nowrap}
+.book.empty{opacity:.45;border-style:dashed}

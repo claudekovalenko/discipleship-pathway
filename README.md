@@ -50,7 +50,7 @@ An installable app (PWA) that works offline once it has been opened.
 - **Whole Bible · Old Testament · New Testament:** every pattern and command page has this switch. Links keep the choice, e.g. `#pattern-6-nt` opens "I will build my church" in the New Testament.
 - **Practices:** seventeen practices of discipleship, each named by a phrase of Scripture. For each one, what Jesus did with his disciples (the Gospels) is set beside what his followers did afterward (Acts to Revelation): being with him, teaching, prayer, fasting, choosing and appointing, sending out two by two, receiving and hospitality, going to the next towns, reporting back, baptizing, breaking bread, singing, serving, sharing possessions, correcting and restoring, strengthening, and suffering. There is also an all-practices page (`#practicesall`).
 - **All patterns compiled:** every pattern and every verse on one page in the app (`#compiled`, or `#compiled-nt` for the New Testament only; it prints cleanly from a browser), and as a document: [PATTERNS.md](PATTERNS.md).
-- **Bible:** all 66 books, grouped by section (Law, History, Wisdom & Poetry, Major Prophets, Minor Prophets, Gospels, Acts, Paul's Letters, General Letters, Revelation). Tap a book to read its passages.
+- **Bible:** all 66 books, grouped by section (Law, History, Wisdom & Poetry, Major Prophets, Minor Prophets, Gospels, Acts, Paul's Letters, General Letters, Revelation). Tap a book to read its passages. A book shows 0 when none of its verses state one of the themes.
 - **Search:** any word, book, or reference, filtered by command.
 
 Each passage is shown as Scripture alone: the ESV text and its reference, with no added headings or notes.
@@ -79,15 +79,19 @@ To try it on your computer, run `python3 -m http.server` in this folder and open
 
 ## Editing
 
-All content is in `data.js`. To add a passage, add a row to `PASSAGES` in canonical order. The app works out the book from the reference:
+All content is in `data.js`.
 
-```js
-["Reference", commandId, "“ESV text”"]
-```
+**The rule for every theme:** a verse is listed under a command, pattern, or practice only when its own words plainly state that theme, so a reader can see the link without any explanation. If a verse needs an argument to connect it, leave it out.
 
-Command ids: 1 Follow me, 2 Abide in my word, 3 Love one another, 4 You will be my witnesses, 5 Teaching them to observe, 6 Entrust to faithful men. To add a pattern, add a row to `PATTERNS` with a phrase of Scripture to name it, where that phrase is from, and the references it includes.
+1. Add the verse to `PASSAGES` in canonical order: `["Reference", "“ESV text”"]`. The app works out the book from the reference.
+2. Add its reference to the list it belongs to:
+   - a command: the fifth item of its row in `COMMANDS`
+   - a pattern: the third item of its row in `PATTERNS`
+   - a practice: the "with Jesus" list (Gospels only) or the "afterward" list (Acts to Revelation only) in `PRACTICES`
 
-**After any change,** run `node scripts/compile-patterns.js` to rebuild `PATTERNS.md`, and bump `CACHE` in `sw.js` (e.g. `dp-v12` → `dp-v13`) so installed apps download the update.
+A passage that is in no list is never shown, so remove it from `PASSAGES` too.
+
+**After any change,** run `node scripts/compile-patterns.js` to rebuild `PATTERNS.md`, and bump `CACHE` in `sw.js` (e.g. `dp-v13` → `dp-v14`) so installed apps download the update.
 
 ## Scripture copyright
 

@@ -16,6 +16,7 @@ const P_BOOK = PASSAGES.map(p => bookIdx(p[0]));
 const cmdOf = id => COMMANDS[id - 1];
 const REF_IDX = new Map(PASSAGES.map((p, i) => [p[0], i]));
 const PAT_IDS = PATTERNS.map(pt => pt[2].map(r => REF_IDX.get(r)));
+const CMD_IDS = COMMANDS.map(c => c[4].map(r => REF_IDX.get(r)));
 const PR_IDS = PRACTICES.map(pr => [pr[2].map(r => REF_IDX.get(r)), pr[3].map(r => REF_IDX.get(r))]);
 
 const isNT = i => P_BOOK[i] >= NT_START;
@@ -42,7 +43,7 @@ function strip(ids, big) {
 /* One passage: the ESV text and its reference, nothing else. */
 function passage(i) {
   const p = PASSAGES[i];
-  return `<article class="pass"><p class="verse">${p[2]}</p><span class="ref">${p[0]}</span></article>`;
+  return `<article class="pass"><p class="verse">${p[1]}</p><span class="ref">${p[0]}</span></article>`;
 }
 
 /* Passages grouped under their canon section headings. */
@@ -79,7 +80,7 @@ function homeScreen() {
     </div>
     ${COMMANDS.map(c => `
       <a class="cmdrow s${c[0]}" href="#cmd-${c[0]}">
-        <span class="txt"><b>“${c[1]}”</b><small>${c[2]} · ${PASSAGES.filter(p => p[1] === c[0]).length} passages</small></span>${chev}</a>`).join("")}
+        <span class="txt"><b>“${c[1]}”</b><small>${c[2]} · ${c[4].length} passages</small></span>${chev}</a>`).join("")}
 
     <p class="label" style="margin-top:26px">How Jesus made disciples, and what his followers did afterward</p>
     <a class="cmdrow" href="#practices" style="--c:var(--accent)">
@@ -97,7 +98,7 @@ function homeScreen() {
 
 function cmdScreen(id) {
   const c = cmdOf(id); if (!c) return homeScreen();
-  const all = PASSAGES.map((p, i) => i).filter(i => PASSAGES[i][1] === id), ids = all.filter(i => inScope(i));
+  const all = CMD_IDS[id - 1], ids = all.filter(i => inScope(i));
   return { title: `“${c[1]}”`, tab: "home", back: "#home", html: `
     <div class="s${id}">
       <div class="hero"><p class="verse">${c[3]}</p><span class="ref">${c[2]}</span></div>
@@ -209,11 +210,12 @@ function practicesAllScreen() {
 
 function bibleScreen() {
   return { title: "The Whole Bible", tab: "bible", html: `
-    <p class="muted" style="margin-top:0">Tap a book to read its passages.</p>
+    <p class="muted" style="margin-top:0">Tap a book to read its passages. A book shows 0 when none of its verses state one of the themes here.</p>
     ${SECTIONS.map((s, si) => `
       <div class="era">${s[0]} <span class="muted">· ${s[1]}</span></div>
       <div class="books">${BOOKS.map((b, bi) => b[2] !== si ? "" : `
-        <a class="book" href="#book-${bi}"><b>${b[1]}</b><small>${P_BOOK.filter(x => x === bi).length}</small></a>`).join("")}</div>`).join("")}` };
+        ${P_BOOK.includes(bi) ? `<a class="book" href="#book-${bi}"><b>${b[1]}</b><small>${P_BOOK.filter(x => x === bi).length}</small></a>`
+          : `<span class="book empty" title="${b[0]}: no passage under these themes"><b>${b[1]}</b><small>0</small></span>`}`).join("")}</div>`).join("")}` };
 }
 
 function bookScreen(bi) {
@@ -244,8 +246,8 @@ function searchScreen() {
 function renderSearch() {
   const q = search.q.trim().toLowerCase();
   const ids = PASSAGES.map((p, i) => i).filter(i => { const p = PASSAGES[i];
-    return (!search.cmd || p[1] === search.cmd) &&
-      (!q || (p[0] + " " + p[2] + " " + BOOKS[P_BOOK[i]][0]).toLowerCase().includes(q)); });
+    return (!search.cmd || CMD_IDS[search.cmd - 1].includes(i)) &&
+      (!q || (p[0] + " " + p[1] + " " + BOOKS[P_BOOK[i]][0]).toLowerCase().includes(q)); });
   $("#count").textContent = `${ids.length} of ${PASSAGES.length} passages`;
   $("#list").innerHTML = grouped(ids) || `<p class="muted">No passages match. Try another word.</p>`;
 }
