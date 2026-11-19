@@ -301,9 +301,9 @@ function matureScreen() {
     <div class="card summary">
       <p class="label">At a glance</p>
       <p class="side"><b>Jesus' marks of a disciple</b></p>
-      <ol class="sumlist">${MATURE.disciple.map(([q, rf], n) => `<li value="${n + 1}"><button type="button" data-jump="mk${n}">“${q}”</button> <span class="ref">${rf}</span></li>`).join("")}</ol>
+      <ol class="sumlist">${MATURE.disciple.map(([q, rf], n) => `<li value="${n + 1}"><span class="jump" role="button" tabindex="0" data-jump="mk${n}">“${q}”</span> <span class="ref">${rf}</span></li>`).join("")}</ol>
       <p class="side"><b>Marks of maturity</b></p>
-      <ol class="sumlist">${MATURE.marks.map(([q, rf], n) => `<li value="${n + D + 1}"><button type="button" data-jump="mk${n + D}">“${q}”</button> <span class="ref">${rf}</span></li>`).join("")}</ol>
+      <ol class="sumlist">${MATURE.marks.map(([q, rf], n) => `<li value="${n + D + 1}"><span class="jump" role="button" tabindex="0" data-jump="mk${n + D}">“${q}”</span> <span class="ref">${rf}</span></li>`).join("")}</ol>
     </div>
 
     <p class="label" style="margin-top:22px">What every disciple grows toward</p>
@@ -444,6 +444,10 @@ function route() {
 window.addEventListener("hashchange", route);
 backBtn.addEventListener("click", () => { location.hash = backBtn.dataset.to; });
 
+view.addEventListener("keydown", e => {
+  const j = e.target.closest && e.target.closest("[data-jump]");
+  if (j && (e.key === "Enter" || e.key === " ")) { e.preventDefault(); j.click(); }
+});
 view.addEventListener("input", e => {
   if (e.target.id === "q") { search.q = e.target.value; renderSearch(); }
 });
