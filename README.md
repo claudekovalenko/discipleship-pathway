@@ -1,6 +1,6 @@
 # Discipleship Pathway
 
-What Scripture says about making disciples, from Genesis to Revelation, in the words of the ESV, centered on the focus of the whole Bible:
+What Scripture says about making disciples, from Genesis to Revelation, in the words of the ESV (with a few newer verses in the NIV, each marked), centered on the focus of the whole Bible:
 
 > “You shall love the Lord your God with all your heart and with all your soul and with all your mind. This is the great and first commandment. And a second is like it: You shall love your neighbor as yourself. On these two commandments depend all the Law and the Prophets.” (Matthew 22:37–40)
 
@@ -49,7 +49,7 @@ An installable app (PWA) that works offline once it has been opened.
   Each shows a bar of all 66 books marking where it appears, then every passage in order.
 - **Whole Bible · Old Testament · New Testament:** every pattern and command page has this switch. Links keep the choice, e.g. `#pattern-6-nt` opens "I will build my church" in the New Testament.
 - **Practices:** seventeen practices of discipleship, each named by a phrase of Scripture. For each one, what Jesus did with his disciples (the Gospels) is set beside what his followers did afterward (Acts to Revelation): being with him, teaching, prayer, fasting, choosing and appointing, sending out two by two, receiving and hospitality, going to the next towns, reporting back, baptizing, breaking bread, singing, serving, sharing possessions, correcting and restoring, strengthening, and suffering. There is also an all-practices page (`#practicesall`).
-- **Growth:** how disciples grow toward maturity, from Scripture alone:
+- **Pathway:** from new believer to mature disciple, in ten steps, each named by a phrase of Scripture. Every step shows *where Scripture places this step* (the verses that show the order, such as Acts 2:37–42, Colossians 2:6–7, Hebrews 5:12–14 and 1 Timothy 3:6, 10), *what the word says*, and *with Jesus* (how he did it with the Twelve). There is also a one-page version (`#stepsall`). Under "Going deeper":
   - *The range of maturity:* infants and milk, children, young men and fathers, solid food for the mature.
   - *How Jesus discipled the Twelve:* thirteen steps in the order of the Gospels, from "Come and you will see" to "stay in the city until you are clothed with power."
   - *Before and after:* the same disciples in the Gospels, then in Acts and their letters.
@@ -89,19 +89,22 @@ All content is in `data.js`.
 
 **The rule for every theme:** a verse is listed under a command, pattern, or practice only when its own words plainly state that theme, so a reader can see the link without any explanation. If a verse needs an argument to connect it, leave it out.
 
-1. Add the verse to `PASSAGES` in canonical order: `["Reference", "“ESV text”"]`. The app works out the book from the reference.
+1. Add the verse to `PASSAGES` in canonical order: `["Reference", "“ESV text”"]`, or `["Reference", "“NIV text”", "NIV"]` for an NIV verse. The app works out the book from the reference.
 2. Add its reference to the list it belongs to:
    - a command: the fifth item of its row in `COMMANDS`
    - a pattern: the third item of its row in `PATTERNS`
    - a practice: the "with Jesus" list (Gospels only) or the "afterward" list (Acts to Revelation only) in `PRACTICES`
+   - the pathway: a step in `PATHWAY` (where Scripture places it, what the word says, with Jesus)
    - growth: a list in `GROWTH` (seasons are in the order of each life, not book order)
 
 A passage that is in no list is never shown, so remove it from `PASSAGES` too.
 
-**After any change,** run `node scripts/compile-patterns.js` to rebuild `PATTERNS.md`, and bump `CACHE` in `sw.js` (e.g. `dp-v14` → `dp-v15`) so installed apps download the update.
+**After any change,** run `node scripts/compile-patterns.js` to rebuild `PATTERNS.md`, and bump `CACHE` in `sw.js` (e.g. `dp-v15` → `dp-v16`) so installed apps download the update.
 
 ## Scripture copyright
 
 Scripture quotations are from the ESV® Bible (The Holy Bible, English Standard Version®), © 2001 by Crossway, a publishing ministry of Good News Publishers. Used by permission. All rights reserved.
 
-Crossway allows up to 500 verses to be quoted without written permission, as long as the quotations don't make up a complete book of the Bible or 25% or more of the total text of the work. Most of this app's text is Scripture, so request permission from Crossway before distributing it widely. Keep the notice on the home screen.
+Passages marked NIV are taken from The Holy Bible, New International Version® NIV®. Copyright © 1973, 1978, 1984, 2011 by Biblica, Inc.™ Used by permission. All rights reserved worldwide.
+
+Crossway and Biblica each allow up to 500 verses of their translation to be quoted without written permission, as long as the quotations don't make up a complete book of the Bible or 25% or more of the total text of the work. The app currently quotes about 466 ESV verses and 14 NIV verses. **Add new verses in the NIV**, since the ESV is near its limit. Most of this app's text is Scripture, so request permission from both publishers before distributing it widely. Keep both notices on the home screen.

@@ -93,7 +93,8 @@ const BOOKS = [
   ["Revelation","Rev",9]
 ];
 
-// Every passage used anywhere in the app, in canonical order: [reference, ESV text]
+// Every passage used anywhere in the app, in canonical order: [reference, text, translation]
+// Translation is the ESV unless the third item says "NIV".
 const PASSAGES = [
   ["Genesis 12:1–3","“Go from your country and your kindred and your father's house to the land that I will show you. And I will make of you a great nation, and I will bless you and make your name great, so that you will be a blessing… and in you all the families of the earth shall be blessed.”"],
   ["Genesis 18:19","“For I have chosen him, that he may command his children and his household after him to keep the way of the LORD by doing righteousness and justice…”"],
@@ -217,6 +218,7 @@ const PASSAGES = [
   ["Matthew 26:30","“And when they had sung a hymn, they went out to the Mount of Olives.”"],
   ["Matthew 26:41","“Watch and pray that you may not enter into temptation. The spirit indeed is willing, but the flesh is weak.”"],
   ["Matthew 28:18–20","“All authority in heaven and on earth has been given to me. Go therefore and make disciples of all nations, baptizing them in the name of the Father and of the Son and of the Holy Spirit, teaching them to observe all that I have commanded you…”"],
+  ["Mark 1:15","“‘The time has come,’ he said. ‘The kingdom of God has come near. Repent and believe the good news!’”","NIV"],
   ["Mark 1:17–18","“And Jesus said to them, ‘Follow me, and I will make you become fishers of men.’ And immediately they left their nets and followed him.”"],
   ["Mark 1:35","“And rising very early in the morning, while it was still dark, he departed and went out to a desolate place, and there he prayed.”"],
   ["Mark 1:38","“And he said to them, ‘Let us go on to the next towns, that I may preach there also, for that is why I came out.’”"],
@@ -291,6 +293,7 @@ const PASSAGES = [
   ["Acts 1:14","“All these with one accord were devoting themselves to prayer, together with the women and Mary the mother of Jesus, and his brothers.”"],
   ["Acts 1:24","“And they prayed and said, ‘You, Lord, who know the hearts of all, show which one of these two you have chosen’”"],
   ["Acts 2:16","“But this is what was uttered through the prophet Joel:”"],
+  ["Acts 2:37–38","“When the people heard this, they were cut to the heart and said to Peter and the other apostles, ‘Brothers, what shall we do?’ Peter replied, ‘Repent and be baptized, every one of you, in the name of Jesus Christ for the forgiveness of your sins. And you will receive the gift of the Holy Spirit.’”","NIV"],
   ["Acts 2:38","“Repent and be baptized every one of you in the name of Jesus Christ for the forgiveness of your sins, and you will receive the gift of the Holy Spirit.”"],
   ["Acts 2:41","“So those who received his word were baptized, and there were added that day about three thousand souls.”"],
   ["Acts 2:42","“And they devoted themselves to the apostles' teaching and the fellowship, to the breaking of bread and the prayers.”"],
@@ -356,6 +359,8 @@ const PASSAGES = [
   ["Acts 28:30–31","“He lived there two whole years at his own expense, and welcomed all who came to him, proclaiming the kingdom of God and teaching about the Lord Jesus Christ with all boldness and without hindrance.”"],
   ["Romans 6:4","“We were buried therefore with him by baptism into death, in order that, just as Christ was raised from the dead by the glory of the Father, we too might walk in newness of life.”"],
   ["Romans 10:14–15","“How then will they call on him in whom they have not believed? And how are they to believe in him of whom they have never heard? And how are they to hear without someone preaching? And how are they to preach unless they are sent? As it is written, ‘How beautiful are the feet of those who preach the good news!’”"],
+  ["Romans 10:17","“Consequently, faith comes from hearing the message, and the message is heard through the word about Christ.”","NIV"],
+  ["Romans 12:6","“We have different gifts, according to the grace given to each of us.…”","NIV"],
   ["Romans 12:10","“Love one another with brotherly affection. Outdo one another in showing honor.”"],
   ["Romans 12:13","“Contribute to the needs of the saints and seek to show hospitality.”"],
   ["Romans 13:8, 10","“Owe no one anything, except to love each other, for the one who loves another has fulfilled the law.… Love does no wrong to a neighbor; therefore love is the fulfilling of the law.”"],
@@ -369,6 +374,7 @@ const PASSAGES = [
   ["1 Corinthians 11:1","“Be imitators of me, as I am of Christ.”"],
   ["1 Corinthians 11:23","“For I received from the Lord what I also delivered to you, that the Lord Jesus on the night when he was betrayed took bread,”"],
   ["1 Corinthians 15:3","“For I delivered to you as of first importance what I also received:…”"],
+  ["1 Corinthians 15:3–4","“For what I received I passed on to you as of first importance: that Christ died for our sins according to the Scriptures, that he was buried, that he was raised on the third day according to the Scriptures,”","NIV"],
   ["2 Corinthians 2:7–8","“so you should rather turn to forgive and comfort him, or he may be overwhelmed by excessive sorrow. So I beg you to reaffirm your love for him.”"],
   ["2 Corinthians 3:3","“And you show that you are a letter from Christ delivered by us, written not with ink but with the Spirit of the living God, not on tablets of stone but on tablets of human hearts.”"],
   ["2 Corinthians 4:7","“But we have this treasure in jars of clay, to show that the surpassing power belongs to God and not to us.”"],
@@ -382,6 +388,7 @@ const PASSAGES = [
   ["Galatians 5:14","“For the whole law is fulfilled in one word: ‘You shall love your neighbor as yourself.’”"],
   ["Galatians 5:22–23","“But the fruit of the Spirit is love, joy, peace, patience, kindness, goodness, faithfulness, gentleness, self-control; against such things there is no law.”"],
   ["Galatians 6:1–2","“Brothers, if anyone is caught in any transgression, you who are spiritual should restore him in a spirit of gentleness… Bear one another's burdens, and so fulfill the law of Christ.”"],
+  ["Ephesians 1:13","“And you also were included in Christ when you heard the message of truth, the gospel of your salvation. When you believed, you were marked in him with a seal, the promised Holy Spirit,”","NIV"],
   ["Ephesians 2:19","“So then you are no longer strangers and aliens, but you are fellow citizens with the saints and members of the household of God,”"],
   ["Ephesians 2:20–21","“built on the foundation of the apostles and prophets, Christ Jesus himself being the cornerstone, in whom the whole structure, being joined together, grows into a holy temple in the Lord.”"],
   ["Ephesians 4:11–12","“And he gave the apostles, the prophets, the evangelists, the shepherds and teachers, to equip the saints for the work of ministry, for building up the body of Christ.”"],
@@ -396,6 +403,7 @@ const PASSAGES = [
   ["Philippians 4:9","“What you have learned and received and heard and seen in me—practice these things, and the God of peace will be with you.”"],
   ["Colossians 1:6","“which has come to you, as indeed in the whole world it is bearing fruit and increasing—as it also does among you, since the day you heard it and understood the grace of God in truth,”"],
   ["Colossians 1:28","“Him we proclaim, warning everyone and teaching everyone with all wisdom, that we may present everyone mature in Christ.”"],
+  ["Colossians 2:6–7","“So then, just as you received Christ Jesus as Lord, continue to live your lives in him, rooted and built up in him, strengthened in the faith as you were taught, and overflowing with thankfulness.”","NIV"],
   ["Colossians 3:16","“Let the word of Christ dwell in you richly, teaching and admonishing one another in all wisdom, singing psalms and hymns and spiritual songs, with thankfulness in your hearts to God.”"],
   ["Colossians 4:2–3","“Continue steadfastly in prayer, being watchful in it with thanksgiving. At the same time, pray also for us, that God may open to us a door for the word, to declare the mystery of Christ,”"],
   ["Colossians 4:12","“…always struggling on your behalf in his prayers, that you may stand mature and fully assured in all the will of God.”"],
@@ -411,6 +419,7 @@ const PASSAGES = [
   ["1 Timothy 3:1–2","“The saying is trustworthy: If anyone aspires to the office of overseer, he desires a noble task. Therefore an overseer must be above reproach, the husband of one wife, sober-minded, self-controlled, respectable, hospitable, able to teach,”"],
   ["1 Timothy 3:6","“He must not be a recent convert, or he may become puffed up with conceit and fall into the condemnation of the devil.”"],
   ["1 Timothy 3:10","“And let them also be tested first; then let them serve as deacons if they prove themselves blameless.”"],
+  ["1 Timothy 4:7–8","“Have nothing to do with godless myths and old wives’ tales; rather, train yourself to be godly. For physical training is of some value, but godliness has value for all things, holding promise for both the present life and the life to come.”","NIV"],
   ["1 Timothy 4:12","“Let no one despise you for your youth, but set the believers an example in speech, in conduct, in love, in faith, in purity.”"],
   ["1 Timothy 4:13","“Until I come, devote yourself to the public reading of Scripture, to exhortation, to teaching.”"],
   ["1 Timothy 4:14","“Do not neglect the gift you have, which was given you by prophecy when the council of elders laid their hands on you.”"],
@@ -433,6 +442,7 @@ const PASSAGES = [
   ["Hebrews 3:13","“But exhort one another every day, as long as it is called ‘today,’ that none of you may be hardened by the deceitfulness of sin.”"],
   ["Hebrews 5:8","“Although he was a son, he learned obedience through what he suffered.”"],
   ["Hebrews 5:12–14","“For though by this time you ought to be teachers, you need someone to teach you again the basic principles of the oracles of God. You need milk, not solid food, for everyone who lives on milk is unskilled in the word of righteousness, since he is a child. But solid food is for the mature, for those who have their powers of discernment trained by constant practice to distinguish good from evil.”"],
+  ["Hebrews 6:1–2","“Therefore let us move beyond the elementary teachings about Christ and be taken forward to maturity, not laying again the foundation of repentance from acts that lead to death, and of faith in God, instruction about cleansing rites, the laying on of hands, the resurrection of the dead, and eternal judgment.”","NIV"],
   ["Hebrews 8:10","“For this is the covenant that I will make with the house of Israel after those days, declares the Lord: I will put my laws into their minds, and write them on their hearts, and I will be their God, and they shall be my people.”"],
   ["Hebrews 10:24–25","“And let us consider how to stir up one another to love and good works, not neglecting to meet together, as is the habit of some, but encouraging one another, and all the more as you see the Day drawing near.”"],
   ["Hebrews 13:2","“Do not neglect to show hospitality to strangers, for thereby some have entertained angels unawares.”"],
@@ -564,3 +574,20 @@ const GROWTH = {
   ],
   mature: ["Luke 6:40","Galatians 5:22–23","Ephesians 4:13–14","Philippians 3:12, 15","Colossians 1:28","Colossians 4:12","1 Timothy 4:15","2 Timothy 3:16–17","Hebrews 5:12–14","James 1:4","2 Peter 1:5–8"]
 };
+
+// The pathway from new believer to mature disciple. Each step shows:
+//   where Scripture places this step (the verses that show the order),
+//   what the word says for this step, and how Jesus did it with the Twelve (Gospels only).
+// [phrase, where the phrase is from, where Scripture places it, what the word says, with Jesus]
+const PATHWAY = [
+  ["Repent and believe the good news!","Mark 1:15 NIV",["Acts 2:37–38"],["Mark 1:15","Romans 10:17","Ephesians 1:13"],["John 1:39","Mark 1:17–18"]],
+  ["Repent and be baptized","Acts 2:38",["Acts 2:41"],["Matthew 28:18–20","Acts 8:12","Acts 16:33","Romans 6:4"],["John 4:1–2"]],
+  ["They devoted themselves","Acts 2:42",["Acts 2:42"],["Acts 2:46","Hebrews 10:24–25"],["Mark 3:14","Luke 11:1"]],
+  ["Like newborn infants, long for the pure spiritual milk","1 Peter 2:2",["1 Corinthians 3:1–2","1 Peter 2:2"],["1 Corinthians 15:3–4","Hebrews 6:1–2"],["Matthew 5:1–2","Mark 4:34"]],
+  ["Rooted and built up in him","Colossians 2:7 NIV",["Colossians 2:6–7"],["Joshua 1:8","John 8:31","Acts 14:21–22"],["Mark 9:28–29"]],
+  ["Train yourself to be godly","1 Timothy 4:7 NIV",["Hebrews 5:12–14"],["1 Timothy 4:7–8","1 Timothy 4:15","James 1:22","2 Peter 1:5–8"],["Mark 6:7","Mark 6:30","Luke 10:17"]],
+  ["To equip the saints for the work of ministry","Ephesians 4:12",["Ephesians 4:11–12","Ephesians 4:13–14"],["Romans 12:6","1 Peter 4:10"],["Mark 10:45","John 13:14–15"]],
+  ["Able to teach others also","2 Timothy 2:2",["Hebrews 5:12–14","2 Timothy 2:2"],["Matthew 28:18–20","Colossians 1:28","Titus 2:3–4"],["Luke 10:1","John 20:21"]],
+  ["Let them also be tested first","1 Timothy 3:10",["1 Timothy 3:6","1 Timothy 3:10"],["Acts 14:23","Acts 16:2–3","1 Timothy 5:22"],["Luke 6:12–13"]],
+  ["Present everyone mature in Christ","Colossians 1:28",["Ephesians 4:13–14"],["Luke 6:40","Colossians 1:28","James 1:4","1 John 2:13–14"],["Luke 24:49"]]
+];

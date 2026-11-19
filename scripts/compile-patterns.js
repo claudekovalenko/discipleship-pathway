@@ -17,12 +17,12 @@ const bookOf = ref => {
 const anchor = s => s.toLowerCase().replace(/[^a-z0-9 ]/g, "").trim().replace(/ +/g, "-");
 
 let md = `# Patterns Through the Whole Bible\n\n`;
-md += `${d.PATTERNS.length} patterns, each named by a phrase of Scripture and traced from Genesis to Revelation. Scripture quotations are from the ESV.\n\n`;
+md += `${d.PATTERNS.length} patterns, each named by a phrase of Scripture and traced from Genesis to Revelation. Scripture quotations are from the ESV unless marked NIV.\n\n`;
 md += `> “You shall love the Lord your God with all your heart and with all your soul and with all your mind. This is the great and first commandment. And a second is like it: You shall love your neighbor as yourself. On these two commandments depend all the Law and the Prophets.” (Matthew 22:37–40)\n\n`;
 md += `Patterns 1 and 2 are that focus. The rest flow from it.\n\n`;
 md += `## Contents\n\n`;
 d.PATTERNS.forEach((pt, n) => { md += `${n + 1}. [“${pt[0]}” (${pt[1]})](#${anchor(`${n + 1} ${pt[0]}`)})\n`; });
-md += `\nThen: [Practices: With Jesus, and Afterward](#practices-with-jesus-and-afterward) · [Growth Toward Maturity](#growth-toward-maturity)\n`;
+md += `\nThen: [Practices: With Jesus, and Afterward](#practices-with-jesus-and-afterward) · [From New Believer to Mature Disciple](#from-new-believer-to-mature-disciple) · [Growth Toward Maturity](#growth-toward-maturity)\n`;
 
 d.PATTERNS.forEach((pt, n) => {
   const refs = pt[2];
@@ -32,7 +32,7 @@ d.PATTERNS.forEach((pt, n) => {
   [["Old Testament", ot], ["New Testament", nt]].forEach(([label, list]) => {
     if (!list.length) return;
     md += `### ${label}\n\n`;
-    list.forEach(r => { md += `**${r}**\n> ${byRef.get(r)[1]}\n\n`; });
+    list.forEach(r => { md += `**${r}${byRef.get(r)[2] ? " (" + byRef.get(r)[2] + ")" : ""}**\n> ${byRef.get(r)[1]}${byRef.get(r)[2] ? ` (${byRef.get(r)[2]})` : ""}\n\n`; });
   });
 });
 
@@ -42,11 +42,18 @@ d.PRACTICES.forEach((pr, n) => {
   md += `## ${n + 1}. ${pr[0]}\n\n*${pr[1]}*\n\n`;
   [["With Jesus (the Gospels)", pr[2]], ["Afterward (Acts to Revelation)", pr[3]]].forEach(([label, list]) => {
     md += `### ${label}\n\n`;
-    list.forEach(r => { md += `**${r}**\n> ${byRef.get(r)[1]}\n\n`; });
+    list.forEach(r => { md += `**${r}${byRef.get(r)[2] ? " (" + byRef.get(r)[2] + ")" : ""}**\n> ${byRef.get(r)[1]}${byRef.get(r)[2] ? ` (${byRef.get(r)[2]})` : ""}\n\n`; });
   });
 });
+md += `\n---\n\n# From New Believer to Mature Disciple\n\nEach step shows where Scripture places it, what the word says, and how Jesus did it with the Twelve.\n\n`;
+d.PATHWAY.forEach(([ph, rf, order, word, jesus], n) => {
+  md += `## Step ${n + 1}. “${ph}” (${rf})\n\n`;
+  md += `### Where Scripture places this step\n\n${order.map(r => `**${r}${byRef.get(r)[2] ? " (" + byRef.get(r)[2] + ")" : ""}**\n> ${byRef.get(r)[1]}\n\n`).join("")}`;
+  md += `### What the word says\n\n${word.map(r => `**${r}${byRef.get(r)[2] ? " (" + byRef.get(r)[2] + ")" : ""}**\n> ${byRef.get(r)[1]}\n\n`).join("")}`;
+  md += `### With Jesus\n\n${jesus.map(r => `**${r}${byRef.get(r)[2] ? " (" + byRef.get(r)[2] + ")" : ""}**\n> ${byRef.get(r)[1]}\n\n`).join("")}`;
+});
 const G = d.GROWTH;
-const verses = list => list.map(r => `**${r}**\n> ${byRef.get(r)[1]}\n\n`).join("");
+const verses = list => list.map(r => `**${r}**\n> ${byRef.get(r)[1]}${byRef.get(r)[2] ? ` (${byRef.get(r)[2]})` : ""}\n\n`).join("");
 md += `\n---\n\n# Growth Toward Maturity\n\n`;
 md += `## The range of maturity\n\n${verses(G.range)}`;
 md += `## How Jesus discipled the Twelve\n\nIn the order they appear in the Gospels.\n\n`;
@@ -56,6 +63,6 @@ G.pairs.forEach(([who, before, after]) => { md += `### ${who}\n\n**Before (the G
 md += `## Seasons of preparation\n\nEach life in the order it happened.\n\n`;
 G.seasons.forEach(([who, list]) => { md += `### ${who}\n\n${verses(list)}`; });
 md += `## A mature disciple\n\n${verses(G.mature)}`;
-md += `\n---\n\nScripture quotations are from the ESV® Bible (The Holy Bible, English Standard Version®), © 2001 by Crossway, a publishing ministry of Good News Publishers. Used by permission. All rights reserved. Some passages are shortened with an ellipsis (…). Read each one in its full context.\n`;
+md += `\n---\n\nScripture quotations are from the ESV® Bible (The Holy Bible, English Standard Version®), © 2001 by Crossway, a publishing ministry of Good News Publishers. Used by permission. All rights reserved. Passages marked (NIV) are taken from The Holy Bible, New International Version® NIV®. Copyright © 1973, 1978, 1984, 2011 by Biblica, Inc.™ Used by permission. All rights reserved worldwide. Some passages are shortened with an ellipsis (…). Read each one in its full context.\n`;
 fs.writeFileSync(path.join(root, "PATTERNS.md"), md);
 console.log(`Wrote PATTERNS.md: ${d.PATTERNS.length} patterns, ${d.PRACTICES.length} practices, growth`);

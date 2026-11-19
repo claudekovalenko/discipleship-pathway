@@ -240,3 +240,10 @@ a.tag{text-decoration:none}
   display:grid;place-items:center;font:700 12px system-ui,sans-serif}
 .steps .phrase{font-family:Georgia,"Iowan Old Style",serif;font-size:19px;line-height:1.3;margin:0 0 2px}
 .steps .ref{margin-bottom:8px}
+
+/* Pathway */
+.steps.path > li{padding-bottom:14px}
+.steps.path a{display:block;text-decoration:none;color:var(--ink);background:var(--surface);border:1px solid var(--line);border-radius:12px;padding:10px 14px}
+.steps.path a:active{background:var(--accent-soft)}
+.steps.path .phrase{display:block;font-size:17px;font-weight:600}
+.ref .tr{font-size:11px;font-weight:700;letter-spacing:.06em;color:var(--accent);text-decoration:none;border:1px solid var(--accent);border-radius:4px;padding:0 4px;margin-left:4px}

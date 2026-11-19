@@ -44,7 +44,7 @@ function strip(ids, big) {
 /* One passage: the ESV text and its reference, nothing else. */
 function passage(i) {
   const p = PASSAGES[i];
-  return `<article class="pass"><p class="verse">${p[1]}</p><span class="ref">${p[0]}</span></article>`;
+  return `<article class="pass"><p class="verse">${p[1]}</p><span class="ref">${p[0]}${p[2] ? ` <abbr class="tr" title="New International Version">${p[2]}</abbr>` : ""}</span></article>`;
 }
 
 /* Passages grouped under their canon section headings. */
@@ -87,9 +87,9 @@ function homeScreen() {
     <a class="cmdrow" href="#practices" style="--c:var(--accent)">
       <span class="txt"><b>${PRACTICES.length} practices</b><small>With Jesus in the Gospels · Afterward in Acts to Revelation</small></span>${chev}</a>
 
-    <p class="label" style="margin-top:26px">Growth toward maturity</p>
+    <p class="label" style="margin-top:26px">The pathway</p>
     <a class="cmdrow" href="#growth" style="--c:var(--accent)">
-      <span class="txt"><b>How disciples grow</b><small>The range of maturity · how Jesus discipled the Twelve · seasons of preparation</small></span>${chev}</a>
+      <span class="txt"><b>From new believer to mature disciple</b><small>${PATHWAY.length} steps, each tested against the word</small></span>${chev}</a>
 
     <p class="label" style="margin-top:26px">Patterns through the whole Bible</p>
     <a class="cmdrow" href="#patterns" style="--c:var(--accent)">
@@ -98,7 +98,7 @@ function homeScreen() {
       <span class="txt"><b>All patterns compiled</b><small>Every pattern and every verse on one page</small></span>${chev}</a>
     <a class="cmdrow" href="#bible" style="--c:var(--accent)">
       <span class="txt"><b>Genesis to Revelation</b><small>All ${BOOKS.length} books · ${PASSAGES.length} passages</small></span>${chev}</a>
-    <p class="fine">Scripture quotations are from the ESV® Bible (The Holy Bible, English Standard Version®), © 2001 by Crossway, a publishing ministry of Good News Publishers. Used by permission. All rights reserved. Some passages are shortened with an ellipsis (…). Read each one in its full context.</p>` };
+    <p class="fine">Scripture quotations are from the ESV® Bible (The Holy Bible, English Standard Version®), © 2001 by Crossway, a publishing ministry of Good News Publishers. Used by permission. All rights reserved. Passages marked NIV are taken from The Holy Bible, New International Version® NIV®. Copyright © 1973, 1978, 1984, 2011 by Biblica, Inc.™ Used by permission. All rights reserved worldwide. Some passages are shortened with an ellipsis (…). Read each one in its full context.</p>` };
 }
 
 function cmdScreen(id) {
@@ -222,10 +222,44 @@ const GROWTH_PARTS = [
   ["mature", "A mature disciple", "Fully trained, complete, mature in Christ", GROWTH.mature.length]];
 
 function growthScreen() {
-  return { title: "Growth", tab: "growth", html: `
-    <div class="hello"><h2>Growth toward maturity</h2><p>How disciples grow, from Scripture alone.</p></div>
+  return { title: "Pathway", tab: "growth", html: `
+    <div class="hello"><h2>From new believer to mature disciple</h2>
+      <p>Each step shows where Scripture places it, what the word says, and how Jesus did it with the Twelve.</p></div>
+    <a class="cmdrow" href="#stepsall" style="--c:var(--accent)">
+      <span class="txt"><b>The whole pathway on one page</b><small>All ${PATHWAY.length} steps with every verse</small></span>${chev}</a>
+    <ol class="steps path">${PATHWAY.map((s, n) => `<li><a href="#step-${n}">
+      <b class="phrase">“${s[0]}”</b><span class="ref">${s[1]}</span></a></li>`).join("")}</ol>
+
+    <p class="label" style="margin-top:26px">Going deeper</p>
     ${GROWTH_PARTS.map(([k, t, s]) => `<a class="cmdrow" href="#grow-${k}" style="--c:var(--accent)">
       <span class="txt"><b>${t}</b><small>${s}</small></span>${chev}</a>`).join("")}` };
+}
+
+/* One pathway step: where Scripture places it, what the word says, with Jesus. */
+function stepBody(n) {
+  const [, , order, word, jesus] = PATHWAY[n];
+  return `<p class="side"><b>Where Scripture places this step</b></p>${ids(order).map(passage).join("")}
+    <p class="side"><b>What the word says</b></p>${ids(word).map(passage).join("")}
+    <p class="side"><b>With Jesus</b> · the Gospels</p>${ids(jesus).map(passage).join("")}`;
+}
+
+function stepScreen(n) {
+  const s = PATHWAY[n]; if (!s) return growthScreen();
+  return { title: `Step ${n + 1} of ${PATHWAY.length}`, tab: "growth", back: "#growth", html: `
+    <div class="hello"><p class="label">Step ${n + 1} of ${PATHWAY.length}</p><h2 class="phrase">“${s[0]}”</h2><span class="ref">${s[1]}</span></div>
+    ${stepBody(n)}
+    <div class="pager">
+      ${n > 0 ? `<a href="#step-${n - 1}">← Step ${n}</a>` : ""}
+      ${n < PATHWAY.length - 1 ? `<a class="next" style="--c:var(--accent)" href="#step-${n + 1}">Step ${n + 2} →</a>` : ""}
+    </div>` };
+}
+
+function stepsAllScreen() {
+  return { title: "The Whole Pathway", tab: "growth", back: "#growth", html: `
+    <div class="hello"><h2>From new believer to mature disciple</h2><p>${PATHWAY.length} steps</p></div>
+    ${PATHWAY.map((s, n) => `<section class="compiled" id="st${n}">
+      <h2 class="phrase"><span class="num">${n + 1}</span>“${s[0]}”</h2><span class="ref">${s[1]}</span>
+      ${stepBody(n)}</section>`).join("")}` };
 }
 
 function growScreen(k) {
@@ -318,6 +352,8 @@ function route() {
     : name === "patterns" ? patternsScreen()
     : name === "pattern" ? patternScreen(+arg)
     : name === "growth" ? growthScreen()
+    : name === "step" ? stepScreen(+arg)
+    : name === "stepsall" ? stepsAllScreen()
     : name === "grow" ? growScreen(arg)
     : name === "season" ? seasonScreen(+arg)
     : name === "bible" ? bibleScreen()

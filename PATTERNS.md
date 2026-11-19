@@ -1,6 +1,6 @@
 # Patterns Through the Whole Bible
 
-22 patterns, each named by a phrase of Scripture and traced from Genesis to Revelation. Scripture quotations are from the ESV.
+22 patterns, each named by a phrase of Scripture and traced from Genesis to Revelation. Scripture quotations are from the ESV unless marked NIV.
 
 > “You shall love the Lord your God with all your heart and with all your soul and with all your mind. This is the great and first commandment. And a second is like it: You shall love your neighbor as yourself. On these two commandments depend all the Law and the Prophets.” (Matthew 22:37–40)
 
@@ -31,7 +31,7 @@ Patterns 1 and 2 are that focus. The rest flow from it.
 21. [“Love the sojourner” (Deuteronomy 10:19)](#21-love-the-sojourner)
 22. [“God chose what is weak in the world to shame the strong” (1 Corinthians 1:27)](#22-god-chose-what-is-weak-in-the-world-to-shame-the-strong)
 
-Then: [Practices: With Jesus, and Afterward](#practices-with-jesus-and-afterward) · [Growth Toward Maturity](#growth-toward-maturity)
+Then: [Practices: With Jesus, and Afterward](#practices-with-jesus-and-afterward) · [From New Believer to Mature Disciple](#from-new-believer-to-mature-disciple) · [Growth Toward Maturity](#growth-toward-maturity)
 
 ---
 
@@ -1650,6 +1650,276 @@ Then: [Practices: With Jesus, and Afterward](#practices-with-jesus-and-afterward
 
 ---
 
+# From New Believer to Mature Disciple
+
+Each step shows where Scripture places it, what the word says, and how Jesus did it with the Twelve.
+
+## Step 1. “Repent and believe the good news!” (Mark 1:15 NIV)
+
+### Where Scripture places this step
+
+**Acts 2:37–38 (NIV)**
+> “When the people heard this, they were cut to the heart and said to Peter and the other apostles, ‘Brothers, what shall we do?’ Peter replied, ‘Repent and be baptized, every one of you, in the name of Jesus Christ for the forgiveness of your sins. And you will receive the gift of the Holy Spirit.’”
+
+### What the word says
+
+**Mark 1:15 (NIV)**
+> “‘The time has come,’ he said. ‘The kingdom of God has come near. Repent and believe the good news!’”
+
+**Romans 10:17 (NIV)**
+> “Consequently, faith comes from hearing the message, and the message is heard through the word about Christ.”
+
+**Ephesians 1:13 (NIV)**
+> “And you also were included in Christ when you heard the message of truth, the gospel of your salvation. When you believed, you were marked in him with a seal, the promised Holy Spirit,”
+
+### With Jesus
+
+**John 1:39**
+> “He said to them, ‘Come and you will see.’ So they came and saw where he was staying, and they stayed with him that day, for it was about the tenth hour.”
+
+**Mark 1:17–18**
+> “And Jesus said to them, ‘Follow me, and I will make you become fishers of men.’ And immediately they left their nets and followed him.”
+
+## Step 2. “Repent and be baptized” (Acts 2:38)
+
+### Where Scripture places this step
+
+**Acts 2:41**
+> “So those who received his word were baptized, and there were added that day about three thousand souls.”
+
+### What the word says
+
+**Matthew 28:18–20**
+> “All authority in heaven and on earth has been given to me. Go therefore and make disciples of all nations, baptizing them in the name of the Father and of the Son and of the Holy Spirit, teaching them to observe all that I have commanded you…”
+
+**Acts 8:12**
+> “But when they believed Philip as he preached good news about the kingdom of God and the name of Jesus Christ, they were baptized, both men and women.”
+
+**Acts 16:33**
+> “And he took them the same hour of the night and washed their wounds; and he was baptized at once, he and all his family.”
+
+**Romans 6:4**
+> “We were buried therefore with him by baptism into death, in order that, just as Christ was raised from the dead by the glory of the Father, we too might walk in newness of life.”
+
+### With Jesus
+
+**John 4:1–2**
+> “Now when Jesus learned that the Pharisees had heard that Jesus was making and baptizing more disciples than John (although Jesus himself did not baptize, but only his disciples),”
+
+## Step 3. “They devoted themselves” (Acts 2:42)
+
+### Where Scripture places this step
+
+**Acts 2:42**
+> “And they devoted themselves to the apostles' teaching and the fellowship, to the breaking of bread and the prayers.”
+
+### What the word says
+
+**Acts 2:46**
+> “And day by day, attending the temple together and breaking bread in their homes, they received their food with glad and generous hearts,”
+
+**Hebrews 10:24–25**
+> “And let us consider how to stir up one another to love and good works, not neglecting to meet together, as is the habit of some, but encouraging one another, and all the more as you see the Day drawing near.”
+
+### With Jesus
+
+**Mark 3:14**
+> “And he appointed twelve (whom he also named apostles) so that they might be with him and he might send them out to preach”
+
+**Luke 11:1**
+> “Now Jesus was praying in a certain place, and when he finished, one of his disciples said to him, ‘Lord, teach us to pray, as John taught his disciples.’”
+
+## Step 4. “Like newborn infants, long for the pure spiritual milk” (1 Peter 2:2)
+
+### Where Scripture places this step
+
+**1 Corinthians 3:1–2**
+> “But I, brothers, could not address you as spiritual people, but as people of the flesh, as infants in Christ. I fed you with milk, not solid food, for you were not ready for it. And even now you are not yet ready,”
+
+**1 Peter 2:2**
+> “Like newborn infants, long for the pure spiritual milk, that by it you may grow up into salvation—”
+
+### What the word says
+
+**1 Corinthians 15:3–4 (NIV)**
+> “For what I received I passed on to you as of first importance: that Christ died for our sins according to the Scriptures, that he was buried, that he was raised on the third day according to the Scriptures,”
+
+**Hebrews 6:1–2 (NIV)**
+> “Therefore let us move beyond the elementary teachings about Christ and be taken forward to maturity, not laying again the foundation of repentance from acts that lead to death, and of faith in God, instruction about cleansing rites, the laying on of hands, the resurrection of the dead, and eternal judgment.”
+
+### With Jesus
+
+**Matthew 5:1–2**
+> “Seeing the crowds, he went up on the mountain, and when he sat down, his disciples came to him. And he opened his mouth and taught them, saying:”
+
+**Mark 4:34**
+> “He did not speak to them without a parable, but privately to his own disciples he explained everything.”
+
+## Step 5. “Rooted and built up in him” (Colossians 2:7 NIV)
+
+### Where Scripture places this step
+
+**Colossians 2:6–7 (NIV)**
+> “So then, just as you received Christ Jesus as Lord, continue to live your lives in him, rooted and built up in him, strengthened in the faith as you were taught, and overflowing with thankfulness.”
+
+### What the word says
+
+**Joshua 1:8**
+> “This Book of the Law shall not depart from your mouth, but you shall meditate on it day and night, so that you may be careful to do according to all that is written in it…”
+
+**John 8:31**
+> “If you abide in my word, you are truly my disciples.”
+
+**Acts 14:21–22**
+> “When they had preached the gospel to that city and had made many disciples, they returned to Lystra and to Iconium and to Antioch, strengthening the souls of the disciples, encouraging them to continue in the faith, and saying that through many tribulations we must enter the kingdom of God.”
+
+### With Jesus
+
+**Mark 9:28–29**
+> “And when he had entered the house, his disciples asked him privately, ‘Why could we not cast it out?’ And he said to them, ‘This kind cannot be driven out by anything but prayer.’”
+
+## Step 6. “Train yourself to be godly” (1 Timothy 4:7 NIV)
+
+### Where Scripture places this step
+
+**Hebrews 5:12–14**
+> “For though by this time you ought to be teachers, you need someone to teach you again the basic principles of the oracles of God. You need milk, not solid food, for everyone who lives on milk is unskilled in the word of righteousness, since he is a child. But solid food is for the mature, for those who have their powers of discernment trained by constant practice to distinguish good from evil.”
+
+### What the word says
+
+**1 Timothy 4:7–8 (NIV)**
+> “Have nothing to do with godless myths and old wives’ tales; rather, train yourself to be godly. For physical training is of some value, but godliness has value for all things, holding promise for both the present life and the life to come.”
+
+**1 Timothy 4:15**
+> “Practice these things, immerse yourself in them, so that all may see your progress.”
+
+**James 1:22**
+> “But be doers of the word, and not hearers only, deceiving yourselves.”
+
+**2 Peter 1:5–8**
+> “For this very reason, make every effort to supplement your faith with virtue, and virtue with knowledge, and knowledge with self-control, and self-control with steadfastness, and steadfastness with godliness, and godliness with brotherly affection, and brotherly affection with love. For if these qualities are yours and are increasing, they keep you from being ineffective or unfruitful in the knowledge of our Lord Jesus Christ.”
+
+### With Jesus
+
+**Mark 6:7**
+> “And he called the twelve and began to send them out two by two, and gave them authority over the unclean spirits.”
+
+**Mark 6:30**
+> “The apostles returned to Jesus and told him all that they had done and taught.”
+
+**Luke 10:17**
+> “The seventy-two returned with joy, saying, ‘Lord, even the demons are subject to us in your name!’”
+
+## Step 7. “To equip the saints for the work of ministry” (Ephesians 4:12)
+
+### Where Scripture places this step
+
+**Ephesians 4:11–12**
+> “And he gave the apostles, the prophets, the evangelists, the shepherds and teachers, to equip the saints for the work of ministry, for building up the body of Christ.”
+
+**Ephesians 4:13–14**
+> “until we all attain to the unity of the faith and of the knowledge of the Son of God, to mature manhood, to the measure of the stature of the fullness of Christ, so that we may no longer be children, tossed to and fro by the waves and carried about by every wind of doctrine,…”
+
+### What the word says
+
+**Romans 12:6 (NIV)**
+> “We have different gifts, according to the grace given to each of us.…”
+
+**1 Peter 4:10**
+> “As each has received a gift, use it to serve one another, as good stewards of God's varied grace:”
+
+### With Jesus
+
+**Mark 10:45**
+> “For even the Son of Man came not to be served but to serve, and to give his life as a ransom for many.”
+
+**John 13:14–15**
+> “If I then, your Lord and Teacher, have washed your feet, you also ought to wash one another's feet. For I have given you an example, that you also should do just as I have done to you.”
+
+## Step 8. “Able to teach others also” (2 Timothy 2:2)
+
+### Where Scripture places this step
+
+**Hebrews 5:12–14**
+> “For though by this time you ought to be teachers, you need someone to teach you again the basic principles of the oracles of God. You need milk, not solid food, for everyone who lives on milk is unskilled in the word of righteousness, since he is a child. But solid food is for the mature, for those who have their powers of discernment trained by constant practice to distinguish good from evil.”
+
+**2 Timothy 2:2**
+> “and what you have heard from me in the presence of many witnesses entrust to faithful men, who will be able to teach others also.”
+
+### What the word says
+
+**Matthew 28:18–20**
+> “All authority in heaven and on earth has been given to me. Go therefore and make disciples of all nations, baptizing them in the name of the Father and of the Son and of the Holy Spirit, teaching them to observe all that I have commanded you…”
+
+**Colossians 1:28**
+> “Him we proclaim, warning everyone and teaching everyone with all wisdom, that we may present everyone mature in Christ.”
+
+**Titus 2:3–4**
+> “Older women likewise are to be reverent in behavior… They are to teach what is good, and so train the young women…”
+
+### With Jesus
+
+**Luke 10:1**
+> “After this the Lord appointed seventy-two others and sent them on ahead of him, two by two, into every town and place where he himself was about to go.”
+
+**John 20:21**
+> “Peace be with you. As the Father has sent me, even so I am sending you.”
+
+## Step 9. “Let them also be tested first” (1 Timothy 3:10)
+
+### Where Scripture places this step
+
+**1 Timothy 3:6**
+> “He must not be a recent convert, or he may become puffed up with conceit and fall into the condemnation of the devil.”
+
+**1 Timothy 3:10**
+> “And let them also be tested first; then let them serve as deacons if they prove themselves blameless.”
+
+### What the word says
+
+**Acts 14:23**
+> “And when they had appointed elders for them in every church, with prayer and fasting they committed them to the Lord in whom they had believed.”
+
+**Acts 16:2–3**
+> “He was well spoken of by the brothers at Lystra and Iconium. Paul wanted Timothy to accompany him,…”
+
+**1 Timothy 5:22**
+> “Do not be hasty in the laying on of hands, nor take part in the sins of others; keep yourself pure.”
+
+### With Jesus
+
+**Luke 6:12–13**
+> “In these days he went out to the mountain to pray, and all night he continued in prayer to God. And when day came, he called his disciples and chose from them twelve, whom he also named apostles”
+
+## Step 10. “Present everyone mature in Christ” (Colossians 1:28)
+
+### Where Scripture places this step
+
+**Ephesians 4:13–14**
+> “until we all attain to the unity of the faith and of the knowledge of the Son of God, to mature manhood, to the measure of the stature of the fullness of Christ, so that we may no longer be children, tossed to and fro by the waves and carried about by every wind of doctrine,…”
+
+### What the word says
+
+**Luke 6:40**
+> “A disciple is not above his teacher, but everyone when he is fully trained will be like his teacher.”
+
+**Colossians 1:28**
+> “Him we proclaim, warning everyone and teaching everyone with all wisdom, that we may present everyone mature in Christ.”
+
+**James 1:4**
+> “And let steadfastness have its full effect, that you may be perfect and complete, lacking in nothing.”
+
+**1 John 2:13–14**
+> “I am writing to you, fathers, because you know him who is from the beginning. I am writing to you, young men, because you have overcome the evil one. I write to you, children, because you know the Father. I write to you, fathers, because you know him who is from the beginning. I write to you, young men, because you are strong, and the word of God abides in you, and you have overcome the evil one.”
+
+### With Jesus
+
+**Luke 24:49**
+> “And behold, I am sending the promise of my Father upon you. But stay in the city until you are clothed with power from on high.”
+
+
+---
+
 # Growth Toward Maturity
 
 ## The range of maturity
@@ -2049,4 +2319,4 @@ Each life in the order it happened.
 
 ---
 
-Scripture quotations are from the ESV® Bible (The Holy Bible, English Standard Version®), © 2001 by Crossway, a publishing ministry of Good News Publishers. Used by permission. All rights reserved. Some passages are shortened with an ellipsis (…). Read each one in its full context.
+Scripture quotations are from the ESV® Bible (The Holy Bible, English Standard Version®), © 2001 by Crossway, a publishing ministry of Good News Publishers. Used by permission. All rights reserved. Passages marked (NIV) are taken from The Holy Bible, New International Version® NIV®. Copyright © 1973, 1978, 1984, 2011 by Biblica, Inc.™ Used by permission. All rights reserved worldwide. Some passages are shortened with an ellipsis (…). Read each one in its full context.
